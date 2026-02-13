@@ -5,7 +5,7 @@
 
 - To find hidden URLs, we will use a tool called dirb. This tool uses a brute-force approach, by taking a list of potential page names and testing one by one if they exist in your website. This approach works because people use predictable names a lot of times.
 
-- Command -> dirb [[dirb]]
+- Command -> [[dirb]]
 
 - Offensive security = red team
 
@@ -344,7 +344,10 @@
 	- **Cache-Control:** How long to store the content of the response in the browser's cache before it requests it again.
 	- **Content-Type:** This tells the client what type of data is being returned, i.e., HTML, CSS, JavaScript, Images, PDF, Video, etc. Using the content-type header the browser then knows how to process the data.
 	- **Content-Encoding:** What method has been used to compress the data to make it smaller when sending over the internet.
-
+### How Websites Work
+- There are two major components that make up a website:
+	1. Front End (Client-Side) - the way your browser renders a website.
+	2. Back End (Server-Side) - a server 
 
 
 
@@ -400,9 +403,3 @@
 - Another way to access this information, and then some, is using the Local User and Group Management. Right-click on the Start Menu and click **Run**. Type *Lusrmgr.msc*. 
 - To protect the local user with high (elevated) privileges, Microsoft introduced **User Account Control** (UAC). UAC (by default) doesn't apply for the built-in local administrator account. How does UAC work? When a user with an account type of administrator logs into a system, the current session doesn't run with elevated privileges. When an operation requiring higher-level privileges needs to execute, the user will be prompted to confirm if they permit the operation to run. 
 - **Task Manager** provides information about the applications and processes currently running on the system. Other information is also available, such as how much CPU and RAM are being utilized, which falls under **Performance**. 
-
-
-
-
- ## How The Web Works
-
