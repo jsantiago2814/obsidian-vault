@@ -1,0 +1,1 @@
+**Grab common AD PowerShell Scripts to reset passwords and regular management.**

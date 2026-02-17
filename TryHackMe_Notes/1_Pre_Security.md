@@ -24,7 +24,7 @@
 - Digital Forensics is the application of traditional forensic science processes to digital devices. Digital forensics is used to preserve and analyze digital evidence to aide in the investigation of incidents, such as a breach. This may involve looking at information from: File System, System Memory, System Logs, and Network Logs
 
 - Incident response is how organizations manage security events such as breaches, data leaks and cyber attacks. An incident response process is a defined set of stages to minimize damage, contain the threat and recover fast. The process looks like this: Preparation -> Detection & Analysis -> Containment, Eradication, and Recovery -> Post-Incident Activity
- <img width="1140" height="497" alt="image" src="https://github.com/user-attachments/assets/3360d5f2-0080-4cdb-a957-bbfd05cea3bf" />
+![[Pasted image 20260215082000.png]]
 
 - Preparation: Creating the necessary resources and frameworks to handle an incident.
 
@@ -87,9 +87,9 @@
 
 - Devices have two means of identification, with one being permeable. These are: 1) An IP Address and 2) A Media Access Control (MAC) Address - think of this as being similar to a serial number.
 
-- An IP Aaddress (or Internet Protocol) address can be used as a way of identifying a host on a network for a period of time, where that IP address can then be associated with another device without the IP address changing.
+- An IP Address (or Internet Protocol) address can be used as a way of identifying a host on a network for a period of time, where that IP address can then be associated with another device without the IP address changing.
 
-<img width="1140" height="487" alt="image" src="https://github.com/user-attachments/assets/cb0913a3-39c2-47dc-8199-c8fc4c1371d5" />
+![[Pasted image 20260215082113.png]]
 
 - An IP address is a set of numbers that are divided into four octets. The value of each octet will summarise to be the IP address of the device on the network. This number is calculated through a technique known as IP addressing & subnetting.
 
@@ -105,13 +105,13 @@
 
 - IPv6 is a new iteration of the Internet Protocol addressing scheme to help tackle the shortage of addresses for IPv5. IPv6 supports up to 2^128 of IP addresses (340 trillion-puls) and is more efficient due to new methodologies.
 
-<img width="736" height="177" alt="image" src="https://github.com/user-attachments/assets/4f0ef524-c522-4db7-924c-45646c45e2ea" />
+![[Pasted image 20260215082220.png]]
 
-- MAC Addresses - Devices on a network will all have a physical network interface, which is a microchip board foudn on the device's motherboard. This network interface is assigned a unique address at the factory it was built at, called a MAC (Media Access Control) address. The MAC address is a twelve-character hexadecimal number (a base sixteen numbering system used in computing to represent numbers) split into two's and separatedby a colon. These colons are considered separators. For example, a4:c3:f0:85:ac:2d. The first six characters represent the company that made the network interface, and the last six is a unique number.
+- MAC Addresses - Devices on a network will all have a physical network interface, which is a microchip board found on the device's motherboard. This network interface is assigned a unique address at the factory it was built at, called a MAC (Media Access Control) address. The MAC address is a twelve-character hexadecimal number (a base sixteen numbering system used in computing to represent numbers) split into two's and separated by a colon. These colons are considered separators. For example, a4:c3:f0:85:ac:2d. The first six characters represent the company that made the network interface, and the last six is a unique number.
 
-<img width="1140" height="669" alt="image" src="https://github.com/user-attachments/assets/c065dd33-b3b5-4ff8-a563-e9f8de4a6280" />
+![[Pasted image 20260215082229.png]]
 
-- Ping (ICMP) - Ping is one of hte most fundamental network tooks available to us. Ping uses ICMP (Internet Control Message Protocol) packets to determine the performance of a connection between devices, for example, if the connection exists or is reliable
+- Ping (ICMP) - Ping is one of the most fundamental network tools available to us. Ping uses ICMP (Internet Control Message Protocol) packets to determine the performance of a connection between devices, for example, if the connection exists or is reliable
 
 - The syntax to do a simple ping is ping IP address or website URL
 
@@ -123,29 +123,29 @@
 
 - Star Topology - Devices are individually connected via a central networking device such as a switch or hub. This topology is most commonly found today becasue of its reliability and scalability - despite the cost. Any informatiion sent to a device in this topology is sent via the central device which it connects. Because more cabling and the purchase of dedicated networking equipment is required for this topology, it is more expensive than any other topologies. However, this topology is much more scalable in nature, which means that it is very easy to add more devices as the demand for the network increases. Unfortunately, the more the network scales, the more maintenance is required to keep the network functional.
 
-<img width="1140" height="669" alt="image" src="https://github.com/user-attachments/assets/85be1a2e-4286-4d57-8efd-d3a47142167a" />
+![[Pasted image 20260215082254.png]]
 
 - Bus Topology - This type of connection relies upon a single connection which is known as a backbone cable. this type of topology is similar to the leaf off of a tree in the sense that devices (leaves) stem from where the branches are on this cable. Because all data is destined for each deivce travels along the same cable, it is very quickly prone to becoming slow and bottlenecked if devices within teh topology simultaneously requesting data. This bottleneck also results in very difficult troubleshooting because it quickly becomes difficult to identify which device is experiencing issues with data all travelling along the same route. Bus topologies are one of the easier and more cost-efficient topologies to set up because of their expenses, such as cabling or dedicated networking equipment used to connect these devices. Lastly, another disadvantage fo the bus topology is that there is little redundancy in place in case of failures.
 
-<img width="1140" height="801" alt="image" src="https://github.com/user-attachments/assets/9501d4b1-92c2-4f56-9e9b-d2e51a87d666" />
+![[Pasted image 20260215082302.png]]
 
 - Ring Topology - The ring topology (also known as token topology) boasts some similarities. Devices such as computers are connected directly to each other to form a loop, meaning there is little cabling required and less dependence on dedicated hardware such as within a star topology. A ring topology works by sending data across the loop until it reaches the destined device, using other devices along the loop to forward the data. Interestingly, a device will only send received data from another device in this topology if it does not have any to send itself. If the device happnes to have data to send, it will send its own data first before sending data from another device. Becasue there is only one direction for data to travel across this topology, it is fairly eaasy to troubleshoot any faults that arise. However, this is a double-edged sword because it isn't an efficient way of data travelling across a network, as it may have to visit multiple devices before reaching the intended device. Lastly, ring topologies are less prone to bottlenecks, such as within a bus topology, as large amounts of traffic are not travlling across the network at any one time.
 
-<img width="878" height="801" alt="image" src="https://github.com/user-attachments/assets/06d9ecef-6ad2-4a20-921f-c14d28a01aaa" />
+![[Pasted image 20260215082309.png]]
 
 - What is a Switch? Switches are dedicated devices within  network that are designed to aggregate multiple other devices such as computers, printers, or any other networking-capable device suing ethernet. These various devices plug into a switch's port. Switches are usually found in larger networks such as busineses, schools, or similar-sized networks, where there are many devices to connect to the network. Swithches can connect a large number of devices by having ports of 4, 8, 16, 24, 32, and 64 for devices to plug into. Switches are much more efficient than their lesser counterprt (hubs/repeaters). Switches keep track of what device is connected to which port. This way, when they receive a packet, instead of repeating that packet to every port like a hub would do, it just sends it to the intended target, thus reducing network traffic.
 
-<img width="1409" height="801" alt="image" src="https://github.com/user-attachments/assets/9efc286b-48c8-4e6a-b589-de174a1a4fed" />
+![[Pasted image 20260215082317.png]]
 
-- Both siwtches and routers can be connected to one another.
+- Both switches and routers can be connected to one another.
 
 - What is a Router? It's a routers job to connect networks and pass data between them. It does this by using routing (hence the name router!). Routing is the label given to the process of data travelling across networks. Routing involves creating a patth between networks so that this data can be successfully delivered. Routing is useful when devices are connected by many paths.
 
-<img width="1140" height="390" alt="image" src="https://github.com/user-attachments/assets/cacbf02d-2435-4a6d-b7bb-93beacd0f371" />
+![[Pasted image 20260215082328.png]]
 
-- Subnetting is the term given to splitting up a network into smaller, minature networks within itself.
+- Subnetting is the term given to splitting up a network into smaller, miniature networks within itself.
 
-<img width="908" height="801" alt="image" src="https://github.com/user-attachments/assets/b50c8769-b527-45a5-9837-4f4a3843822e" />
+![[Pasted image 20260215082341.png]]
 
 - Network administrators use subnetting to categorize and assign specific parts of a network to reflect this. Subnetting is achieved by splitting up the number of hosts that can fit within the network, represented by a number called a subnet mask. As we can recall, an IP address is made up of four sections called octets. The same goes for a subnet mask, which is also represented as a number of four bytes (32 bits), ranging from 0 to 255 (0 - 255). Subnets use IP addresses in three different ways: 1) Identify the network address, 2) Identify the host address, 3) identify the default gateway. Default gateways usually use either the first or last host address in a network (.1 or .254).
 
@@ -153,17 +153,18 @@
 
 - How does ARP work? Each device within a network has a ledger to store information on, which is called a cache. In the context of ARP, this cache stores the identifiers of other devices on the network. In order to map these two identifiers together (IP address and MAC address), ARP sends two type of messages: 1) ARP Request & 2) ARP Reply. When an ARP request is sent, a message is broadcasted on the network to other devices asking, "What is the mac address that owns this IP address?" When the other device receives that message, they will only respond if they own that IP address and will send an ARP reply with its MAC address. The requesting device can now remember this mapping and store it in its ARP cache for future use.
 
-<img width="823" height="864" alt="image" src="https://github.com/user-attachments/assets/fc799cd9-65cc-407e-a4b6-e496c9c6b05b" />
+![[Pasted image 20260215082357.png]]
 
 - IP addresses can be assigned either manually, by entering them physically into a device, or automatically and most commonly by using a DHCP (Dynamic Host Configuration Protocol) server. When a device connects to a entwork, if it has not already been manually assigned an IP address, it sends out a request (DHCP Discover) to see if any DHCP servers are on the network. The DHCP server then replies back with an IP address the device could use (DHCP Offer). The device then sends a reply confirming it wants the offered IP Address (DHCP Request), and then lastly, the DHCP server sends a reply acknowledging this has been completed, and the device can start using the IP Address (DHCP ACK).
+![[Pasted image 20260216141155.png]]
 
-<img width="636" height="870" alt="image" src="https://github.com/user-attachments/assets/fe591d4a-0603-4ebd-9d12-ca69f1ae090d" />
+![[Pasted image 20260215082413.png]]
 
 - OSI (Open Systems Interconnection) Model
 
 - The OSI model is an essential model used in networking. This critical model provides a framework dictating how all networked devices will send, receive, and interpret data. One of the main benefits of the OSI model is that devices can have different functions and designs on a network while communicating with other devices. Data sent across a network that follows the uniformity of the OSI model can be understood by other devies. The OSI model consist of seven layers. Each layer has a different set of responsibilites and is arranges from Layer 7 to Layer 1. At every individual layer that data travels through, specific processes take place, and pieces of information are added to this data.
 
-<img width="1077" height="800" alt="image" src="https://github.com/user-attachments/assets/8ca3ceec-3718-40c0-83bd-90ab95eeee32" />
+![[Pasted image 20260215082442.png]]
 
 - Layer 1 - Physical: This layer references  the physical components of the hardware used in networking and is the lowest layer that you will find. Devices use electircal signals to transfer data between each other in a binary numbering system (1's and 0's).
 
@@ -180,6 +181,18 @@
  - Layer 6 - Presentation: Layer 6 of the OSI model is the layer in which standardization starts to take place. Because software developers can develop any software such as an email client differently, the data still needs to be handled in the same way - no matter how the software works. This layer acts as a translator for data to and from the application layer (Layer 7). Security features such as data encryption (like HTTPS) occur at this layer.
 
  - Layer 7 - Application: The application layer of the OSI model is the layer that you will be most familiar with. This familiarity is because the application layer is the layer in which protocols and rules are in place to determine how the user should interact with data sent or received. Everyday applications such as email clients, browsers, or file server browing software such as FileZilla proved a friendly, Graphical User Interface (GUI) for users to interact with data sent or received. Other protocols include DNS (Domain Name System), which is how website addresses are translated into IP addresses.
+ 
+
+| Layer Number | Layer Name         | Main Function                                          | Example Protocols and Standards           |
+| ------------ | ------------------ | ------------------------------------------------------ | ----------------------------------------- |
+| Layer 7      | Application Layer  | Providing services and interfaces to applications.     | HTTP, FTP, DNS, POP3, SMTP, IMAP          |
+| Layer 6      | Presentation Layer | Data encoding, encryption, and compression             | Unicode, MIME, JPEG, PNG, MPEG            |
+| Layer 5      | Session Layer      | Establishing, maintaining, and synchronizing sessions. | NFS, RPC                                  |
+| Layer 4      | Transport Layer    | End-to-end communication and data segmentation         | UDP, TCP                                  |
+| Layer 3      | Network Layer      | Logical addressing and routing between networks        | IP, ICMP, IPSec                           |
+| Layer 2      | Data Link Layer    | Reliable data transfer between adjacent nodes          | Ethernet (802.3), WiFi (802.11)           |
+| Layer 1      | Physical Layer     | Physical data transmission media                       | Electrical, optical, and wireless signals |
+
 
 ### Packets & Frames
 
@@ -218,7 +231,7 @@
    - 5 - FIN - This packet is used ot cleanly (properly) close the conneciton after it has been complete.
    - \# - RST - This packet abruptly ends all communication. This is the last resport and indicates there was a problem during the process. For example, if the service or application is not working correctly, or the system has faults such as low resources.
  
-<img width="981" height="949" alt="image" src="https://github.com/user-attachments/assets/03011fab-cd5b-41b4-a796-9e803d623793" />
+![[Pasted image 20260215082600.png]]
 
 -  Any sent data is given a random number sequence and is reconstructed using this number sequence and incrementing by 1. Both computers must agree on the same number sequence for data to be sent in the correct order. This order is agreed upon during three steps.
    - 1 - SYN - Client: Here's my Initial Sequence Number (ISN) to SYNchronize with (0).
@@ -227,7 +240,7 @@
  
 - TCP Closing a Connection - First, TCP will close a connection once a device has determined that the other device has successfullly received all of the data. To initiate the closure of a TCP connection, the device will send a "FIN" packet to the other device. Of course, with TCP, the other device will also have to acknowledge this packet.   
 
-<img width="981" height="949" alt="image" src="https://github.com/user-attachments/assets/ed939f8f-41a5-4f8f-ab27-ccc9ac1ac8c4" />
+![[Pasted image 20260215082616.png]]
 
 ### Extending Your Network
 
@@ -266,7 +279,7 @@
 - DNS (Domain Name System) provides a simple way for us to communicate with devices on the internet without remember complex numbers.
 
 - Domain Hierarchy
-![[Pasted image 20260213094759.png]]
+![[Pasted image 20260215082646.png]]
 
 - TLD (Top-Level Domain): A TLD is the righthand part of a domain name. So, for example, the tryhackme.com TLD is .com. There are two types of TLD, gTLD (Generic Top Level) and ccTLD (CountryCode Top Level Domain). Historically a gTLD was meant to tell the user the domain name's purpose; for example, a .com would be for commercial purposes, .org for organization, .edu for education and .gov for government. And a ccTLD was used for geographical purposes, for example, .ca for sites based in Canada, .co.uk for sites based in the United Kingdom and so on.
 
@@ -288,14 +301,14 @@
     - 4 - The TLD server holds records for where to find the authoritative server to answer the DNS request. The authoritative server is also known as the nameserver for the domain.
     - 5 - An athoritative DNS server is the server that is responsible for storing the DNS records for a particular domain name and where any updates to your domain name DNS records would be made. Depending on the record type, the DNS record is then sent back to the Recursive DNS Server, where a local copy will be cached for future requests and then relayed back to the original client that madde the request. DNS records all come with a TTL (Time To Live) value. 
 
-![[Pasted image 20260213094819.png]]
+![[Pasted image 20260215082704.png]]
 ### HTTP in Detail
 - HTTP (HyperText Transfer Protocol)
 - HTTP is what's used whenever you view a website, developed by Tim Berners-Lee and his team between 1989 - 1991. 
 - HTTPS (HyperText Transfer Protocol Secure)
 - HTTPS is the secure version of HTTP. HTTPS data is encrypted so it not only stops people from seeing the data you are receiving and sending, but it also gives you assurances that you're talking to the correct web server and not something impersonating it.
 - What is a URL? (Uniform Resource Locater)
-![[Pasted image 20260213095238.png]]
+![[Pasted image 20260215082730.png]]
 
 	- **Scheme:** This instructs on what protocol to use for accessing the resource such as HTTP, HTTPS, FTP (File Transfer Protocol).
 	- **User:** Some services require authentication to log in, you can put a username and password into the URL to log in.
@@ -310,7 +323,7 @@
 	- POST Request: This is used for submitting data to a web server and potentially creating new records.
 	- PUT Request: This is used for submitting data to a web server to update information.
 	- DELETE Request: This is used for deleting information/records from a web server. 
-- HTTP Status Codes [[HTTP Status Codes]]:
+- HTTP Status Codes [[HTTP_Status_Codes]]:
 
 | 100-199 - Information Response | These are sent to tell the client the first part of their request has been accepted and they should continue sending the rest of their request. These codes are no longer very common. |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -347,16 +360,183 @@
 ### How Websites Work
 - There are two major components that make up a website:
 	1. Front End (Client-Side) - the way your browser renders a website.
-	2. Back End (Server-Side) - a server 
+	2. Back End (Server-Side) - a server that processes your request and returns a response.
+- Websites are primarily created using:
+	- HTML, to build websites and define their structure
+	- CSS, to make websites look pretty by adding styling options
+	- JavaScript, implement complex features on pages using interactivity 
+- HyperText Markup Language (HTML) is the language websites are written in. elements (also known as tags) are the building blocks of HTML pages and tells the browser how to display content.
+- You can view the HTML of any website by right-clicking and selecting "View Page Source"
+- JavaScript (JS) is one of the most popular coding languages in the work and allows pages to become interactive.
+- Sensitive information can be potentially leveraged to further an attacker's access within different parts of a web application by viewing the page source.
+- HTML Injection is a vulnerability that occurs when unfiltered user input is displayed on the page. 
+![[Pasted image 20260213143227.png]]
 
+### Putting it all together
+- Load balancers provide two main features, ensuring high traffic websites can handle the load and providing a failover if a server becomes unresponsive. 
+- Load balancers perform periodic checks with each server to ensure they are running correctly; this is called a health check. If a server doesn't respond appropriately or doesn't respond, the load balancer will stop sending traffic until it responds appropriately again.
+- A CDN (Content Delivery Networks) can be an excellent resource for cutting down traffic to a busy website. It allows you to host static files form your website, such as JavaScript, CSS, Images, Videos, and host them across thousands of servers all over the work.  When a user requests one of the hosted files, the CDN works out where the nearest server is physically located and sends the request there instead of potentially the other side of the world.
+- A Web Application Firewall (WAF) sits between your web request and the web server; its primary purpose is to protect the webserver from hacking or denial of service attacks. It analyzes the web requests for common attack techniques, whether the request is from a real browser rather than a bot. 
+- A web server is a software that listens for incoming connections and then utilizes the HTTP protocol to deliver web contents to its clients. 
+- The most common web sever software you'll come across is Apache, Nginx, IIS, and NodeJS.
+- A Web server delivers files from what's called its root directory, which is defined in the software settings. For example, Nginx and Apache share the same default location of /var/www/html in Linus OS and IIS uses C:\inetpub\wwwroot for the Windows OS. For example: /var/www/html/picture.jpg
+- Virtual Hosts can have their root directory mapped to different locations on the hard drive. 
+- Static content - is content that never changes.
+- Dynamic content - is content that could change with different requests. 
 
+## Module 4 - Linux Fundamentals
+- The name "Linux" is actually an umbrella term for multiple OS's that are based on UNIX (another OS). Thanks to Linux being open-source, variants of Linux come in all shapes and sizes - suited for what the system is being used for.
+- For example, Ubuntu & Debian are some of the more commonplace distributions of Linux because it is so extensible. 
+- A large part of interacting with these systems is using the "Terminal".
+- Commands - [[Linux_Commands]]
+	1. echo - Output any text that we provide.
+	2. whoami - Find out what user you're currently logged in as!
+	3. ls (short for listing) - find out the contents of any files or folders.
+	4. cd (short for change directory)  - To change to a specific directory.
+	5. cat (short for concatenating) - A way to output the contents of a file
+	6. pwd (short for print working directory) - See the current directory you are in.
+- "find" command let's you search for files across the entire system that the user has access to instead of having to consistently use "cd" and "ls". 
+	- ex. find -name \[insert file name] 
+	- Can also use a wild card (\*) to search for anything that has a .txt at the end. 
+		- ex. find - name \*.txt
+ - grep command allows us to search the contents of files for specific values that we are looking for. 
+ - Take for example, an access log of a web server. If a certain log (ex. access.log) had 244 entries and you wanted to search for a specific IP address, "grep" can be used to search the entire contents of the file for entries of the value that we are searching for .
+	 - grep \[insert value to search] access.log
+- grep also has a -R (recursive) option to search across multiple files inside a directory. For example to search for a variable across all files in the current directory and its subfolders we can run:
+	- grep -r "PRETTY_NAME" /etc/
+	- This will search every file in the current directory, all sub directories, show were the PRETTY_NAME appears.
+- Linux operators area fantastic way to power up your knowledge of working with Linux. A few important operators that are worth noted are described below.
 
-### Module 4 - Linux Fundamentals
+| Symbol/Operator | Description                                                                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| &               | This operator allows you to run commands in the background of your terminal.                                                                     |
+| &&              | This operator allows you to combine multiple commands together in one line of your terminal.                                                     |
+| >               | This operator is a redirector - meaning that we can take the output form a command (such as using cat to output a file) and direct it elsewhere. |
+| >>              | This operator does the same function of the > operator but appends the output rather than replacing (meaning nothing is overwritten).            |
+- It is worth noting when using &&, the following command(s) will only run if the command before it was successful.
+- Introduction to Flags and Switches [[Linux_Commands]]
+- To locate hidden files can use the -a (short for --all) flag when using the ls command.
+- Commands that accept these will also have a --help option, which lists out the possible options that the command accepts. 
+- The manual pages are a great source of information for both system commands and applications available a Linux machine.
+- To access this documentation, we can use the "man" command and then provide the command we want to read the documentation for. Ex. man ls
+- Additional commands for interacting with the filesystem are listed below:
 
+| Command | Full Name      | Purpose                      |
+| ------- | -------------- | ---------------------------- |
+| touch   | touch          | Create file                  |
+| mkdir   | make directory | Create a folder              |
+| cp      | copy           | Copy a file or folder        |
+| mv      | move           | Move a file or folder        |
+| rm      | remove         | Remove a file or folder      |
+| file    | file           | Determine the type of a file |
+- If using rm to remove a directory, need to add the -R switch along side the name of the directory you wish to remove. Ex. rm -R mydirectory
+- Switching between users on a Linux install is easy work thanks to the **su** command. Unless you are the root user (or using root permissions through sudo), then you are required to know two things to facilitate this transition of user accounts:
+	- The user we wish to switch to
+	- The user's password
+- In Linux, every file and directory has a set of permissions that control who can read, write, or execute it. These permissions are often displayed in symbolic format, such as: rwxrwxrwx
+- This format is split into three groups:
+
+| Section | Applies To | Example |
+| ------- | ---------- | ------- |
+| First 3 | Owner      | rwx     |
+| Next 3  | Group      | rwx     |
+| Last 3  | Others     | rwx     |
+	- r = read
+	- w = write
+	- x = execute
+- Each permission has a numeric value:
+	- Read (r) = 4
+	- Write (w) = 2
+	- Execute (x) = 1
+	- To calculate the numeric value, we add the values together for each group.
+- For example: rwxrwxrwx
+
+| Group  | Permissions | Calculation | Value |
+| ------ | ----------- | ----------- | ----- |
+| Owner  | rwx         | 4+2+1       | 7     |
+| Group  | rwx         | 4+2+1       | 7     |
+| Others | rwx         | 4+2+1       | 7     |
+- So rwxrwxrwx = 777
+
+| Symbolic  | Numeric | Meaning                                              |
+| --------- | ------- | ---------------------------------------------------- |
+| rwxr-xr-x | 755     | Owner can do everything, others can read and execute |
+| rw-r--r-- | 644     | Owner can read/write, others can only read           |
+| rwx------ | 700     | Only the owner has access                            |
+- Understanding numeric permissions is important because many Linux commands user numeric values (e.x. chmod 755 file)
+- Common Linux directories
+	- /etc
+		- This root directory is one of the most important root directories. The etc folder (short for etcetera) is a commonplace location to store system files that are used by your operating system. 
+	- / var
+		- The "/var" directory, with "var" being short for variable data, is one of the main root folders found on a Linux install. This folder stores data that is frequently accessed or written by services or applications running on the system. For example, log files from running services and applications are written here (/var/log), or other data that is not necessarily associated with a specific user (i.e., databases and the like). 
+	- /root
+		- Unlike the /home directory, the /root folder is actually the home for the "root" system user. There isn't anything more to this folder other than just understanding that this is the home directory for the "root" user. 
+	- /tmp
+		- This is a unique root directory found on a Linux install. Short for "**temporary**", the /tmp directory is volatile and is used to store data that is only needed to be accessed once or twice. Similar to the memory on your computer, once the computer is restarted, the contents of this folder are cleared out. What's useful for us in pentesting is that any user can write to this folder by default. Meaning once we have access to a machine, it serves as a good place to store things like our enumeration scripts. 
+- Terminal Text Editors
+		- Nano - To create or edit a file using nano, we simply use **nano \[insert file name]**.
+		- Once we press enter to execute the command, nano will launch. Where we can just being to start entering or modifying our text. You can navigate each line using the "up" and "down" arrow keys or start a new line using the "Enter" key on your keyboard.
+		- VIM - Is a much more advanced text editor. Some of VIM's benefits include:
+			- Customizable - you can modify the keyboard shortcuts
+			- Syntax Highlighting - this is useful if you are writing or maintaining code, making it a popular choice for software develpers
+			- VIM works on all terminals where nano may not be installed
+			- [[VIM_Cheatsheet]]
+- Downloading files (wget). **wget** command allows us to download files from the web via HTTP -- as if you were accessing the file in your browser. We simply need to provide the address of the resource that we with to download.
+	- ex. wget https://assets.tryhackme.com/additional/linux-fundamentals/part3/myfile.txt
+- Transferring Files From Your Host - SCP (SSH)
+	- Secure copy, or SCP, is just that -- a means of securely copying files. 
+	- Provided that we know the usernames and passwords for a user on your current system and a user on the remote system. For example, let's copy an example file from our machine to a remote machine. 
+	- scp important.txt ubuntu@192.168.1.30:/home/ubuntu/transferred.txt
+	- Copying from a remote computer that we are not logged into would look like:
+	- scp ubuntu@192.168.1.30:/home/ubuntu/documents.txt notes.txt
+- Serving Files From Your Host - WEB
+- Ubuntu machines come pre-packaged with python3. Python helpfully provides a lightweight and easy-to-use module called "HTTPServer". This module turns your computer into a quick and easy web server that you can use to serve your own files, where they can then be downloaded by another computing using commands such as **curl** and **wget**.
+- You will need to open a new terminal to use **wget** and leave the one that you have started the Python3 web server in. This is because, once you start the Python3 web server, it will run in that terminal until you cancel it. 
+- Processes are the programs that are running on your machine. They are managed by the kernel, where each process will have an ID associated with it, also known as its PID. The PID increments for the order in which the process starts. I.e. the 60th process will have a PID of 60.
+- We can use the friendly **ps** command to provide a list of the running processes as our user's session and some additional information such as its status code, the session that is running it, how much usage of the CPU it is using, and the name of the actual program or command that is being executed. 
+![[Pasted image 20260215102526.png]]
+- To see the processes run by other users and those that don't run from a session (i.e. system processes), we need to provide **aux** to the **ps** command like so: **ps aux**
+![[Pasted image 20260215102716.png]]
+- Another useful command is the top command; top gives you real-time statistics about the processes running on your system instead of a one-time view. The statistics will refresh every 10 seconds, but will also refresh when you use the arrow keys to brows the various rows. 
+- You can send signals that terminate processes; there are a variety of types of signals that correlate to exactly how "cleanly" the process is dealt with by the kernel. To kill a command, we can use the appropriately named **kill** command and the associated PID that we wish to kill. I.e., to kill PID 1337, we'd use **kill 1337**. 
+- Below are some of the signals that we can send to a process when it is killed:
+	- SIGTERM: Kill the process, but allow it to do some cleanup tasks beforehand
+	- SIGKILL - Kill the process - doesn't do any cleanup after the fact
+	- SIGSTOP - Stop/suspend a process.
+- Getting Processes/Services to Start on Boot:
+- Enter the use of **systemctl** -- this command allows us to interact with the **systemd** process/daemon. **systemctl** is an easy to use command that takes the following formatting: **systemctl \[option] \[service]**
+- The "option" can be one of five options:
+	1. Start
+	2. Stop
+	3. Enable
+	4. Disable
+	5. Status
+- CTRL + Z is an effective way of "pausing" the execution of a script or command.
+- If you background a process utilizing the "&" or "CTRL + Z" commands, you can view it using the **ps aux** command. 
+- **fg** can be utilized to bring the background process back into use on the terminal, where the script can be returned to us. 
+- Maintaining Your System: Automation
+- **Crontab** is one of the processes that is started during boot, which is responsible for facilitating and managing cron jobs. 
+- A crontab is simply a special file with formatting that is recognized by the **cron** process to execute each line step-by-step. Crontabs require 6 specific values:
+	- MIN - What minute to execute at
+	- HOUR - What hour to execute at
+	- DOM - What day of the month to execute at
+	- MON - What month of the year to execute at
+	- DOW - What day of the week to execute at
+	- CMD - The actual command that will be executed
+- Let's use the example of backing up files. You may with to backup "/home/cmnatic/Documents" every 12 hours. We would use the following formatting: 
+	- 0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/
+- An interesting feature of crontab is that these also support the wildcard or asterisk (\*).
+- [Crontab Generator - Generate crontab syntax](https://crontab-generator.org/)
+- [Crontab.guru - The cron schedule expression generator](https://crontab.guru/)
+- Crontabs can be edited by using the **crontab - e**, where you can select an editor (such as Nano) to edit your crontab.
+- When developers with to submit software to the community, they will submit it to an "apt" repository. When using the **ls** command on a Ubuntu 20.04 Linux machine, these files serve as the gateway/registry.
+ ![[Pasted image 20260215104624.png]]
+ - Additional repositories can be added using the **add-apt-repository** command or by listing another provider!
+ - Normally we use the **apt** command to install software onto our Ubuntu system. The **apt** command is part of the package management software also named **apt**. **Apt** contains a whole suite of tools that allows us to manage the packages and sources of our software, and to install or remove software at the same time. 
+ - One method of adding repositories is to use the **add-apt-repository** command. 
 ## Module 5 - Windows Fundamentals
-- The Windows operating system has a long history dating back to 1985, and currently, it is the dominant operating system in both home use and corporate networks. Because of this, Window has always been targeted by hackers & malware writers.
-![[Pasted image 20260213085644.png]]
-- The above screenshot is an example of a typical Windows Desktop. Each component that makes up the GI is explained below.
+![[Pasted image 20260215105908.png]]
+- A typical Windows Desktop is shown above and has these components that make up the GUI:
 	1. The Desktop
 	2. Start Menu
 	3. Search Box (Cortana)
@@ -364,42 +544,48 @@
 	5. Taskbar
 	6. Toolbars
 	7. Notification Area
-- The file system used in modern versions of Windows is the New Technology File System or simply NTFS.
-- Before NTFS, there was FAT16/FAT32 (File Allocation Table) and HPFS (High Performance File System).
-- You still see FAT partitions in use today. For example, you typically see FAT partitions in USB devices, MicroSD cards, etc. but traditionally not on personal Windows computers/laptops or Windows Servers.
+- The file system used in modern versions of Windows it the New Technology File System or simply **NTFS**. 
+- Before NTFS, there was FAT16/FAT32 (File Allocation Table) and HPFS (High Performance File System). 
 - NTFS is known as a journaling file system. In case of a failure, the file system can automatically repair the folders/files on disk using information stored in a log file. This function is not possible with FAT.
-- NTFS addresses many limitations of previous file systems; such as:
-	1. Supports files larger than 4GB
-	2. Set specific permissions on folders and files
-	3. Folder and file compression
-	4. Encryption (Encryption File System or EFS)
 - On NTFS volumes, you can set permissions that grant or deny access to files and folders. The permissions are:
-	1. Full control
-	2. Modify
-	3. Read & Execute
-	4. List folder contents
-	5. Read
-	6. Write
-![[Pasted image 20260213090917.png]]
-- Another feature of NTFS is Alternate Data Streams (ADS).
-- Alternate Data Streams (ADS) is a file attribute specific to Windows NTFS (New Technology File System). 
-- Every file has at lease one data stream ($DATA), and ADS allows files to contain more than one stream of data. Natively Windows Explorer doesn't display ADS to the user.
-- The Windows folder (C:\Windows) is traditionally known as the folder which contains the Windows operating system.
-- The system variables for the Windows directory is %windir%. 
-- Per Microsoft, "*Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders*".
-- There are many folders within the "Windows" folder. One of the many is **System32**.
-- The **System32** folder holds the important files that are critical for the operating system. You should proceed with extreme caution when interacting with this folder. Accidentally deleting any files or folders within the System32 can render the Windows OS not operational. 
-- User accounts can be one of two types on a typical local Windows system: Administrator & Standard User.
-- The user account type will determine what actions the user can perform on that specific Windows system.
-	- An Administrator can make changes to the system: add users, delete users, modify groups, modify settings on the system, etc. 
-	- A Standard user can only make changes to folders/files attributed to the user & can't perform system-level changes, such as install programs.\
-- When a user account is created, a profile is created for the user. The location for each user profile folder will fall under is C:\Users.
-- Each user profile will have the same folders; a few of them are:
-	- Desktop
-	- Documents
-	- Downloads
-	- Music
-	- Pictures
-- Another way to access this information, and then some, is using the Local User and Group Management. Right-click on the Start Menu and click **Run**. Type *Lusrmgr.msc*. 
-- To protect the local user with high (elevated) privileges, Microsoft introduced **User Account Control** (UAC). UAC (by default) doesn't apply for the built-in local administrator account. How does UAC work? When a user with an account type of administrator logs into a system, the current session doesn't run with elevated privileges. When an operation requiring higher-level privileges needs to execute, the user will be prompted to confirm if they permit the operation to run. 
-- **Task Manager** provides information about the applications and processes currently running on the system. Other information is also available, such as how much CPU and RAM are being utilized, which falls under **Performance**. 
+	- Full Control
+	- Modify
+	- Read & Execute
+	- List folder contents
+	- Read
+	- Write
+![[Pasted image 20260215110242.png]]
+- Another feature of NTFS is Alternate Data Streams (ADS). ADS is a file attribute specific to Windows NTFS. Every file has at lease one data stream ($DATA), and ADS allows files to contain more than one stream of data. 
+- The Windows folder (C:\Windows) is traditionally known as the folder which contains the Windows operating system. 
+- The system environment variable for the Windows directory is %windir%. 
+- Per [Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1) , " *Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders*".
+-  One of the many folders within the 'Windows' folder is **System32**. System32 folder holds the important files that are critical for the OS. 
+- User accounts can be one of two types on a typical local Windows system: Administrator & Standard User. 
+- An Administrator can make changes to the system: add users, delete users, modify groups, modify settings on the system, etc.
+- A Standard User can only make changes to folders/files attributed to the user & can't perform system-level changes, such as install programs. 
+- One way to view this information is using the Local User and Group Management. Right click on the Start Menu and click **Run**. Type **lusrmgr.msc**. 
+- **User Account Control** (UAC) - when a user with an account type of administrator logs into a system, the current session doesn't run with elevated permissions. When an operation requiring higher-level privileges needs to execute, the user will be prompted to confirm if they permit the operation to run. 
+- The **System Configuration** utility (MSConfig) is for advanced troubleshooting, and its main purpose is to help diagnose startup issues. 
+- The utility has five tabs across the top:
+	1. General
+	2. Boot
+	3. Services
+	4. Startup
+	5. Tools
+- The **Computer Management** (compmgmt) utility has three primary sections: **System Tools**, **Storage**, and **Services and Applications**. 
+- **System Tools** - Let's start with **Task Scheduler**. With Task Scheduler, we can create and manage common tasks that our computer will carry out automatically at the times we specify. A task can run an application, a script, etc., and tasks can be configured to run at any point. 
+- In event viewer there are five types of events that can be logged. 
+![[Pasted image 20260215111607.png]]
+- **System Information** (msinfo32) tool - Per Microsoft, "_Windows includes a tool called Microsoft System Information (Msinfo32.exe).  This tool gathers information about your computer and displays a comprehensive view of your hardware, system components, and software environment, which you can use to diagnose computer issues._"
+- The command prompt (cmd) is the command line within Windows OS. [[Windows_Commands]]
+	- **hostname** command - will output the computer name
+	- **whoami** command - will output the name of the logged-in user.
+	- **ipconfig** command - will show the network address settings for the computer.
+	- **/?** command - a command to retrieve the help manual
+	- **cls** command - to clear the command prompt screen
+	- **netstat** command - This command will display protocol statistics and current TCP/IP network connections.
+	- **net** command - primarily used to manage network resources. 
+- The **Windows Registry** is a central hierarchical database used to store information necessary to configure the system for one or more users, applications, and hardware devices. 
+- There are various ways to view/edit the registry. One way is to use the **Registry Editor** (regedit). 
+- **Windows Update** - Updates are typically released the 2nd Tuesday of each month. This day is called **Patch Tuesday**. 
+- **BitLocker** - Per Microsoft, "*BitLocker Drive Encryption is a data protection feature that integrates with the operating system and addresses the threats of data theft or exposure from lost, stolen, or inappropriately decommissioned computers*".
