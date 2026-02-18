@@ -216,7 +216,8 @@
 ![[Pasted image 20260216115207.png]]
 - **Comments** - Sometimes the code can be very lengthy. In this scenario, the code might confuse you when you look at it after some time or share it with somebody. An easy way to resolve this problem is to use comments in different parts of the code. A comment is a sentence that we write in our code just for the sake of understanding. It is written with a **#** sign followed by a space and the sentence you need to write. 
 ![[Pasted image 20260216115417.png]]
-### Networking
+## Networking
+### Networking Core Protocols
 - Domain Name System (DNS), is responsible for properly mapping a domain name to an IP address. DNS operates at the Application Layer (Layer 7 of the ISO OSI model). 
 - DNS traffic uses UDP port 53 by default and TCP port 53 as a default fall back. [[Ports]]
 - **A record:** The A (Address) record maps a hostname to one or more IPv4 addresses. For example, you can set *example.com* to resolve to *172.17.2.172*. 
@@ -263,3 +264,40 @@
 	- **MOVE \<sequence_set> \<mailbox>** moves the specified messages to another mailbox
 	- **COPY \<sequence_set> \<data_item_name>** copies the specified messages to another mailbox
 	- **LOGOUT** logs out
+### Networking Secure Protocols
+- Transport Layer Security (TLS) is added to existing protocols to protect communication confidentiality, integrity, and authenticity. Consequently HTTP, POP3, SMTP, and IMAP become HTTPS, POP3S, SMTPS, and IMAPS, where the appended "S" stands for Secure. 
+- TLS ensures that no one can read or modify the exchanged data.
+- The first step for every server (or client) that needs to identify itself is to get a signed TLS certificate.
+- HTTP relies on TCP and uses port 80 by default and all traffic is sent in cleartext. 
+- HTTPS stands for Hypertext Transfer Protocol Secure. It is basically HTTP over TLS. Exchanged traffic is encrypted and there is no way to know the contents without acquiring the encryption key.
+- telnet sends traffic in clear text. This problem necessitated a solution.
+- Nowadays, when you use an SSH client, it is most likely based on OpenSSH libraries and source code. Some benefits are:
+	- Secure authentication
+	- Confidentiality
+	- Integrity
+	- Tunneling
+	- X11 Forwarding
+- Virtual Private Network (VPN) - the VPN client will encrypt the traffic and pass it to the main branch via the established tunnel (shown in blue). The VPN traffic is limited to the blue lines; the green lines would carry the decrypted VPN traffic.
+![[Pasted image 20260217142831.png]]
+
+### Wireshark: The Basics
+- Wireshark is an open-source, cross-platform network packet analyzer tool capable of sniffing and investigating live traffic and inspecting packet captures (PCAP). 
+- Wireshark is one of the most potent traffic analyzer tools available in the wild. 
+![[Pasted image 20260217143038.png]]
+
+- Wireshark has two type of packet coloring methods: temporary rules that are only available during a program session and permanent rules that are saved under the preference file (profile) and available for the next program session. 
+- Default permanent coloring is shown below.
+![[Pasted image 20260217143218.png]]
+- You can use the blue "shark button" to start network sniffing (capturing traffic), the red button will stop the sniffing, and the green button will restart the sniffing process.
+- Wireshark can combine two pcap files into one single file. YOu can use the "File --> Merge" menu path to merge a pcap with the processed one. 
+- Packets consist of 5 to 7 layers based on the OSI model.
+![[Pasted image 20260217143444.png]]
+	- The Frame (Layer 1)
+	- Source \[MAC] (Layer 2)
+	- Source \[IP] (Layer 3)
+	- Protocol (Layer 4)
+	- Protocol Errors (continuation of Layer 4)
+	- Application Protocol (Layer 5)
+	- Application Data (extension of Layer 5)
+- The most basic way of filtering is to use the "right-click meu" or "Analyze --> Apply as Filter" menu to filter the specific value.
+### TCPdump: The Basics
