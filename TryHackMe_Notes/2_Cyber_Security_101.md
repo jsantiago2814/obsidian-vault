@@ -301,3 +301,104 @@
 	- Application Data (extension of Layer 5)
 - The most basic way of filtering is to use the "right-click meu" or "Analyze --> Apply as Filter" menu to filter the specific value.
 ### TCPdump: The Basics
+- The TCPdump tool and its libpcap is the foundation for various other networking tools today. Moreover, it was ported to MS Windows as wincap.
+- Specify the Network Interface: First thing to decide is which network interface to listen to using **-i INTERFACE**. You can choose to listen on all available interfaces using **-i any**; alternatively you can specify an interface you want to listen on, such as **-i eth0**. 
+- **-w FILE** to save file.
+- **-r FILE** to read a file.
+- **-c COUNT** to specify the number of packets to capture.
+- **man tcpdump** for the manual page.
+- Filtering by Host
+![[Pasted image 20260218103018.png]]
+- Filtering expressions:
+
+| Command                                  | Explanation                                                     |
+| ---------------------------------------- | --------------------------------------------------------------- |
+| tcpdump host IP or tcpdump host HOSTNAME | Filters packets by IP address or hostname                       |
+| tcpdump src host IP                      | Filters packets by a specific source host                       |
+| tcpdump dst host IP                      | Filters packets by a specific destination host                  |
+| tcpdump port PORT_NUMBER                 | Filters packets by port number                                  |
+| tcpdump src port PORT_NUMBER             | Filters packets by the specified source port number             |
+| tcpdump PROTOCOL                         | Filters packets by protocol; examples include ip, ip6, and icmp |
+- Displaying packets:
+
+| Command     | Explanation                                        |
+| ----------- | -------------------------------------------------- |
+| tcpdump -q  | Quick and quite: brief packet information          |
+| tcpdump -e  | Include MAC addresses                              |
+| tcpdump -A  | Print packets as ASCII encoding                    |
+| tcpdump -xx | Display packets in hexadecimal format              |
+| tcpdump -x  | Show packets in both hexadecimal and ASCII formats |
+### Nmap: The Basics
+- Nmap (Network Mapper) is an open-source tool used for network discovery and security auditing. It also assists in the exploration of network hosts and services, providing information about open ports, operating systems, and other details.
+- Nmap uses multiple ways to specify its targets:
+	- IP range using **-**: if you want to scan all the IP addresses from 192.168.0.1 to 192.168.0.10, you can write 192.168.0.1-10
+	- IP subnet using **/**: if you want to scan a subnet, you can express it as 192.168.0.1/24, and this would be equivalent to 192.168.0.0-255
+	- Hostname: You can also specify your target by hostname, for example, **example.thm**.
+- Scanning a "Local" Network
+	- Nmap offers the **-sn** option, i.e., ping scan. However, don't expect this to be limited like **ping**.
+	- Because we are scanning the local network, where we are connected via Ethernet or Wifi, we can look up the MAC address of the devices. Consequently, we can figure out the network card vendors, which is beneficial information as it can help us guess the type of target device(s). 
+![[Pasted image 20260218105008.png]]
+ - Scanning a "Remote" Network
+	- In this context, "remote" means that at least one route separates our system from this network.
+	- Our system has the IP address **192.168.66.89** and belongs to the **192.168.66.0/24** network. In the terminal below we scan the target network **192.168.11.0/24** were there are two or more routers (hops) separate our local system from the targets.
+![[Pasted image 20260218105301.png]]
+- Nmap offers a list scan with the option **-sL**.. This scan only lists the targets to scan without actually scanning them. For example, **nmap -sL 192.168.0.1/24** will list the 256 targets that will be scanned. This option helps confirm the targets before running the actual scan.
+- The **-sn** flag aims to discover live hosts without attempting to discover the services running on them. This might be helpful if you want to discover the devices on a network without causing much noise. 
+- By design, TCP has 65,535 ports, and the same applies to UDP.
+- The easiest and most basic way to know whether a TCP port is open would be to attempt to **telnet** to the port. 
+- **Connect Scan** - The connect scan can be triggered using **-sT**. This tries to complete the TCP three-way handshake with every target TCP port.
+- **SYN Scan (Stealth)** - Unlike the connect scan, which tries to connect to the target TCP port, i.e., complete a three-way handshake, the SYN scan only executes the first step: it sends a TCP SYN packet. You can select the SYN scan using the **-sS** flag.
+- **Scanning UDP Ports** - Nmap offers the option **-sU** to scan for UDP services. 
+- Nmap scans the most common 1,000 ports by default. 
+
+| Option     | Explanation                                                    |
+| ---------- | -------------------------------------------------------------- |
+| -sT        | TCP connect scan - complete three-way handshake                |
+| -sS        | TCP SYN - only first step of the three-way handshake           |
+| -sU        | UDP scan                                                       |
+| -F         | Fast mode- scans the 100 most common ports                     |
+| -p\[range] | Specifies a rang of port number - **-p-** scans all the ports. |
+- Nmap Version Detection: Extract More Information
+
+| Option | Explanation                                          |
+| ------ | ---------------------------------------------------- |
+| -O     | OS detection                                         |
+| -sV    | Service and version detection                        |
+| -A     | OS detection, version detection, and other additions |
+| -Pn    | Scan hosts that appear to be down                    |
+- Nmap provides various options to control the scan speed and timing
+
+| Option                                                            | Explanation                                                                                        |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| -T\<0-5>                                                          | Timing template - paranoid (0), sneaky (1), polite (2), normal (3), aggressive (4), and insane (5) |
+| --min-parallelism \<numprobes> and --max-parallelism \<numprobes> | Minimum and maximum rate (packets/second)                                                          |
+| --host-timeout                                                    | Maximum amount of time to wait for a target host                                                   |
+- Verbosity and Debugging - The best way to get more updates about what's happening is to enable verbose output by adding **-v**. 
+- You can increase the verbosity level by adding another "v" such as **-vv** or even **-vvv**. 
+- If all this verbosity does not satisfy your needs, you must consider the **-d** for debugging-level output. 
+- Saving Scan Report
+	- **-oN \<filename>** - Normal Output
+	- **-oX \<filename>** - XML output
+	- **-oG \<filename>** - grep-able output (useful for grep and awk)
+	- **-oA \<basename>** - Output in all major formats.
+
+## Cryptography
+- Cryptography's ultimate purpose is to ensure *secure communication in the presence of adversaries.*
+- Cryptography is used to protect confidentiality, integrity, and authenticity. 
+![[Pasted image 20260219100816.png]]
+
+![[Pasted image 20260219100831.png]]
+- **Symmetric encryption**, also known as **symmetric cryptography**, uses the same key to encrypt and decrypt the data. Keeping the kay secret is a must; it is also called **private key cryptography**. 
+![[Pasted image 20260219101010.png]]
+- **Asymmetric Encryption** uses a pair of keys, one to encrypt and the other to decrypt. This is also called, **public key cryptography**. 
+![[Pasted image 20260219101108.png]]
+- XOR, short of "exclusive OR", is a logical operation in binary arithmetic that plays a crucial role in various computing and cryptographic applications. In binary, XOR compares two bits and returns 1 if the bits are different and 0 if they are the same.
+
+| A   | B   | A ⊕ B |
+| --- | --- | ----- |
+| 0   | 0   | 0     |
+| 0   | 1   | 1     |
+| 1   | 0   | 1     |
+| 1   | 1   | 1     |
+- **Modulo Operation**, commonly written as **%** or as **mod**. The modulo operator, X%Y, is the remainder when X is divided by Y. 
+- 25%5 = 0 because 25 divided by 5 is 5, with a remainder of 0, i.e., 25 = 5 X 5 + 0
