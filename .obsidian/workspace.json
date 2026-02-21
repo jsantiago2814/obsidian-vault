@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0b15b1248af4e108",
+            "id": "2e3c4432ea19b2e1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.5,
-    "collapsed": true
+    "width": 359.5
   },
   "right": {
     "id": "33a2e8ed4416e3cf",
@@ -185,15 +184,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "0b15b1248af4e108",
+  "active": "2e3c4432ea19b2e1",
   "lastOpenFiles": [
+    "Tools.md",
+    "TryHackMe_Notes/2_Cyber_Security_101.md",
     "attachments/Pasted image 20260219101108.png",
     "attachments/Pasted image 20260219101010.png",
     "attachments/Pasted image 20260219100831.png",
     "attachments/Pasted image 20260219100828.png",
     "attachments/Pasted image 20260219100816.png",
     "Ports.md",
-    "TryHackMe_Notes/2_Cyber_Security_101.md",
     "attachments/Pasted image 20260218105301.png",
     "attachments/Pasted image 20260218105008.png",
     "attachments/Pasted image 20260218103018.png",
@@ -205,7 +205,6 @@
     "TryHackMe_Notes/4_Web_Fundamentals.md",
     "attachments/Pasted image 20260217143444.png",
     "attachments/Pasted image 20260217143218.png",
-    "attachments/Pasted image 20260217143038.png",
     "TryHackMe_Notes/5_Web_Application_Pentesting.md",
     "PowerShell cmdlets",
     "PowerShell cmdlets/PowerShell cmdlets.md",

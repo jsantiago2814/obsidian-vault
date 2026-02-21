@@ -383,6 +383,7 @@
 	- **-oA \<basename>** - Output in all major formats.
 
 ## Cryptography
+### Cryptography Basics
 - Cryptography's ultimate purpose is to ensure *secure communication in the presence of adversaries.*
 - Cryptography is used to protect confidentiality, integrity, and authenticity. 
 ![[Pasted image 20260219100816.png]]
@@ -402,3 +403,54 @@
 | 1   | 1   | 1     |
 - **Modulo Operation**, commonly written as **%** or as **mod**. The modulo operator, X%Y, is the remainder when X is divided by Y. 
 - 25%5 = 0 because 25 divided by 5 is 5, with a remainder of 0, i.e., 25 = 5 X 5 + 0
+### Public Key Cryptography Basics
+- **Authentication:** You want to be sure you communicate with the right person, not someone else pretending.
+- **Authenticity:** You can verify that the information comes from the claimed source.
+- **Integrity:** You must ensure that no one changes the data you exchange.
+- **Confidentiality:** You want to prevent an unauthorized party from eavesdropping on your conversations.
+- **RSA** is a public-key encryption algorithm that enables secure data transmission over insecure channels. RSA is based on the mathematically difficult problem of factoring a large number. 
+- **Diffie-Hellman Key Exchange:** Key exchange aims to establish a shared secret between two parties. It is a method that allows two parties to establish a shared secret over an insecure channel without requiring a pre-existing shared secret and without an observer being able to get this key. Diffie-Hellman Key Exchange is often used alongside RSA public key cryptography.
+- **SSH** - you should treat your private SSH keys like passwords. Using tools like John the Ripper, you can attack an encrypted SSH key to attempt to find the passphrase, highlighting the importance of using a complex passphrase.
+- Leaving an SSH key in the **authorized_keys** file on a machine can be a useful backdoor, and you don't need to deal with any of the issues of un-stabilized reverse shells like Control-C or lack of tab completion.
+- **Digital Signature** - Digital signatures provide a way to verify the authenticity and integrity of a digital message or document. Using symmetric cryptography, you produce a signature with your private key, which can be verified using your public key. 
+- Some articles use terms such as electronic signature and digital signature interchangeably. In this task, the term *digital signature* refers to signing a document using a private key or certificate.
+- **Certificates**: Certificates are an essential application of public key cryptography, and they are also linked to digital signature. A common place where they are used is for HTTPS. 
+- The certificates have a chain of trust, starting with a root CA (Certificate Authority). 
+- **PGP** stands for Pretty Good Privacy. It's software that implements encryption for encrypting files, performing digital signing, and more.
+- **GPG** is commonly used in email to protect the confidentiality of email messages. Furthermore, it can be used to sign an email message and confirm its integrity. 
+- **Cryptography**: is the science of securing communication and data using codes and ciphers.
+- **Cryptanalysis**: is the study of methods to break or bypass cryptographic security systems without knowing the key.
+- **Brute-Force Attack**: is an attack method that involves trying every possible key or password to decrypt a message.
+- **Dictionary Attack**: is an attack method where the attacker tries dictionary words or combinations of them.
+### Hashing Basics
+- A **hash value** is a fixed-size string or characters that is computed by a hash function. A **hash function** takes an input of an arbitrary size and returns an output of fixed length, i.e., hash value. 
+- Hash functions are different from encryption. There is no key, and it's meant to be impossible (or computationally impractical) to go from output back to the input. 
+- Hashing helps protect data's integrity and ensure password confidentiality.
+- A hash collision is when two different inputs give the same output. 
+- The **pigeonhole effect** states that the number of items (pigeons) is more than the number of containers (pigeonholes); some containers must hold more than one item.
+- **Three insecure practices** when it comes to passwords:
+	- Storing passwords in plaintext.
+	- Storing passwords using a deprecated encryption.
+	- Storing passwords using an insecure hashing algorithm.
+- **Password salting** refers to adding a **salt**, i.e., a random value, to the password before it is hashed.
+- A **Rainbow Table** is a lookup table of hashes to plaintexts, so you can quickly find out what password a user had just from the hash. 
+- Websites like https://crackstation.net/ and https://hashes.com/en/decrypt/hash internally use massive rainbow tables to provide fast password cracking for **hashes without salts**. 
+- On Linux, password hashes are stored in **/etc/shadow**, which is normally only readable by root. They used to be store in **/etc/passwd**, which was readable by everyone. 
+- The **shadow** file contains the password information. Each line contains nine fields, separated by colons (:). The first two fields are the login name and the encrypted password. More information about the other fields can be found by executing **man 5 shadow** on a Linux system. 
+- **MS Windows Passwords** are hashed using NTLM, a variant of MD4. They're visually identical to MD4 and MD5 hashes, so it's very important to use context to determine the hash type. 
+- On MS Windows, password hashes are stored in the SAM (Security Accounts Manager). MS Windows tries to prevent normal users from dumping them, but tools like mimikatz exist to circumvent MS Windows security. 
+- You can't "decrypt" password hashes. They're not encrypted. You have to crack the hashes by hashing many different inputs, potentially adding the salt if there is one and comparing it to the target hash. Once it matches, you know what the password was. Tools like https://hashcat.net/hashcat/ and https://www.openwall.com/john/ are commonly used for these purposes. 
+- Hashing can be used to check that files haven't been changed. 
+- **HMAC (Keyed-Hash Message Authentication Code)** is a type of message authentication code (MAC) that uses a cryptographic hash function in combination with a secret key to verify the authenticity and integrity of data. 
+### John the Ripper: The Basics
+- John the Ripper is a well-known, well-loved, and versatile hash-cracking tool. It combines a fast cracking speed with an extraordinary range of compatible hash types. 
+- A hash is a way of taking a piece of data of any length and representing it in another fixed-length form. Many popular hashing algorithms exist, such as MD4, MD5, SHA1, and NTLM. 
+- Hashing functions are designed as one-way functions. In other words, it is easy to calculate the hash value of a given input; however, it is a hard problem to find the original input given the hash value. In simple terms, a hard problem quickly becomes computationally infeasible in computer science.
+- This computational problem has its roots in mathematics as P vs NP.
+	- P (Polynomial Time): Class P covers the problems whose solution can be found in polynomial time.
+	- NO (Non-deterministic Polynomial Time): Problems in the class NP are those for which a given solution can be checked quickly, even though finding the solution itself might be hard.
+	- John the Ripper, or John as it's commonly shortened, is a tool for conducting fast brute force attacks on various hash types (dictionary attack). 
+- "Jumbo John" version of John the Ripper is the most popular extended version of John the Ripper.
+- To check if John the Ripper has been installed you can type **john** into the terminal. 
+-  https://github.com/openwall/john/blob/bleeding-jumbo/doc/INSTALL
+- 
