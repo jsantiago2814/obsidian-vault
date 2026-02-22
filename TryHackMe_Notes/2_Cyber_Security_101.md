@@ -453,4 +453,51 @@
 - "Jumbo John" version of John the Ripper is the most popular extended version of John the Ripper.
 - To check if John the Ripper has been installed you can type **john** into the terminal. 
 -  https://github.com/openwall/john/blob/bleeding-jumbo/doc/INSTALL
-- 
+## Exploitation Basics
+### Moniker Link (CVE-2024-21413)
+- On 2/13/2024, Microsoft announced RCE & credential link vulnerability with the assigned CVE of CVE-2024-21413.
+### Metasploit: Introduction
+- Metasploit is the most widely used exploitation framework. Metasploit is a powerful tool that can support all phases of a penetration testing engagement, from information gathering to post-exploitation.
+- **msfconsole:** The main command-line interface.
+- **Modules:** Suppporting modules such as exploits, scanners, payloads, etc.
+- **Tools:** Stand-alone tools that will help vulnerability research, vulnerability assessment, or penetration testing. Some of these tools are msfvenom, pattern_create, and pattern_offset. 
+- **Exploit:** A piece of code that uses a vulnerability present on the target system.
+- **Vulnerability:** A design, coding, or logic flaw affecting the target system. The exploitation of a vulnerability can result in disclosing confidential information or allowing the attacker to execute code on the target system.
+- **Payload:** An exploit will take advantage of a vulnerability. However, if we want the exploit to have the result we want, we need to use a payload. Payloads are the code that will run on the target system.
+- **Auxiliary** - Any supporting module, such as scanners, crawlers, and fuzzers, can be found here:
+![[Pasted image 20260221070802.png]]
+- **Encoders** - Encoders will allow you to encode the exploit and payload in the hope that a signature-based antivirus solution may miss them. Signature-based antivirus and security solutions have a database of known threats.
+![[Pasted image 20260221070927.png]]
+- **Evasion** - While encoders will encode the payload, they should not be considered a direct attempt to evade antivirus software. On the other hand, "evasion" modules will try that, with more or less success.
+![[Pasted image 20260221071232.png]]
+- **Exploit** - Exploit, neatly organized by target system.
+![[Pasted image 20260221071346.png]]
+- **NOPs** - NOPs (No OPeration) do nothing, literally. They are represented in the Intel x86 CPU family with 0x90, following which the CPU will do nothing for one cycle. They are often used as a buffer to achieve consistent payload sizes. 
+![[Pasted image 20260221071601.png]]
+- **Payloads** - Payloads are codes that will run on the target system. Exploits will leverage a vulnerability on the target system, but to achieve the desired result, we will need a payload. Examples could be; getting a shell, loading a malware or backdoor to the target system, running a command, or launching calc.exe as a proof of concept to add to the penetration test report.
+![[Pasted image 20260221071941.png]]
+- You will see four different directories under payloads:  adapters, singles, stagers, and stages.
+	- **Adapters:** An adapter wraps single payloads to convert them into different formats. For example, a normal single payload can be wrapped inside a PowerShell adapter, which will make a single PowerShell command that will execute the payload.
+	- **Singles:** Self-contained payloads (add user, launch notepad.exe, etc.) that do not need to download an additional component to run.
+	- **Stagers:** Responsible for setting up a connection channel between Metasploit and the target system. Useful when working with staged payloads. "Staged payloads" will first upload a stager on the target system then download the rest of payload (stage). This provides some advantages as the initial size of the payload will be relatively small compared to the full payload sent at once.
+	- **Stages:** Downloaded by the stager. This will allow you to use larger sized payloads.
+	- Metasploit has a subtle way to help you identify single (also called "inline") payloads and stages payloads.
+		- generic/shell_reverse_tcp
+		- windows/x64/shell/reverse_tcp
+		- Both are reverse Windows shells. The former is an inline (or single) payload, as indicated by the "_" between "shell" and "reverse." While the latter is a staged payload, as indicated by the "/" between "shell" and "reverse".
+- **Post** - Post modules will be useful on the final stage of the penetration testing process listed above, post-exploitation. 
+![[Pasted image 20260221073246.png]]
+- The Metasploit Framework can be launched using **msfconsole**command on any system the Metasploit Framework is installed on.
+- The **msfconsole** can be used just like a regular command-line shell. 
+![[Pasted image 20260221074437.png]]
+- It will support most Linux commands, including **clear** (to clear the terminal screen), but will not allow you to use some features of a regular command line.
+- The help command can be used on its own or for a specific command. Below is the help menu for the set command.
+![[Pasted image 20260221074700.png]]
+- You can use the history command to see commands you have typed earlier. 
+- An important feature of msfconsole is the support of tab completion. 
+- The module to be used can also be selected with the **use** command followed by the number at the beginning of the search line.
+![[Pasted image 20260221074939.png]]
+- While the prompt has changed, you will notice we can still run the commands previously mentioned. This means we did not "enter" a folder as you would typically expect in an operating system command line.
+![[Pasted image 20260221075114.png]]
+- The prompt tells us we now have a context set in which we will work. You can see this by typing the show options command.
+![[Pasted image 20260221075226.png]]
