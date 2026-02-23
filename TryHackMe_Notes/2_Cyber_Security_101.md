@@ -501,3 +501,38 @@
 ![[Pasted image 20260221075114.png]]
 - The prompt tells us we now have a context set in which we will work. You can see this by typing the show options command.
 ![[Pasted image 20260221075226.png]]
+- In this example, we will set the RHOSTS parameter to the IP address of our target system using the **set** command.
+- Once you have set a parameter, you can use the **show options** command to check the value that was set correctly.
+![[Pasted image 20260222084009.png]]
+- **RHOSTS:** "Remote host", the IP address of the target system. A single IP address or a network range can be set. This will support the CIDR (Classless Inter-Domain Routing) notion (/24, /16, etc.) or a network range (10.10.10.x - 10.10.10.y). You can also use a file where the targets are listed, one target per file line using file:/path/of/the/target_file.txt.
+- **RPORT:** "Remote port", the port on the target system the vulnerable application is running on.
+- **PAYLOAD:** The payload you will use with the exploit.
+- **LHOST:** "Localhost", the attacking machine IP address.
+- **LPORT:** "Local port", the port you will use for the reverse shell to connect back to. This is a port on your attacking machine, and you can set it to any port not used by any other application.
+- **Session:** Each connection established to the target system using Metasploit will have a session ID. You will use this with post-exploitation modules that will connect to the target system using an existing conneciton.
+- You can override any set parameter using the set command again with a different value. You can also clear any parameter value using the **unset** command or clear all set parameters with the **unset all** command.
+- You can use the **setg** command to set values that will be used for all modules. The **setg** command is used like the set command. You can clear any value set with **setg** using **unsetg**. 
+- **Using modules** - Once all module parameters are set, you can launch the module using the **exploit** command. Metasploit also supports the **run** command, which is an alias created for the **exploit** command as the word exploit did not make sense when using modules that were not exploits (port scanners, vulnerability scanners, etc.). 
+- The exploit command can be used without any parameters or using the "**-z**" parameter.
+- The **exploit -z** command will run the exploit and background the session as soon as it opens.
+- Some modules support the **check** option. This will check if the target system is vulnerable without exploiting it. 
+- **Sessions** - You can use the **background** command to background the session prompt and go back to the msfconsole prompt. 
+- Alternatively, **CTRL+Z** can be used to background sessions. 
+- The **sessions** command can be used from the msfconsole prompt or any context to see the existing sessions.
+- To interact with any session, you can use the **sessions -i** command followed by the desired session number.
+### Metasploit: Exploitation
+- You can list potential port scanning modules available using the **search portscan** command.
+- **CONCURRENCY:** Number of targets to be scanned simultaneously.
+- **PORTS:** Port range to be scanned. Metasploit will scan port numbers from 1 to 10000.
+- **RHOSTS:** Target or target network to be scanned.
+- **THREADS:** Number of threads that will be used simultaneously. More threads will result in faster scans. 
+- You can use the **info** command for any module to have a better understanding of its use and purpose.
+- Most of the exploits will have a preset default payload. However, you can always use the **show payloads** command to list other commands you can use with that specific exploit.
+- Once you have decided on the payload, you can use the **set payload** command to make your choice.
+### Metasploit: Meterpreter
+- Meterpreter is a Metasploit payload that supports the penetration testing process with many valuable components. 
+- Meterpreter runs on the target system but is not installed on it. It runs in memory and does not write itself to the disk on the target. This feature aims to avoid being detected during antivirus scans.
+- We have used the **msfvenom --list payloads** command and grepped "meterpreter" payloads (adding **| grep meterpreter** to the command line), so the output only shows these. 
+![[Pasted image 20260222091912.png]]
+## Web Hacking
+- 
