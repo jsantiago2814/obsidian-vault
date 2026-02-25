@@ -535,4 +535,289 @@
 - We have used the **msfvenom --list payloads** command and grepped "meterpreter" payloads (adding **| grep meterpreter** to the command line), so the output only shows these. 
 ![[Pasted image 20260222091912.png]]
 ## Web Hacking
-- 
+### Web Application Basics
+- The **Front End** are the parts that you can see and interact with.
+	- **HTML** (Hypertext Markup Language) is a foundational aspect of web applications. It is a set of instructions or code that instructs a web browser on what to display and how to display it. 
+	- **CSS** (Cascading Style Sheets) in web applications describes a standard appearance, such as certain colors, types of text, and layouts.
+	- **JS** (JavaScript) is part of a web application front end that enables more complex activity in the web browser. Whereas HTML can be considered a simple set of instructions on what to display, JavaScript is a more advanced set of instructions that allow choices and decisions to be made on what to display.
+- The **Back End** of a web application is things you don't see within a web browser but are important for the web application to work. 
+	- This involves things such as the **Database**, other **Infrastructure** components, and **WAF** (Web Application Firewall).
+- Uniform Resource Locater (URL) is a web address that lets you access all kinds of online content.
+![[Pasted image 20260223144635.png]]
+- **Scheme** - The **scheme** is the protocol used to access the website.
+- **User** - Some URLs can include a user's login details (usually a username) for sites that require authentication.
+- **Host/Domain** - The **host** or **domain** is the most important part of the URL because it tells you which website you're accessing. 
+- **Port** - The **port number** helps direct your browser to the right service on the web server.
+- **Path** - The **path** points to the specific file or page on the server that you're trying to access.
+- **Query String** - The **query string** is the part of the URL that starts with a question mark (?). It's often used for things like search terms or form inputs.
+- **Fragment** - The **fragment** starts with a hash symbol (#) and helps point to a specific section of a webpage - like jumping directly to a particular heading or table.
+- There are two types of HTTP messages:
+	- **HTTP Requests**: Sent by the user to trigger actions on the web application.
+	- **HTTP Responses:** Sent by the server in response to the user's request. 
+- **Start Line** - The start line is like the introduction of the message. It tells you what kind of message is being sent - whether it's a request from the user or a response from the server. 
+- **Headers** - Headers are made up of key-value pairs that provide extra information about the HTTP message.
+- **Empty Line** - The empty line is a little divider that separates the header from the body. 
+- **Body** - The body is where the actual data is stored.
+- An **HTTP request** is what a user sends to a web server to interact with a web application and make something happen.
+- The **request line** (or start line) is the first part of an HTTP request and tells the server what kind of request it's dealing with. It has three main parts: the **HTTP method**, the **URL path**, and the **HTTP version**. 
+- The first line in every HTTP response is called the **Status Line**. It give you three key pieces of info:
+	- **HTTP Version, Status Code,** and **Reason Phrase**
+- **Information Responses (100 - 199)**
+- **Successful Responses (200 - 299)**
+- **Redirection Messages (300 - 399)**
+- **Client Error Responses (400 - 499)**
+- **Server Error Responses (500 - 599)**
+	- Common status codes: **100 (Continue), 200 (OK), 301 (Moved Permanently), 404 (Not Found), and 500 (Internal Server Error)
+### JavaScript Essentials
+- JavaScript (JS) is a popular scripting language that allows web developers to add interactive features to websites containing HTML and CSS (styling). 
+- Variables are containers that allow you to store data values in them. There are three ways to declare variables in JS: **var**, **let**, and **const**. 
+- **Data Types** - In JS, data types define the type of value a variable can hold. Examples include **string** (text), **number**, **boolean** (true/false), null, undefined, and object (for more complex data like arrays or objects).
+- **Functions** - A function represents a block of code designed to perform a specific task.
+- **Loops** - Loops allow you to run a code block multiple times as long as a condition is **true**. 
+- JS is an **interpreted** language, meaning the code is executed directly in the browser without prior compilation. 
+- Internal JS refers to embedding the JS code directly within an HTML document. 
+- External JS involves creating and storing JS code in separate file ending with a **.js** file extension. 
+- When pen-testing a web application, it is important to check whether the website uses internal or external JS. This can be easily verified by viewing the page's source code.
+- Best practices - Avoid relying on Client-Side Validation Only, Refrain from Adding Untrusted Libraries, Avoid Hardcoded Secrets, Minify and Obfuscate You JavaScript Code.
+### SQL Fundamentals
+- There are quite a few different types of databases that can be bult, but to primary types are: **relational databases** (aka SQL) & **non-relational databases** (aka NoSQL)
+- ![[Pasted image 20260223153822.png]]
+- **Relational databases:** Store structured data, meaning the data inserted into this database follows a structure.
+- **Non-relational databases:** Instead of storing data the above way, store data in a non-tabular format. 
+![[Pasted image 20260223153936.png]]
+- **Primary and Foreign Keys** - There are to types of **keys:** 
+	- **Primary Keys** - A primary key is used to ensure that the data collected in a certain column is unique.
+	- **Foreign Keys** - A foreign key is a column (or columns) in a table that also exists in another table within a database, and therefore provides a link between the two tables. 
+- The benefits of SQL and relational databases
+	- It's fast, easy to learn, reliable, and flexible. 
+- **CRUD** operations results are fundamental for data operations and when interacting with databases.
+	- **Create (INSERT statement)** - Adds a new record to the table.
+	- **Read (SELECT statement)** - Retrieves record from the table.
+	- **Update (UPDATE statement)** - Modifies existing data in the table.
+	- **Delete (DELETE statement)** - Removes record from the table.
+### Burp Suite: The Basics
+- In essence, Burp Suite is a Java-based framework designed to serve as a comprehensive solution for conducting web application penetration testing. It has become the industry standard tool for hands-on security assessments of web and mobile applications, including those that rely on application programming interfaces (APIs). 
+- Burp Suite Community offers **Proxy, Repeater, Intruder, Decoder, Comparer, and Sequencer**. 
+- **Intercepting Requests:** When requests are made through the Burp Proxy, they are intercepted and held back from reaching the target server. 
+- **FoxyProxy** allows you to connect to the Burp Suite Proxy. 
+## Offensive Security Tooling
+### Hydra
+- Hydra is a brute force online password cracking program, a quick system login password "hacking" tool. Hyrda can run through a list and "brute force" some authentication services. 
+- The options we pass into Hydra depend on which service (protocol) we're attacking. For example, if we wanted to brute force FTP with the username being **user** and a password list being **passlist.txt**, we'd use the following command: hydra -l user -P passlist.txt ftp://MACHINE_IP
+### Gobuster
+- Gobuster is an open-source offensive tool written in Golang. It enumerates web directories, DNS subdomains, vhosts, Amazon S3 buckets, and Google Cloud Storage by brute force, using specific wordlists and handling the incoming responses.
+- Looking at the phases of ethical hacking, Gobuster could be placed between the reconnaissance and scanning phases.
+- Gobuster is included by default in distributions like Kali Linux. 
+- **gobuster --help** - This help page gives us a good overview of its functionalities and options.
+![[Pasted image 20260224095956.png]]
+### Shells Overview
+- Shells in cyber security are widely used by attackers to remotely control systems, making them an important part of the attack chain.
+- A shell is software that allows a user to interact with an OS. It can be a graphical interface, but it is usually a command-line interface, and this will depend on the operating system running on the target system.
+- Shells allow attackers to execute several activities:
+	- **Remote System Control**
+	- **Privilege Escalation**
+	- **Data Exfiltration**
+	- **Persistence and Maintenance Access**
+	- **Post-Exploitation Activities**
+	- **Access Other Systems on the Network**
+- **Reverse Shell** - A reverse shell, sometimes referred to as a "connect back shell," is one of the most popular techniques for gaining access to a system in cyberattacks. The connections initiate form the target system to the attacker's machine, which can help avoid detection from network firewalls and other security appliances.
+- **How Reverse Shells Work**
+	- **Set up a Netcat (nc) Listener** - A reverse shell will connect back to the attacker's machine. This machine will be waiting for a connection, so Netcat can be used ot listen to a connection using the following command **nc -lvnp 443**. 
+	- The **-l** option indicates to Netcat to listen or wait for a conneciton.
+	- **-v** option enables verbose mode. 
+	- **-n** option prevents the connections from using DNS for lookup.
+	- **-p** flag indicates the port that will be used to wait for the connection.
+	- Any port can be used to wait for a connection, but attackers and pentesters tend to use known ports by other applications like 53, 80, 8080, 443, 139, or 445. This is to blend the reverse shell with legitimate traffic and avoid detection by security appliances. 
+- **Gaining Reverse Shell Access** - Once we have our listener set, the attacker should execute what is known as a reverse shell payload. This payload usually abuses the vulnerability or unauthorized access granted by the attacker and executes a command that will expose the shell through the network. There's a variety of payloads that will depend on the tools and OS of the compromised system. We can explore some of them here - [Reverse Shell Cheat Sheet | pentestmonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet).
+- **Attacker Receives the Shell** - Once the payload is executed, the attacker will receive a **reverse shell**, as shown below, allowing them to execute commands as if they were logging into a regular terminal in the OS.
+![[Pasted image 20260224101658.png]]
+- **Bind Shell** - A bind shell will bind a port on the compromised system and listen for a connection; when this connection occurs, it exposes the shell session so the attacker can execute command remotely.
+- This method can be used when the compromised target does not allow outgoing connections, but it tends to be less popular since it needs to remain active and listen for connections, which can lead to detection.
+- Once the Bind Shell setup is executed, it will wait for an incoming connection.
+- Now that the target machine is waiting for incoming connections, we can use Netcat to connect.
+- **Shell Listeners**
+	- **Rlwrap** - It is a small utility that used the GNU readline library to provide editing keyboard and history.
+	- **Ncat** - Ncat is an improved version of Netcat distributed by the NMAP project. It provides extra features, like encryption (SSL). 
+![[Pasted image 20260224103948.png]]
+	- **Socat** - It is a utility that allows you to create a socket connection between two data sources.
+- **Shell Payloads** - A Shell Payload can be a command or script that exposes the shell to an incoming connection in the case of a bind shell or send connection in the case of a reverse shell. 
+- Payloads that can be used in the Linux OS to expose the shell through the most popular **reverse shell** are:
+	- **Bash**
+	- **PHP**
+	- **Python**
+	- **Telnet**
+	- **AWK**
+	- **BusyBox**
+- **Web Shell** - A web shell is a script written in a language supported by a compromised web server that executes command through the web server itself. A web shell is usually a file containing the code that executes commands and handles files. It can be hidden within a compromised web application or service, making it difficult to detect and very popular among attackers. 
+	- **Example PHP Web Shell**
+![[Pasted image 20260224104740.png]]
+- Some of the most popular web shells that can be found online are:
+	- [flozz/p0wny-shell: Single-file PHP shell](https://github.com/flozz/p0wny-shell) - A minimalistic single-file PHP web shell that allows remote command execution.
+	- [b374k/b374k: PHP Webshell with handy features](https://github.com/b374k/b374k) - A more feature-rich PHP web shell with file management and command execution, among other functionalities.
+	- [c99 Shell Download](https://www.r57shell.net/single.php?id=13) - A well-known and robust PHP web shell with extensive functionality.
+### SQLMap: The Basics
+ - SQL injection is a prevalent vulnerability and has long been a hot topic in cyber security. 
+ - A database is a collection of data that can be stored, modified, and retired. 
+ - Carrying out an SQL injection attack involves discovering the SQL injection vulnerability inside the application and manipulating the database. 
+ - **SQLMap** is an automated tool for detecting and exploiting SQL injection vulnerabilities in web applications. The **--help** command with SQLMap will list all available flags you can use.
+ - If you don't want to manually add the flags to each command, use the **--wizard** flag with SQLMap. When you use this flag, the tool will guide you through each step and ask questions to complete the scan, making it perfect for beginners.
+## Defensive Security
+### Defensive Security Intro
+- Refer to [[1_Pre_Security]]
+### SOC Fundamentals
+- A **SOC** (Security Operations Center) is a dedicated facility operated by a specialized security team.
+- **Detection**
+	- Detect vulnerabilities, detect unauthorized activity, detect policy violations, detect intrustions.
+- **Response** 
+	- Support with the incident response.
+- There are three pillars of a SOC.
+	- People, Process, and Technology
+- The **People** are known as the SOC team. 
+![[Pasted image 20260224111139.png]]
+- **Process** - Each role has its own processes. The alert triage is the basis of the SOC team. The first response to any alert is to perform the triage. 
+![[Pasted image 20260224111235.png]]
+- **Technology** - refers to the security solutions. The security solutions efficiently minimize the SOC team's manual effort to detect and respond to threats.
+	- **SIEM**: Security Information and Event Management 
+	- **EDR**: Endpoint Detection and Response
+	- **Firewall**
+### Digital Forensics Fundamentals
+- Forensics is the application of methods and procedures to investigate and solve crimes. The branch of forensics that investigates cyber crimes is known as **digital forensics**. 
+- **Digital Forensics Methodology**: 
+	- **Collection** - the first phase of digital forensics is data collection.
+	- **Examination** - The collected data may overwhelm due to its size.
+	- **Analysis** - The investigators now have to analyze the data by correlating it with multiple pieces of evidence to draw conclusions.
+	- **Reporting** - In the last phase of digital forensics, a detailed report is prepared. 
+![[Pasted image 20260224111659.png]]
+- There are different types of digital forensics, all with their own collection and analysis methodologies:
+![[Pasted image 20260224111735.png]]
+- **Evidence Acquisition**
+	- **Proper Authorization** - The forensics team should obtain authorization from the relevant authorities before collecting any data.
+	- **Chain of Custody** - A chain of custody is a formal document containing all the details of the evidence.
+	- **Write Blockers** - Write blockers are an essential part of the digital forensics team's toolbox. Write blockers can block any evidence alteration actions. 
+	- **Windows Forensics** 
+		- Two different categories of forensic images are taken from a Windows operating system.
+			- **Disk Image** - contains all the data present on the storage device on the system (HDD, SSD, etc.). 
+			- **Memory Image** - The memory image contains the data inside the operating system's RAM. This memory is volatile, meaning the data will get lost after the system is powered off or restarted. 
+		- **FTK Imager** - FTK Imager is a widely used tool for taking disk images of Windows operating systems. 
+		- **Autopsy** - Autopsy is a popular open-source digital forensics platform.
+		- **DumpIt** - DumptIt offers the utility of taking a memory image from a Windows operating system.
+		- **Volatility** - Volatility is a powerful open-source tool for analyzing memory images.
+### Incident Response Fundamentals
+- Refer to [[1_Pre_Security]]
+### Logs Fundamentals
+|Log Type|Usage|Example|
+|---|---|---|
+|System Logs|The system logs can be helpful in troubleshooting running issues in the OS. These logs provide information on various operating system activities.|- System Startup and shutdown events  <br>- Driver Loading events  <br>- System Error events  <br>- Hardware events|
+|Security Logs|The security logs help detect and investigate incidents. These logs provide information on the security-related activities in the system.|-Authentication events  <br>- Authorization events  <br>- Security Policy changes events  <br>- User Account changes events - Abnormal Activity events|
+|Application Logs|The application logs contain specific events related to the application. Any interactive or non-interactive activity happening inside the application will be logged here.|- User Interaction events  <br>- Application Changes events  <br>- Application Update events  <br>- Application Error events|
+|Audit Logs|The Audit logs provide detailed information on the system changes and user events. These logs are helpful for compliance requirements and can play a vital role in security monitoring as well.|- Data Access events  <br>- System Change events  <br>- User Activity events  <br>- Policy Enforcement events|
+|Network Logs|Network logs provide information on the network’s outgoing and incoming traffic. They play crucial roles in troubleshooting network issues and can also be handy during incident investigations.|- Incoming Network Traffic events  <br>- Outgoing Network Traffic events  <br>- Network Connection Logs - Network Firewall Logs|
+|Access Logs|The Access logs provide detailed information about the access to different resources. These resources can be of different types, providing us with information on their access.|- Webserver Access Logs  <br>- Database Access Logs - Application Access Logs  <br>- API Access Logs|
+- **Windows Event Logs Analysis** - Windows OS has a utility known as Event Viewer, which gives a nice graphical user interface to view and search for anything in these logs. 
+- Here is a table of some important Event IDs in Windows OS:
+
+| Event ID | Description                                        |
+| -------- | -------------------------------------------------- |
+| 4624     | A user account successfully logged in              |
+| 4625     | A user account failed to login                     |
+| 4634     | A user account successfully logged off             |
+| 4720     | A user account was created                         |
+| 4724     | An attempt was made to reset an account's password |
+| 4722     | A user account was enabled                         |
+| 4725     | A user account was disabled                        |
+| 4726     | A user account was deleted                         |
+## Security Solutions
+### Introduction to SIEM
+- Security Information and Event Management system (SIEM) is the core security solution that a SOC analyst uses in the security operations center.
+![[Pasted image 20260224113541.png]]
+- Features of SIEM: Centralized Log Collection, Normalization of Logs, Correlation of Logs, Real-time Alerting, Dashboards and Reporting
+### Firewall Fundamentals
+- A firewall is designed to inspect a network's or digital device's incoming and outgoing traffic. The firewall will allow or deny traffic based on its maintained rules.
+- **Types of Firewalls**
+	- **Stateless Firewall** - This type of firewall operates on layer 3 and layer 4 of the OSI model and works solely by filtering the data based on predetermined rules without taking note of the previous connections.
+	- **Stateful Firewall** - Unlike stateless firewalls, this type of firewall goes beyond filtering packets by predetermined rules. It also keeps track of pervious connections and stores them in a stable table.
+	- **Proxy Firewall** - The problem with previous firewalls was their inability to inspect the contents of a packet. Proxy firewalls, or application-level gateways, act as intermediaries between the private network and the Internet and operate on the OSI model's layer 7.
+	- **Next-Generation Firewall (NGFW)** - This is the most advance typed of firewall that operates from layer 3 to layer 7 of the OSI model, offering deep packet inspection and other functionalities that enhance the security of incoming and outgoing network traffic. It has an intrusion prevention system that blocks malicious activities in real time. 
+- **Windows Defender Firewall** - This firewall contains all the basic functionality for creating, allowing, or denying specific programs or creating customized rules. 
+- **Linux iptables Firewall**
+	- **Netfilter** - Netfilter is the framework inside the Linux OS with core firewall functionalities, including packet filtering, NAT, and connection tracking.
+	- ufw (Uncomplicated Firewall), as the name says, eliminates the complications of making rules in a complex syntax in "iptables", by giving you an easier interface.
+### IDS Fundamentals
+- **Intrusion Detection System (IDS)** - detects malicious activities in a timely manner. 
+- **Host Intrusion Detection System (HIDS):** Host-based IDS solutions are installed individually on the hosts and are responsible for only detecting potential security threats associated with that particular hose. 
+- **Network Intrusion Detection System (NIDS):** Network-based IDS solutions are crucial in detecting potentially malicious activities within the whole network, regardless of any specific hosts. 
+![[Pasted image 20260224115131.png]]
+- **Detection Modes**
+	- **Signature-Based IDS:** Many attacks occur every day. Each attack has its unique pattern, which is known as a signature. 
+	- **Anomaly-Based IDS:** This type of IDS first learns the normal behavior (baseline) of the network or system and performs detections if there is any deviation from the normal behavior. Anomaly-based IDS can also detect zero-day attacks because they don't rely on available signatures for detection.
+	- **Hybrid IDS:** A hybrid IDS combines the detection methods of signature-based IDS and anomaly-based IDS to leverage the strengths of each approach.
+- **IDS Example: Snort**
+	- Snort is one of the most widely used open-source IDS solutions developed in 1998. It uses signature-based and anomaly-based detections to identify known threats.
+![[Pasted image 20260224115626.png]]
+### Vulnerability Scanner Overview
+- Vulnerabilities are weaknesses inside of the software or hardware. The process of fixing the vulnerabilities is known as patching.
+- **Authenticated Scans** - credentials of the subject host must be provided to the vulnerability scanner. Identifies the vulnerabilities that can be exploited by the attackers having access to the host.
+- **Unauthenticated Scans** - The vulnerability scanner does not require the host's credentials; it only needs the IP address. Identifies the vulnerabilities that can be exploited by an external attacker having no access to the subject host. 
+- **External & Internal Scans**
+- **Tools for Vulnerability Scanning**
+	- **Nessus**
+	- **Qualys**
+	- **Nexpose**
+	- **OpenVAS (Open Vulnerability Assessment System)**
+- **CVE** - CVE stands for Common Vulnerabilities and Exposures. Consider CVE a unique number for each of your inquiries and complaints. 
+	- **CVE prefix:** Every CVE number has the prefix "CVE" in the beginnning.
+	- **Year**: The second part of every CVE number contains the year it was discovered.
+	- **Arbitrary Digits:** The last part of the CVE numbers contains four or more arbitrary digits. 
+- **CVSS** - CVSS stands for Common Vulnerability Scoring System. The CVSS score is calculated by considering multiple factors, including its impact, ease of exploitability, etc. 
+
+| CVSS Score Range | Severity Levels |
+| ---------------- | --------------- |
+| 0.0 - 3.9        | Low             |
+| 4.0 - 6.9        | Medium          |
+| 7.0 - 8.9        | High            |
+| 9.0 - 10         | Critical        |
+## Defensive Security Tooling
+### CyberChef: The Basics
+- CyberChef is a simple, intuitive web-based application designed to help with various "cyber" operation tasks within your browser. Think of it as a Swiss Army knife for data - like having a toolbox of different tools designed to do a specific task. 
+- There are different ways to access and run CyberChef.
+	- **Online Access** - All you need is a web browser and an internet connection. Then, you can can click this link  (https://gchq.github.io/CyberChef) to open CyberChef directly within your web browser.
+	- **Offline or Local Copy** - You can run this offline or locally on your machine by downloading the latest release file from this link (https://github.com/gchq/CyberChef/releases). 
+- CyberChef consists of four areas. These are:
+	- 1 - Operations
+	- 2 - Recipe
+	- 3 - Input
+	- 4 - Output
+![[Pasted image 20260224121117.png]]
+### CAPA: The Basics
+- CAPA (Common Analysis Platform for Artifacts) is a tool developed by the FireEye Mandiant team. It is designed to identify the capabilities present in executable files like Portable Executables (PE), ELF binaries, .NET modules, shellcode, and even sandbox reports. 
+- The beauty of CAPA is that it encapsulates years of reverse engineering knowledge into an automated tool. 
+- To run the tool, open PowerShell, navigate to the correct directory where CAPA is installed, then run **capa** or **capa.exe**, then point to the binary. 
+### REMnux: Getting Started
+- The REMnux VM is a specialized Linux distro. It already includes tools like Volatility, YARA, Wireshare, oledump, and INetSim. It also provides a sandbox-like environment for dissecting potentially malicious software without risking your primary system. 
+### FlareVM: Arsenal of Tools
+- FlareVM, or "Forensics, Logic Analysis, and Reverse Engineering," stands out as a comprehensive and carefully curated collection of specialized tools uniquely designed to meet the needs of reverse engineers, malware analysts, incident responders, forensic investigators, and penetration testers. 
+- **Arsenal of Tools** for Reverse Engineering & Debugging, Disassemblers & Decompilers, Static & Dynamic Analysis, Forensics & Incident Response, Network Analysis, File Analysis, Scripting & Authomation, and Sysinternals Suite.
+## Build Your Cyber Security Career
+- Refer to [[1_Pre_Security]]
+## OWASP Top 10 (2025)
+### OWASP Top 10 2025: IAA Failures
+- IAAA (Identity, Authentication, Authorization, and Accountability)
+- **Identity** - the unique account (e.g., User ID/email) that represents a person or service.
+- **Authentication** - providing the identity (passwords, OTP, passkeys)
+- **Authorization** - what identity is allowed to do.
+- **Accountability** - recording and alerting on who did what, when, and from where.
+- **A01: Broken Access Control** - Broken Access Control happens when the server doesn't properly enforce who can access what on every request. 
+	- Enforce server-side checks on **every** request.
+- **A07: Authentication Failures** - Authentication Failures happen when an application can't reliably verify or bind a user's identify.
+	- Enforce unique indexes on the canonical form, rate-limit/lock out brute force, and rotate sessions on password/privilege changes.
+- **A09: Logging & Alerting Failures** - When applications don't record or alert on security-relevant events, defenders can't detect or investigate attacks. 
+	- Log the full auth lifecycle (fail/success, password/2FA/role changes, admin actions), centralize logs off-host with retention, and alert on anomalies (e.g., brute-force bursts, privilege elevation). 
+### OWASP Top 10 2025: Application Design Flaws
+- **AS02: Security Misconfigurations** - Security misconfigurations happen when systems, servers, or applications are deployed with unsafe defaults, incomplete settings, or exposed services. These are not code bugs but mistakes in how the environment, software, or network is set up. 
+- **AS03: Software Supply Chain Failures** - Software supply chain failures happen when applications rely on components, libraries, services, or models that are compromised, outdated, or improperly verified.
+- **AS04: Cryptographic Failures** - Cryptographic failures happen when encryption is used incorrectly or not at all. 
+- **AS06: Insecure Design** - Insecure design happens when flawed logic or architecture is built into a system from the start. These flaws stem from skipped threat modelling, no design requirements or reviews, or accidental errors. 
+### OWASP Top 10 2025: Insecure Data Handling
+- **A04: Cryptographic Failures** - Cryptographic failures happen when sensitive data isn't adequately protected due to lack of encryption, faulty implementation, or insufficient security measures. 
+- **A05: Injection** - Injection has been a long-standing feature on the OWASP Top 10 list. Injection remains a classic example of web exploitation. Injection occurs when an application takes user input and mishandles it.
+- **A08: Software or Data Integrity Failures** - Software or Data Integrity Failures occur when an application relies on code, updates, or data it assumes are safe, without verifying their authenticity, integrity, or origin.

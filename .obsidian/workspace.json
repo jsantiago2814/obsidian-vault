@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TryHackMe_Notes/2_Cyber_Security_101.md",
+                "file": "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Cyber_Security_101"
+              "title": "3_Jr_Penetration_Tester"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.5,
-    "collapsed": true
+    "width": 359.5
   },
   "right": {
     "id": "33a2e8ed4416e3cf",
@@ -187,24 +186,24 @@
   },
   "active": "2e3c4432ea19b2e1",
   "lastOpenFiles": [
-    "attachments/Pasted image 20260222091912.png",
-    "attachments/Pasted image 20260222084009.png",
-    "attachments/Pasted image 20260221075226.png",
-    "attachments/Pasted image 20260221075114.png",
-    "attachments/Pasted image 20260221074939.png",
-    "attachments/Pasted image 20260221074700.png",
-    "attachments/Pasted image 20260221074437.png",
-    "attachments/Pasted image 20260221073246.png",
-    "attachments/Pasted image 20260221071941.png",
-    "attachments/Pasted image 20260221071601.png",
-    "attachments/Pasted image 20260221071346.png",
-    "Tools.md",
     "TryHackMe_Notes/2_Cyber_Security_101.md",
+    "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
+    "attachments/Pasted image 20260224131419.png",
+    "attachments/Pasted image 20260224131355.png",
+    "attachments/Pasted image 20260224131328.png",
+    "Tools.md",
+    "attachments/Pasted image 20260224131314.png",
+    "attachments/Pasted image 20260224131219.png",
+    "attachments/Pasted image 20260224131140.png",
+    "TryHackMe_Notes/1_Pre_Security.md",
+    "attachments/Pasted image 20260224121117.png",
+    "attachments/Pasted image 20260224115626.png",
+    "attachments/Pasted image 20260224115131.png",
+    "attachments/Pasted image 20260224113541.png",
     "Ports.md",
     "HTTP_Status_Codes.md",
     "PowerShell cmdlets/AD PowerShell Scripts.md",
     "Windows_Commands/Windows_Commands.md",
-    "TryHackMe_Notes/1_Pre_Security.md",
     "THM_Rooms.md",
     "TryHackMe_Notes/4_Web_Fundamentals.md",
     "TryHackMe_Notes/5_Web_Application_Pentesting.md",
@@ -212,7 +211,6 @@
     "PowerShell cmdlets/PowerShell cmdlets.md",
     "Linux_Commands/Linux_Commands.md",
     "TryHackMe_Notes/6_Offensive_Pentesting.md",
-    "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
     "TryHackMe_Notes/7_Red_Teaming.md",
     "Linux Commands/Linux Basic Commands.md",
     "Windows_Commands",
