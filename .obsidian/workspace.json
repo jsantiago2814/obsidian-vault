@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.5
+    "width": 359.5,
+    "collapsed": true
   },
   "right": {
     "id": "33a2e8ed4416e3cf",
@@ -186,6 +187,9 @@
   },
   "active": "2e3c4432ea19b2e1",
   "lastOpenFiles": [
+    "attachments/Pasted image 20260227103813.png",
+    "attachments/Pasted image 20260227102607.png",
+    "attachments/Pasted image 20260227101638.png",
     "Tools.md",
     "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
     "attachments/Pasted image 20260225160557.png",
@@ -196,8 +200,6 @@
     "attachments/Pasted image 20260225142506.png",
     "attachments/Pasted image 20260225141357.png",
     "attachments/Pasted image 20260225141338.png",
-    "attachments/Pasted image 20260225141139.png",
-    "attachments/Pasted image 20260225095150.png",
     "TryHackMe_Notes/2_Cyber_Security_101.md",
     "TryHackMe_Notes/1_Pre_Security.md",
     "Ports.md",

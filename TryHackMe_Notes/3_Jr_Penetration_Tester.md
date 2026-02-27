@@ -218,6 +218,7 @@
 - **Sequencer** allows us to evaluate the entropy, or randomness, of "tokens." Tokens are strings used to identify something and should ideally be generated in a cryptographically secure manner. These tokens could be session cookies or Cross-Site Request Forgery (CSRF) tokens used to protect form submission. 
 - **Organizer** - The Organizer module of Burp Suite is designed to help you store and annotate copies of HTTP requests that you may want to revisit later. This tool can be particularly useful for organizing your penetration testing workflow.
 ## Network Security
+### Passive Reconnaissance
 - Reconnaissance (recon) can be defined as a preliminary survey to gather information about a target. It is the first step in The Unified Kill Chain ([Unified Kill Chain: Raising Resilience Against Cyber Attacks](https://www.unifiedkillchain.com/)) to gain an initial foothold on a system. We divide reconnaissance into:
 	- Passive Reconnaissance
 	- Active Reconnaissance
@@ -241,4 +242,79 @@
 - Shodan.io tries to connect to every device reachable online to build a search engine of connected "things" in contrast with a search engine for web pages. 
 ### Active Reconnaissance
 - Active reconnaissance requires you to make some kind of contact with your target.
-- 
+- **Web Browser** - The web browser can be a convenient tool, especially that it is readily available on all systems.
+- A few add-ons for Firefox and Chrome that can help in penetration testing:
+	- **FoxyProxy** - lets you quickly change the proxy server you are using to access the target website.
+	- **User-Agent Switcher and Manager** - gives you the ability to pretend to be accessing the webpage from a different operating system or different web browser. 
+	- **Wappalyzer** - provides insights about the technologies on the visited websites.
+- **Ping** - In simple terms, the ping command sends a packet to a remote system, and the remote system replies. This way, you can conclude that the remote system is online and that the network is working between the two systems.
+- You can use ping as **ping Machine_IP** or **ping HOSTNAME**. 
+- Will need to hit **CTRL+C** to force ping to stop if you don't specify the count in Linux (ex. **ping -c 10 MACHINE_IP**). 
+- **Traceroute** - as the name suggests, the traceroute command traces the route taken by the packets from your system to another host. The purpose of a traceroute is to find the IP addresses of the routers or hops that a packet traverses as it goes from your system to a target host.
+	- On Linux and macOS, the command to use is **traceroute MACHINE_IP**, and on MS Windows, it is **tracert MACHINE_IP**. Traceroute tries to discover the routers across the path from your system to the target system. 
+- **TELNET** (Teletype Network) protocol was developed in 1969 to communicate with a remote system via a command-line interface (CLI). The default port used by telnet is 23. From a security perspective, **telnet** sends all data, including usernames and passwords, in cleartext. 
+- Using **telnet MACHINE_IP PORT**,  you can connect to any service running on TCP and even exchange a few messages unless it uses encryption. 
+- **Netcat** - Netcat or simply **nc** has different applications that can be of great value to a pentester. Netcat supports both TCP and UDP protocols. It can function as a client that connects to a listening port; alternatively, it can act as a server that listens on a port of your choice. 
+	- You can connect to a server using **nc MACHINE_IP PORT**, which is quite similar to **telnet MACHINE_IP PORT**. Note that you may need top press SHIFT+ENTER after the GET line. 
+![[Pasted image 20260227101638.png]]
+- You can use netcat to listen on a TCP port and connect to a listening port on another system.
+- On the server system, where you want to open a port and listen on it, you can issue **nc -lp 1234** or better yet, **nc -vnlp 1234**. The exact order of the letters does not matter as long as the port number is preceded directly by **-p**.
+
+| Option | Meaning                                                    |
+| ------ | ---------------------------------------------------------- |
+| -l     | Listen mode                                                |
+| -p     | Specify the Port number                                    |
+| -n     | Numeric only; no resolution of hostnames via DNS           |
+| -v     | Verbose output (optional, yet useful to discover any bugs) |
+| -vv    | Very Verbose (optional)                                    |
+| -k     | Keep listening after client disconnects                    |
+**Putting It All Together**
+
+| Command          | Example                                     |
+| ---------------- | ------------------------------------------- |
+| ping             | **ping -c 10 MACHINE_IP** on Linux or macOS |
+| ping             | **ping -n 10 MACHINE_IP** on MS Windows     |
+| traceroute       | **traceroute MACHINE_IP** on Linux or macOS |
+| tracert          | **tracert MACHINE_IP** on MS Windows        |
+| telnet           | **telnet MACHINE_IP PORT_NUMBER**           |
+| netcat as client | **nc MACHINE_IP PORT_NUMBER**               |
+| netcat as server | **nc -lvnp PORT_NUMBER**                    |
+**Developer Tools**
+Linux or MS Windows - Ctrl + Shift + I
+macOS - Option + Command + I
+
+### Nmap Live Host Discovery
+- Nmap, short for Network Mapper, is free, open-source software released under the GPL license, created by Gordon Lyon (Fyodor), a network security expert and open-source programmer. 
+- Nmap is an industry-standard tool for mapping networks, identifying live hosts, and discovering running services. 
+- A Nmap scan usually goes through the steps shown in the figure below:
+![[Pasted image 20260227102607.png]]
+- In an IP network a subnetwork is usually the equivalent of one or mor network segments connected together and configured to use the same router. The network segment refers to a physical connection, while a subnetwork refers to a logical connection. 
+- If you are on the same subnet, you would expect your scanner to use ARP Address Resolution Protocol queries to discover live hosts. An ARP query aims to obtain the hardware address (MAC address) that that communication at the link layer becomes possible; however, we can infer that the host is online. 
+- **Enumerating Targets** - Generally speaking, you can provide a list, a range, or a subnet with nmap.
+	- list: MACHINE_IP scanme.nmap.org example.org will scan 3 IP addresses
+	- range: 10.11.12.15-20 will scan 6 IP addresses: 10.11.12.15, 10.11.12.16,... and 10.11.12.20
+	- subnet: MACHINE_IP/30 will scan 4 IP addresses
+- You can also provide a file as input for your list of targets, **nmap -iL list_of_hosts.txt**. 
+- **Discovering Live Hosts** - We will leverage the TCP/IP layers to discover the live hosts.
+![[Pasted image 20260227103813.png]]
+- **Nmap Host Discovery Using ARP**  - If you want Nmap only to perform an ARP scan without port-scanning, you can use **nmap -PR -sn TARGETS**, where **-PR** indicates that you only want an ARP scan. 
+- **Nmap Host Discovery Using ICMP** - We can ping every IP address on a target network and see who would respond to our **ping** (ICMP Type 8/ECHO) request with a ping reply (ICMP Type 0). However, many firewalls block ICMP echo; new versions of MS Windows are configured with a host firewall that blocks ICMP echo requests by default. 
+- **Nmap Host Discovery Using TCP and UDP** - We can send a packet with the SYN (Synchronize) flag set to a TCP port, 80 by default, and wait for a response. An open port should reply with a SYN/ACK (Acknowledge); a closed port would result in an RST (Reset). 
+- We can use UDP to discover if the host is online. Contrary to TCP SYN ping, sending a UDP packet to an open port is not expected to lead to any reply. However, if we send a UDP packet to a closed UDP port, we expect to get an ICMP port unreachable packet; this indicates that the target system is up and available.
+
+| Scan Type              | Example Command                           |
+| ---------------------- | ----------------------------------------- |
+| ARP Scan               | sudo nmap -PR -sn MACHINE_IP/24           |
+| ICMP Echo Scan         | sudo nmap - PE -sn MACHINE_IP/24          |
+| ICMP Timestamp Scan    | sudo nmap -PP -sn MACHINE_IP/24           |
+| ICMP Address Mask Scan | sudo nmap -PM -sn MACHINE_IP/24           |
+| TCP SYN Ping Scan      | sudo nmap -PS22,80,443 -sn MACHINE_IP/30  |
+| TCP ACK Ping Scan      | sudo nmap -PA22,80,443 -sn MACHINE_IP/30  |
+| UDP Ping Scan          | sudo nmap -PU53,161,162 -sn MACHINE_IP/30 |
+- Remember to add **-sn** if you are only interested in host discovery without port-scanning. Omitting **-sn** will let Nmap default to scanning live hosts for ports.
+
+| Option | Purpose                          |
+| ------ | -------------------------------- |
+| -n     | no DNS lookup                    |
+| -R     | reverse-DNS lookup for all hosts |
+| -sn    | host discovery only              |
