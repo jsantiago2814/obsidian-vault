@@ -318,3 +318,79 @@ macOS - Option + Command + I
 | -n     | no DNS lookup                    |
 | -R     | reverse-DNS lookup for all hosts |
 | -sn    | host discovery only              |
+
+### Nmap Basic Port Scans
+- At the risk of oversimplification, we can classify ports in two states:
+	- Open port indicates that there is some service listening on that port.
+	- Closed port indicates that there is no service listening on that port.
+- **TCP Header**
+![[Pasted image 20260227130051.png]]
+
+- **TCP Flags** 
+	- **URG** - Urgent flag indicates that the urgent pointer field is significant.
+	- **ACK** - Acknowledgement flag indicates that the acknowledgement number is significant. I tis used to acknowledge the receipt of a TCP segment.
+	- **PSH** - Push flag asking TCP to pass the data to the application promptly.
+	- **RST** - Reset flag is used to reset the connection. Another device, such as a firewall, might send it to tear a TCP connection.
+	- **SYN** - Synchronize flag is used to initiate a TCP 3-way handshake and synchronize sequence number with the other host.
+	- **FIN** - The sender has no more data to send.
+- **TCP Connect Scan** - TCP connect scan works by completing the TCP 3-way handshake. 
+- **TCP SYN Scan** - Unprivileged users are limited to connect scan. However, the default scan mode is SYN scan, and it requires a privileged (root or sudoer) user to run it. SYN scan does not need to complete the TCP 3-way handshake; instead, it tears down the connection once it receives a response from the server.
+- **UDP Scan** - We cannot guarantee that a service listening on a UDP port would respond to our packets, since it's a connectionless protocol. However, if a UDP packet is sent to a closed port, an ICMP port unreachable error (type 3, code 3) is returned. 
+- **Fine-Tuning Scope and Performance** - You can specify the port you want to scan instead of the default 1000 ports. P
+	- port list: -p22,80,443
+	- port range -p1-1023
+- These scan types should get you started discovering running TCP and UDP services on a target host:
+
+| Option                | Purpose                                  |
+| --------------------- | ---------------------------------------- |
+| -p-                   | all ports                                |
+| -p1-1023              | scan ports 1 to 1023                     |
+| -F                    | 100 most common ports                    |
+| -r                    | scan ports in consecutive order          |
+| -T<0-5>               | -T0 being the slowest and T5 the fastest |
+| --max-rate 50         | rate <= 50 packets/sec                   |
+| --min-rate 15         | rate >=15 packets/sec                    |
+| --min-parallelism 100 | at least 100 probes in parallel          |
+### Nmap Advanced Port Scans
+
+| Port Scan Type                 | Example Command                                     |
+| ------------------------------ | --------------------------------------------------- |
+| TCP Null Scan                  | sudo nmap -sN MACHINE_IP                            |
+| TCP FIN Scan                   | sudo nmap -F MACHINE_IP                             |
+| TCP Xmas Scan                  | sudo nmap -sX MACHINE_IP                            |
+| TCP Maimon Scan                | sudo nmap -sM MACHINE_IP                            |
+| TCP ACK Scan                   | sudo nmap -sA MACHINE_IP                            |
+| TCP Windows Scan               | sudo nmap -sW MACHINE_IP                            |
+| Custom TCP Scan                | sudo nmap --scanflags URGACKPSHRSTSYNFIN MACHINE_IP |
+| Spoofed Source IP              | sudo nmap -S SPOOFED_IP MACHINE_IP                  |
+| Spoofed Mac Address            | --spoof-mac SPOOF_MAC                               |
+| Decoy Scan                     | nmap -D DECOY_IP,ME, MACHINE_IP                     |
+| Idle (Zombie) Scan             | sudo nmap -sI ZOMBIE_IP MACHINE_IP                  |
+| Fragment IP data into 8 bytes  | -f                                                  |
+| Fragment IP data into 16 bytes | -ff                                                 |
+
+| Option   | Purpose                               |
+| -------- | ------------------------------------- |
+| --reason | explains how Nmap made its conclusion |
+| -v       | verbose                               |
+| -vv      | very verbose                          |
+| -d       | debugging                             |
+| -dd      | more details for debugging            |
+### Nmap Post Port Scans
+
+| Option                  | Meaning                                          |
+| ----------------------- | ------------------------------------------------ |
+| -sV                     | determine service/version info on open ports     |
+| -sV --version-light     | try the most likely probes (2)                   |
+| -sV --version-all       | try all available probes (9)                     |
+| -O                      | detect OS                                        |
+| --traceroute            | run traceroute to target                         |
+| -script=SCRIPTS         | Nmap scripts to run                              |
+| -sC or --script=default | run default scripts                              |
+| -A                      | equivalent to -sV -O -sC --traceroute            |
+| -oN                     | save output in normal format                     |
+| -oG                     | save output in grepable format                   |
+| -oX                     | save output in XML format                        |
+| -oA                     | save output in normal, XML, and Grepable formats |
+### Protocols and Servers
+- 
