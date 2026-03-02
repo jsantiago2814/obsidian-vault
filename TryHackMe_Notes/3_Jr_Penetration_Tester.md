@@ -393,4 +393,221 @@ macOS - Option + Command + I
 | -oX                     | save output in XML format                        |
 | -oA                     | save output in normal, XML, and Grepable formats |
 ### Protocols and Servers
-- 
+
+| Protocol | TCP Port | Application(s) | Data Security |
+| -------- | -------- | -------------- | ------------- |
+| FTP      | 21       | File Transfer  | Cleartext     |
+| HTTP     | 80       | Worldwide Web  | Cleartext     |
+| IMAP     | 143      | Email (MDA)    | Cleartext     |
+| POP3     | 110      | Email (MDA)    | Cleartext     |
+| SMTP     | 25       | Email (MTA)    | Cleartext     |
+| Telnet   | 23       | Remote Access  | Cleartext     |
+- The telnet protocol is an application layer protocol used to connect to a virtual terminal of another computer. 
+- Hypertext Transfer Protocol (HTTP) is the protocol used to transfer web pages.
+- File Transfer Protocol (FTP) was developed to make the transfer of files between different computers with different systems efficient.
+- Simple Mail Transfer Protocol (SMTP) - Email is one of the most used services on the internet. Email delivery over the Internet requires the following components:
+	- Mail Submission Agent (MSA)
+	- Mail Transfer Agent (MTA)
+	- Mail Delivery Agent (MDA)
+	- Mail User Agent (MUA)
+- Post Office Protocol version 3 (POP3) is a protocol used to download the email messages from a Mail Delivery Agent (MDA) server, as shown in the figure below. The mail client connects to the POP3 server, authenticates, downloads the new email messages before (optionally) deleting them.
+![[Pasted image 20260301075954.png]]
+- Internet Message Access Protocol (IMAP) is more sophisticated than POP3. IMAP makes it possible to keep your email synchronized across multiple devices (and mail clients). 
+### Protocols and Servers 2
+- Knowing that we are protecting the Confidentiality, Integrity, and Availability (CIA), an attack aims to cause Disclosure, Alteration, and Destruction (DAD). The figures below reflect this. 
+![[Pasted image 20260301080838.png]]
+- **Sniffing Attack** - Sniffing attack refers to using a network packet capture tool to collect information about the target. When a protocol communicates in cleartext, the data exchanged can be captured by a third party to analyze. 
+- A sniffing attack can be conducted using an Ethernet (802.3) network card, provided that the user has proper permissions (root permissions on Linux and administrator privileges on MS Windows). There are many programs available to capture network packets. Below are a few:
+	- **Tcpdump** is a free open source command-line interface (CLI) program that has been ported to work on many operating systems.
+	- **Wireshark** is a free open source graphical user interface (GUI) program available for several operating systems, including Linux, macOS, and MS Windows.
+	- **Tshark** is a CLI alternative to Wireshark.
+- A **Man-in-the-Middle (MITM)** attack occurs when a victim (A) believes they are communicating with a legitimate destination (B) but is unknowingly communicating with an attacker (E). 
+- Because of the close relation between SSL and TLS, one might be used instead of the other. However, TLS is more secure than SSL, and it has practically replaced SSL. An existing cleartext protocol can be upgraded to use encryption via SSL/TLS.
+
+| Protocol | Default Port | Secured Protocol | Default Port with TLS |
+| -------- | ------------ | ---------------- | --------------------- |
+| HTTP     | 80           | HTTPS            | 443                   |
+| FTP      | 21           | FTPS             | 990                   |
+| SMTP     | 25           | SMTPS            | 465                   |
+| POP3     | 110          | POP3S            | 995                   |
+| IMAP     | 143          | IMAPS            | 993                   |
+- Secure Shell (SSH) was created to provide a secure way for remote system administration. In other words, it lets you securely connect to another system over the network and execute commands on the remote system. 
+- **Password attack** - Authentication, or providing your identity, can be achieved through one of the following, or a combination of two:
+	- Something you *know*, such as password and PIN code.
+	- Something you *have*, such as a SIM card, RFID card, and USB dongle.
+	- Something you *are*, such as fingerprint and iris.
+- Attacks against passwords are usually carried out by:
+		- Password Guessing: Guessing a password requires some knowledge of the target, such as their pet's name and birth year.
+		- Dictionary Attack: This approach expands on  password guessing and attempt to include all valid words in a dictionary or a wordlist.
+		- Brute Force Attack: This attack is the most exhaustive and time-consuming where an attacker can go as far as trying all possible character combinations, which grows fast (exponential growth with the number of characters). 
+
+| Protocol | TCP Port | Application(s)                  | Data Security |
+| -------- | -------- | ------------------------------- | ------------- |
+| FTP      | 21       | File Transfer                   | Cleartext     |
+| FTPS     | 990      | File Transfer                   | Encrypted     |
+| HTTP     | 80       | Worldwide Web                   | Cleartext     |
+| HTTPS    | 443      | Worldwide Web                   | Encrypted     |
+| IMAP     | 143      | Email (MDA)                     | Cleartext     |
+| IMAPS    | 993      | Email (MDA)                     | Encrypted     |
+| POP3     | 110      | Email (MDA)                     | Cleartext     |
+| POP3S    | 995      | Email (MDA)                     | Encrypted     |
+| SFTP     | 22       | File Transfer                   | Encrypted     |
+| SSH      | 22       | Remote Access and File Transfer | Encrypted     |
+| SMTP     | 25       | Email (MTA)                     | Cleartext     |
+| SMTPS    | 465      | Email (MTA)                     | Encrypted     |
+| Telnet   | 23       | Remote Access                   | Cleartext     |
+- Hydra remains a very efficient tool that you can launch from the terminal to try different passwords - [[Tools]].
+## Vulnerability Research
+### Vulnerabilities 101
+- A vulnerability in cybersecurity is defined as a weakness or flaw in design, implementation or behaviors of a system or appliction. 
+- NIST defines vulnerability as "weakness in an information system, system security procedures, internal controls, or implementation that could be exploited or triggered by a threat source."
+- There are five (5) main categories of vulnerabilities:
+
+| Vulnerability               | Description                                                                                                                                                                                                                                        |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Operating System            | These types of vulnerabilities are found within the Operating Systems (OSs) and often result in privilege escalation.                                                                                                                              |
+| (Mis)Configuration-based    | These types of vulnerabilities stem from an incorrectly configured application or service. For example, a website exposing customer details.                                                                                                       |
+| Weak or Default Credentials | Applications and services that have an element of authentication will come with default credentials when installed. For example, an administrator dashboard may have the username and password of "admin". These are easy to guess by an attacker. |
+| Application Logic           | These vulnerabilities are a result of poorly designed applications. For example, poorly implemented authentication mechanisms that may result in an attacker being able to impersonate a user.                                                     |
+| Human-Factor                | Human-Factor vulnerabilities are vulnerabilities that leverage human behavior. For example, phishing emails are designed to trick humans into believing they are legitimate.                                                                       |
+- **Scoring Vulnerabilities (CVSS & VPR)** - Vulnerability management is the process of evaluating, categorizing, and ultimately remediating threats (vulnerabilities) faced by an organization.
+- First introduced in 2005, the Common Vulnerability Scoring System (or CVSS) is a very popular framework for vulnerability scoring and has three major iterations. As it stands, the current version is CVSSv3.1 (with version 4.0 currently in draft) a score is essentially determined by some of the following factors (but many more):
+	- How easy is it to exploit the vulnerability?
+	- Do exploits exist for this?
+	- How does this vulnerability interfere with the CIA triad?
+- In fact, there are so many variables that you have to use a calculator (https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator) to figure out the score using this framework.
+
+| Advantages of CVSS                                                               | Disadvantages of CVSS                                                                                                                    |
+| -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| CVSS has been around for a long time.                                            | CVSS was never designed to help prioritize vulnerabilities, instead, just assign a value of severity.                                    |
+| CVSS is popular in organizations.                                                | CVSS heavily assesses vulnerabilities on an exploit being available. However, only 20% of all vulnerabilities have an exploit available. |
+| CVSS is a free framework to adopt and recommended by organizations such as NIST. | Vulnerabilities rarely change scoring after assessment despite the fact that new developments such as exploits may be found.             |
+- The Vulnerability Priority Rating (VPR) framework is a much more modern framework in vulnerability management - developed by Tenable, an industry solutions provider for vulnerability management. This framework is considered to be risk-driven; meaning that vulnerabilities are given a score with a heavy focus on the risk a vulnerability poses to the organization itself, rather than factors such as impact (like with CVSS).
+- VPR is considerably dynamic in its scoring, where the risk that a vulnerability may post can change almost daily as it ages.
+
+| Advantages of VPR                                                                                                                       | Disadvantages of VPR                                                                                                                                                                                                    |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| VPR is a modern framework that is real-world.                                                                                           | VPR is not open-source like some other vulnerability management frameworks.                                                                                                                                             |
+| VPR considers over 150 factors when calculating risk.                                                                                   | VPR can only be adopted apart of a commercial platform.                                                                                                                                                                 |
+| VPR is risk-driven and used by organizations to help prioritize patching vulnerabilities.                                               | VPR does not consider the CIA triad to the extent that CVSS does; meaning that risk to the confidentiality, integrity, and availability of data does not play a large factor in scoring vulnerabilities when using VPR. |
+| Scorings are not final and are very dynamic, meaning the priority a vulnerability should be given can change as the vulnerability ages. | *Intentionally left blank.*                                                                                                                                                                                             |
+|                                                                                                                                         |                                                                                                                                                                                                                         |
+- **Vulnerability Databases** - Thankfully for us, there are resources on the internet that keep track of vulnerabilities for all sorts of software, operating systems, and more! A couple of these resources are:
+	- NVD (National Vulnerability Database) - https://nvd.nist.gov/vuln
+	- Exploit-DB - http://exploit-db.com/
+- The National Vulnerability Database is a website that lists all publicly categorized vulnerabilities. In cybersecurity, vulnerabilities are classified under "Common Vulnerabilities and Exposures" (or CVE for short). 
+- These CVEs have the formatting of **CVE-YEAR-IDNUMBER**. 
+- While NVD helps keep track of new vulnerabilities, it is not great when searching for vulnerabilities for a specific application or scenario.
+- **Exploit-DB** is a resource that we, as hackers, will find much more helpful during an assessment. Exploit-DB retains exploits for software and applications stored under the name, author, and version of the software or application.
+- We can use Exploit-DB to look for snippets of code (known as Proof of Concepts) that are used to exploit a specific vulnerability.
+### Exploit Vulnerabilities
+- There is a myriad of tools and services available in cybersecurity for vulnerability scanning.
+- Nessus (https://www.tenable.com/products/nessus) has both a free (community) edition and commercial. 
+- Some of the advantages and disadvantages of using a vulnerability scanner are listed in the table below:
+
+| Advantage                                                                                                   | Disadvantage                                                                                                                              |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Automated scans are easy to repeat, and the results can be shared within a team with ease.                  | People can often become reliant on these tools.                                                                                           |
+| These scanners are quick and can test numerous applications efficiently.                                    | They are extremely "loud" and produce a lot of traffic and logging. This is not good if you are trying to bypass firewalls and the likes. |
+| Open-source solutions exist.                                                                                | Open-source solutions are often basic and require expensive licenses to have useful features.                                             |
+| Automated scanners cover a wide range of different vulnerabilities that may be hard to manually search for. | They often do not find every vulnerability on an application.                                                                             |
+- Manual scanning for vulnerabilities is often the weapon of choice by a penetration tester when testing individual applications or programs. 
+- Ultimately, both techniques (manual and automated) involve testing an application or program for vulnerabilities. These vulnerabilities include:
+
+| Vulnerability              | Description                                                                                                                                                                                    |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Security Misconfigurations | Security misconfigurations involve vulnerabilities that are due to developer oversight. For example, exposing server information in messages between the application and an attacker.          |
+| Broken Access Control      | This vulnerability occurs when an attacker is able to access parts of an application that they are not supposed to be able to otherwise.                                                       |
+| Insecure Deserilization    | This is the insecure processing of data that is sent across an application. An attacker may be able to pass malicious code to the application, where it will then be executed.                 |
+| Injection                  | An injection vulnerability exists when an attacker is able to input malicious data into an application. This is due to the failure of not ensuring (known as sanitizing) input is not harmful. |
+- **Finding Manual Exploits** - Much like services such as Exploit DB and NVD, Rapid7 (https://www.rapid7.com/db/) is a vulnerability research database. The only difference being that this database also acts as an exploit database. Using this service, you can filter by type of vulnerability.
+- Additionally, the database contains instructions for exploiting applications using the popular Metasploit tool.
+- **GitHub** is a popular web service designed for software developers. Security researchers have taken to this platform as well.
+- **Searchsploit** - Searchsploit is a tool that is available on popular pentesting distributions such as Kali Linux. This tool is an offline copy of Exploit-DB, containing copies of exploits on your system. You are able to search searchsploit by application name and/or vulnerability type. For example, in the snipped below, we are searching searchsploit for exploits relating to Wordpress that we can use - no downloading necessary!
+![[Pasted image 20260301102515.png]]
+
+## Metasploit
+### Metasploit: Introduction
+- Metasploit is the most widely used exploitation framework. Metasploit is a powerful tool that can support all phases of a penetration testing engagement, from information gathering to post-exploitation.
+- The main components of the Metasploit Framework can be summarized as follows:
+	- **msfconsole**: The main command-line interface.
+	- **Modules**: supporting modules such as exploits, scanners, payloads, etc.
+	- **Tools**: Stand-alone tools that will help vulnerability research, vulnerability assessment, or penetration testing. Some of these tools are msfvenom, pattern_create, and pattern_offset.
+- Metasploit can be launched by utilizing the **msfconsole** command. 
+- **Auxiliary**: Any supporting module, such as scanners, crawlers, and fuzzers can be found here.
+![[Pasted image 20260301111259.png]]
+- **Encoders**: Encoders will allow you to encode the exploit and payload in the hope that a signature-based antivirus solution may miss them.
+![[Pasted image 20260301111345.png]]
+- **Evasion**: While encoders will encode the payload, they should not be considered a direct attempt to evade antivirus software. On the other hand, "evasion" modules will try that, with more or less success.
+![[Pasted image 20260301111442.png]]
+- **Exploits**: Exploit, neatly organized by target system.
+![[Pasted image 20260301111514.png]]
+- **NOPs**: NOPs (No OPeration) do nothing, literally. They are represented in the Intel x86 CPU family with 0X90, following which the CPU will do nothing for one cycle. They are often used as a buffer to achieve consistent payload sizes.
+![[Pasted image 20260301111613.png]]
+- **Payloads**: Payloads are codes that will run on the target system. 
+![[Pasted image 20260301111730.png]]
+- You will see four (4) different directories under payload: adapters, singles, stagers, and stages.
+	- **Adapters**: An adapter wraps single payloads to convert them into different formats. For example, a normal single payload can be wrapped inside a PowerShell adapter, which will make a single PowerShell command that will execute the payload
+	- **Singles**: Self-contained payloads (add suer, launch notepad.exe., etc.) that do not need to download an additional component to run.
+	- **Stagers**: Responsible for setting up a connection channel between Metasploit and the target system. Useful when working with staged payloads. "Staged payloads" will first upload a stager on the target system then download the rest of the payload (stage). This provides some advantages as the initial size of the payload will be relatively small compared to the full payload sent at once.
+	- **Stages**: Downloaded by the stager. This will allow you to use larger sized payloads.
+- Metasploit has a subtle way to help you identify single (also called "inline") payloads and staged payloads.
+	- generic/shell_reverse_tcp
+	- windows/x64/shell/reverse_tcp
+- Both are reverse Windows shells. The former is an inline (or single) payload, as indicated by the "_" between "shell" and "reverse". While the latter is a staged payload, as indicated by the "/" between "shell" and "reverse". 
+- **Post** - Post modules will be useful on the final stage of the penetration testing process listed above, post-exploitation. 
+![[Pasted image 20260301112257.png]]
+- The **ls** command lists the contents of the folder from which Metasploit was launched using the **msfconsole** command. Metaploit will support most Linux commands.
+- You can use the **history** command to see commands you have typed earlier.
+- The module to be used can be selected with the **use** command followed by the number at the beginning of the search result line or by listing the module.
+- **show options** - prompt that tells us what can and needs to be set.
+![[Pasted image 20260301112727.png]]
+- **show** command can be used in any context followed by a module type (auxiliary, payload, exploit, etc.) to list available modules.
+![[Pasted image 20260301112744.png]]
+### Metasploit: Meterpreter
+- Meterpreter is a Metasploit payload that supports the penetration testing process with may valuable components. Meterpreter will run on the target system and act as an agent within a command and control architecture. 
+- Meterpreter runs on the target system but is not installed on it. It runs in memory and does not write itself to the disk on the target. This feature aims to avoid being detected during antivirus scans.
+- To find the process id of Meterpreter, you can use the **getip** command while in the meterpreter.
+![[Pasted image 20260301130734.png]]
+- The easiest way to have an idea about available Meterpreter versions could be to list them using msfvenom, as seen below.
+![[Pasted image 20260301130849.png]]
+- **Meterpreter Commands** - Typing **help** on any Meterpreter session (shown by **meterpreter>** at the prompt) will list all available commands.
+- Core commands
+	- **background**: Backgrounds the current session
+	- **exit**: Terminate the Meterpreter session
+	- **guid**: Get the session GUID (Globally Unique Identifier)
+	- **help**: Displays the help menu
+	- **info**: Displays information about a Post module.
+	- **irb**: Opens an interactive Ruby shell on the current session
+	- **load**: Loads one or more Meterpreter extensions
+	- **migrate**: Allows you to migrate Meterpreter to another process
+	- **run**: Executes a Meterpreter script or Post module
+	- **sessions**: Quickly switch to another session
+## Privilege Escalation
+### What the Shell?
+- In the simplest terms, shells are what we use when interfacing with a Command Line environment (CLI). In other words, the common bash or sh programs in Linux are examples of shells, as are cmd.exe and PowerShell on Windows.
+- **Netcat** - Netcat is the traditional "Swiss Army Knife" of networking. It is used to manually perform all kinds of network interactions.
+- **Socat** - Socat is like netcat on steroids. It can do all of the same things, and man more. Socat shells are usually more stable than netcat shells out of the box. In this sense it is vastly superior to netcat; however, there are to big catches:
+	- The syntax is more difficult.
+	- Netcat is installed on virtually every Linux distribution. Socat is very rarely installed by default.
+	- **Metasploit --multi/handler** - The **exploit/multi/handler** module of the Metasploit framework is, like socat and netcat, used to receive reverse shells.
+	- **Msfvenom** - Like multi/handler, msvenom is technically part of the Metasploit Framework, however, it is shipped as a standalone tool.
+- Aside from the tools already covered, there are some repositories of shells in many different languages. One of the most prominent of these is Payload all the Things (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md). The PentestMonkey (https://web.archive.org/web/20200901140719/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet) is also commonly used. 
+- The SecLists repo (https://github.com/danielmiessler/SecLists), though commonly used for wordlists, also contains some very useful code for obtaining shells.
+- **Types of Shells**
+	- **Reverse shells** are when the target is forced to execute code that connects back to your computer. On your own computer you would use one of the tools mentioned in the previous task to set up a listener which would be used to receive the connection. Reverse shells are a good way to bypass firewall rules that may prevent you from connecting to arbitrary ports on the target; however, the drawback is that, when receiving a shell from a machine across the internet, you would need to configure your own network to accept the shell. 
+	- **Bind shells** are when the code executed on the target is used to start a listener attached to a shell directly on the target. This would then be opened up to the internet, meaning you can connect to the port that the code has opened and obtain remote code execution that way. This has the advantage of not requiring any configuration on your own network, but may be prevented by firewalls protecting the target.
+- As a general rule, reverse shells are easier to execute and debug.
+- Shells can be either interactive or non-interactive.
+	- **Interactive**: If you've used PowerShell, Bash, Zsh, sh, or any other Standard CLI environment then you will be used to interactive shells. These allow you to interact with programs after executing them. 
+	- **Non-Interactive** shells don't give you that luxury. In a non-interactive shell you are limited to using programs which do not require the user interaction in order to run properly. Unfortunately, the majority of simple reverse and bind shells are non-interactive, which can make further exploitation trickier. 
+- **Netcat** - Netcat is the most basic tool in a pentester's toolkit when it comes to any kind of networking. With it we can do a wide variety of things, but the focus here will be on shells.
+- **Reverse Shell**
+	- In the previous task we saw that reverse shells require shellcode and a listener. There are many ways to execute a shell, so we'll start by looking at listeners. 
+	- The syntax for starting a netcat listener using Linux is this:
+		- **nc -lvnp \<port-number>
+			- **-l** is used to tell netcat that this will be a listener.
+			- **-v** is used to request a verbose output.
+			- **-n** tells netcat not to resolve host names or use DNS.
+			- **-p** indicates that the port specification will follow.
+		- 
