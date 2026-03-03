@@ -1,1 +1,6 @@
 - dirb
+- find
+- locate
+- grep
+- cut
+- sort

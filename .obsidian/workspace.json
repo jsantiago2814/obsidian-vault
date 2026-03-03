@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
+                "file": "TryHackMe_Notes/4_Web_Fundamentals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3_Jr_Penetration_Tester"
+              "title": "4_Web_Fundamentals"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.5,
-    "collapsed": true
+    "width": 359.5
   },
   "right": {
     "id": "33a2e8ed4416e3cf",
@@ -187,20 +186,20 @@
   },
   "active": "2e3c4432ea19b2e1",
   "lastOpenFiles": [
+    "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
+    "attachments/Pasted image 20260302110035.png",
+    "attachments/Pasted image 20260302105557.png",
+    "attachments/Pasted image 20260302105337.png",
+    "Linux_Commands/Linux_Commands.md",
+    "THM_Rooms.md",
     "attachments/Pasted image 20260301130849.png",
     "attachments/Pasted image 20260301130734.png",
     "Tools.md",
-    "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
     "attachments/Pasted image 20260301112744.png",
     "attachments/Pasted image 20260301112727.png",
     "attachments/Pasted image 20260301112257.png",
     "attachments/Pasted image 20260301111730.png",
     "attachments/Pasted image 20260301111613.png",
-    "attachments/Pasted image 20260301111514.png",
-    "attachments/Pasted image 20260301111442.png",
-    "attachments/Pasted image 20260301111345.png",
-    "attachments/Pasted image 20260301111259.png",
-    "THM_Rooms.md",
     "Important_Info_for_Markdown.md",
     "TryHackMe_Notes/2_Cyber_Security_101.md",
     "TryHackMe_Notes/1_Pre_Security.md",
@@ -212,7 +211,6 @@
     "TryHackMe_Notes/5_Web_Application_Pentesting.md",
     "PowerShell cmdlets",
     "PowerShell cmdlets/PowerShell cmdlets.md",
-    "Linux_Commands/Linux_Commands.md",
     "TryHackMe_Notes/6_Offensive_Pentesting.md",
     "TryHackMe_Notes/7_Red_Teaming.md",
     "Linux Commands/Linux Basic Commands.md",

