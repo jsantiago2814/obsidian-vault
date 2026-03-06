@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TryHackMe_Notes/4_Web_Fundamentals.md",
+                "file": "TryHackMe_Notes/5_Web_Application_Pentesting.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4_Web_Fundamentals"
+              "title": "5_Web_Application_Pentesting"
             }
           }
         ]
@@ -186,7 +186,13 @@
   },
   "active": "2e3c4432ea19b2e1",
   "lastOpenFiles": [
+    "TryHackMe_Notes/4_Web_Fundamentals.md",
+    "attachments/Pasted image 20260304143203.png",
+    "HTTP_Status_Codes.md",
+    "attachments/Pasted image 20260304140557.png",
+    "attachments/Pasted image 20260304135505.png",
     "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
+    "TryHackMe_Notes/1_Pre_Security.md",
     "attachments/Pasted image 20260302110035.png",
     "attachments/Pasted image 20260302105557.png",
     "attachments/Pasted image 20260302105337.png",
@@ -197,17 +203,11 @@
     "Tools.md",
     "attachments/Pasted image 20260301112744.png",
     "attachments/Pasted image 20260301112727.png",
-    "attachments/Pasted image 20260301112257.png",
-    "attachments/Pasted image 20260301111730.png",
-    "attachments/Pasted image 20260301111613.png",
     "Important_Info_for_Markdown.md",
     "TryHackMe_Notes/2_Cyber_Security_101.md",
-    "TryHackMe_Notes/1_Pre_Security.md",
     "Ports.md",
-    "HTTP_Status_Codes.md",
     "PowerShell cmdlets/AD PowerShell Scripts.md",
     "Windows_Commands/Windows_Commands.md",
-    "TryHackMe_Notes/4_Web_Fundamentals.md",
     "TryHackMe_Notes/5_Web_Application_Pentesting.md",
     "PowerShell cmdlets",
     "PowerShell cmdlets/PowerShell cmdlets.md",
