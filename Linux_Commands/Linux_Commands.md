@@ -4,3 +4,5 @@
 - grep
 - cut
 - sort
+- nmap [[nmap]]
+- ffuf

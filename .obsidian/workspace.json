@@ -8,20 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2e3c4432ea19b2e1",
+            "id": "6471ef423a553df9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TryHackMe_Notes/2_Cyber_Security_101.md",
+                "file": "Linux_Commands/Linux_Commands.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Cyber_Security_101"
+              "title": "Linux_Commands"
+            }
+          },
+          {
+            "id": "650725388d104059",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linux_Commands/ffuf.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ffuf"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dirb",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -185,13 +199,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "2e3c4432ea19b2e1",
+  "active": "650725388d104059",
   "lastOpenFiles": [
+    "Linux_Commands/nmap.md",
+    "Linux_Commands/ffuf.md",
     "Linux_Commands/Linux_Commands.md",
+    "Tools.md",
     "TryHackMe_Notes/2_Cyber_Security_101.md",
     "TryHackMe_Notes/1_Pre_Security.md",
     "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
-    "Tools.md",
     "TryHackMe_Notes/5_Web_Application_Pentesting.md",
     "TryHackMe_Notes/4_Web_Fundamentals.md",
     "attachments/Pasted image 20260304143203.png",
