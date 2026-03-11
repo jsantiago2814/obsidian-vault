@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux_Commands/ffuf.md",
+                "file": "TryHackMe_Notes/2_Cyber_Security_101.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ffuf"
+              "title": "2_Cyber_Security_101"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "nmap",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
