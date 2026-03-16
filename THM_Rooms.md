@@ -9,3 +9,4 @@
 - Other rooms to consider:
 	- NMAP
 	- Pen-testing Tools
+	- Breaching Active Directory
