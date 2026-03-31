@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TryHackMe_Notes/1_Pre_Security.md",
+                "file": "Linux_Commands/nmap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1_Pre_Security"
+              "title": "nmap"
+            }
+          },
+          {
+            "id": "a9ce5fd608790c94",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pen testing Basics.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Pen testing Basics"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,21 +199,22 @@
       "bases:Create new base": false
     }
   },
-  "active": "6471ef423a553df9",
+  "active": "a9ce5fd608790c94",
   "lastOpenFiles": [
     "Linux_Commands/ffuf.md",
+    "Linux_Commands/Linux_Commands.md",
     "Linux_Commands/nmap.md",
     "PowerShell cmdlets/AD PowerShell Scripts.md",
     "PowerShell cmdlets/PowerShell cmdlets.md",
+    "Pen testing Basics.md",
+    "TryHackMe_Notes/1_Pre_Security.md",
     "HTTP_Status_Codes.md",
     "Important_Info_for_Markdown.md",
     "Ports.md",
     "THM_Rooms.md",
     "Tools.md",
     "VIM_Cheatsheet.md",
-    "Linux_Commands/Linux_Commands.md",
     "TryHackMe_Notes/2_Cyber_Security_101.md",
-    "TryHackMe_Notes/1_Pre_Security.md",
     "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
     "TryHackMe_Notes/5_Web_Application_Pentesting.md",
     "TryHackMe_Notes/4_Web_Fundamentals.md",
