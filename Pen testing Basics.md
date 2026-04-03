@@ -79,18 +79,18 @@ Once a report is delivered, remediation guidance should align with development p
 ## Metrics and KPIs for Penetration Testing  
 Organizations track various metrics to evaluate the **effectiveness and efficiency** of their penetration testing program.  Key Performance Indicators (KPIs) may include【49†L456-L464】:  
 
-- **Number of Assets/Attack Surfaces Tested:** Scope coverage (networks, apps, domains). A high-percentage coverage shows comprehensiveness【49†L458-L467】.  
-- **Test Cadence:** Frequency of tests (e.g. quarterly, annual). Regular cadence (e.g. every 6 months) shows maturity【49†L458-L467】.  
-- **Vulnerability Discovery Rate:** How quickly new issues are found, or how many vulnerabilities are found per test (normalized by scope size)【45†L108-L117】【49†L456-L464】. A decreasing trend could indicate improving security, but must be interpreted carefully.  
-- **Critical Vulnerability Count:** Number or percentage of high-severity findings per test【49†L460-L464】. This highlights whether critical issues persist.  
-- **False Positive Rate:** Proportion of findings that were later determined non-exploitable or false alarms【49†L456-L464】. Lower is better, reflecting test accuracy.  
-- **Mean Time to Remediate (MTTR):** Average time to fix reported issues after test completion【45†L179-L184】【49†L502-L510】. Shorter MTTR indicates efficient patching processes.  
-- **User Impact / Compliance:** Whether the tests meet regulatory requirements (e.g. “pentest performed per PCI DSS standards”)【49†L458-L464】.  
+- **Number of Assets/Attack Surfaces Tested:** Scope coverage (networks, apps, domains). A high-percentage coverage shows comprehensiveness.  
+- **Test Cadence:** Frequency of tests (e.g. quarterly, annual). Regular cadence (e.g. every 6 months) shows maturity.  
+- **Vulnerability Discovery Rate:** How quickly new issues are found, or how many vulnerabilities are found per test (normalized by scope size). A decreasing trend could indicate improving security, but must be interpreted carefully.  
+- **Critical Vulnerability Count:** Number or percentage of high-severity findings per test. This highlights whether critical issues persist.  
+- **False Positive Rate:** Proportion of findings that were later determined non-exploitable or false alarms. Lower is better, reflecting test accuracy.  
+- **Mean Time to Remediate (MTTR):** Average time to fix reported issues after test completion. Shorter MTTR indicates efficient patching processes.  
+- **User Impact / Compliance:** Whether the tests meet regulatory requirements (e.g. “pentest performed per PCI DSS standards”).  
 - **Remediation Rate:** Percentage of findings closed within a defined period.  
 
 Metrics must be aligned with objectives. For example, a matured program will track that over time “discovery rate” and “critical vulnerability frequency” are falling【49†L517-L524】. However, one must beware of perverse incentives (e.g. testers hiding findings to look good). Thus, transparency and context are important.
 
-Dashboards and scorecards (like the sample in [45]) can visualize metrics for stakeholders. Ultimately, the goal is to use metrics to improve security posture and justify the value of testing. KPIs help answer questions like “Are we improving?” and “Where to invest next?”.  They also connect to ROI – fewer breaches or compliance fines can be attributed to continuous testing.
+Dashboards and scorecards can visualize metrics for stakeholders. Ultimately, the goal is to use metrics to improve security posture and justify the value of testing. KPIs help answer questions like “Are we improving?” and “Where to invest next?”.  They also connect to ROI – fewer breaches or compliance fines can be attributed to continuous testing.
 
 ## Beginner Learning Path and Resources  
 For beginners with basic IT knowledge, a structured learning path is recommended:
@@ -116,29 +116,29 @@ The key is iterative practice: try a challenge, fail, learn from walkthroughs or
 
 ## Comparative Table of Popular Tools and Platforms  
 
-| Tool/Platform      | Purpose              | Strengths                              | Limitations                              | License/Cost                                |
-|--------------------|----------------------|----------------------------------------|-------------------------------------------|--------------------------------------------|
-| **Nmap**           | Network discovery/port scanning | Very fast and flexible for scanning large networks; supports scripting (NSE)【89†L13-L19】 | No built-in exploit capability; may miss host-based misconfigs | Open source (Nmap Public Source License, GPL-derived)【89†L13-L19】 |
-| **Metasploit**     | Exploitation framework | Huge exploit database; integrated payloads; rapid exploit testing | Can be noisy; requires manual tuning; some modules outdated | Open source (BSD-3 clause)【62†L2255-L2262】; Pro edition commercial |
-| **Burp Suite**     | Web proxy/interceptor | Industry standard for web testing; powerful manual testing tools (intruder, repeater) | Community edition is limited (no scanner); Pro is expensive ($$$) | Pro: Commercial license; Community: free but limited features |
-| **OWASP ZAP**      | Web application scanner/proxy | Free and open-source; active community; automated scanning features | User interface can be less polished than Burp; fewer advanced features | Open source (Apache 2.0)【87†L649-L653】, free |
-| **Nessus**         | Network vulnerability scanner | Comprehensive CVE database; regular plugin updates; easy reporting | Commercial tool; high cost for professional edition; can produce false positives | Free (limited Home version), Professional license (paid) |
-| **Wireshark**      | Packet capture/analyzer | Deep protocol inspection; graphical analysis; widely used for network troubleshooting | Requires filtering to find attacks in noisy captures; not an attack tool per se | Open source (GPL) |
-| **Aircrack-ng**    | Wi-Fi network testing | Robust for cracking WEP/WPA by capturing handshakes; suite of tools (airmon, aireplay) | Only works within radio range; illegal without permission; hardware needed | Open source (GPL) |
-| **SET (Social Engineer Toolkit)** | Phishing & social attacks | Automates common social engineering tests (phishing pages, credential harvesting) | Requires custom social context; purely tools—success depends on user gullibility | Open source (Python; license varies by component) |
-| **SQLMap**         | SQL injection exploitation | Automates finding/exploiting SQLi vulnerabilities; supports many DBs | Only attacks SQLi; may miss blind or complex cases; some filtering needed | Open source (GPL) |
-| **Kali Linux**     | Pen-testing OS distribution | Bundles hundreds of security tools; actively maintained; widely used in training | Full distro can be heavy; using many tools requires learning curve | Open source (DEB; all tools have their own licenses) |
-| **Docker Bench (CIS)** | Container/CIS compliance checker | Automated CIS benchmark checks for Docker hosts | Only checks configuration, not runtime exploits | Open source (Apache 2.0) |
-| **Trivy**         | Container image vulnerability scanner | Quick and simple; checks for CVEs in images; integrates with CI/CD | Limited to container images and some Terraform; misses complex configs | Open source (Apache 2.0) |
-| **Pacu**          | AWS exploitation framework | Modules for AWS misconfig exploitation; mimics attacker actions | Only for AWS (not Azure/GCP); requires valid credentials during tests | Open source (MIT) |
-| **Kali Proving Grounds** | Online lab platform | Realistic lab environments for network/external pentests; beginner-friendly intro | Limited free labs; full lab requires subscription | Free tier; paid plans for advanced labs |
+| Tool/Platform                     | Purpose                               | Strengths                                                                              | Limitations                                                                      | License/Cost                                                  |
+| --------------------------------- | ------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Nmap**                          | Network discovery/port scanning       | Very fast and flexible for scanning large networks; supports scripting (NSE)           | No built-in exploit capability; may miss host-based misconfigs                   | Open source (Nmap Public Source License, GPL-derived)         |
+| **Metasploit**                    | Exploitation framework                | Huge exploit database; integrated payloads; rapid exploit testing                      | Can be noisy; requires manual tuning; some modules outdated                      | Open source (BSD-3 clause); Pro edition commercial            |
+| **Burp Suite**                    | Web proxy/interceptor                 | Industry standard for web testing; powerful manual testing tools (intruder, repeater)  | Community edition is limited (no scanner); Pro is expensive ($$$)                | Pro: Commercial license; Community: free but limited features |
+| **OWASP ZAP**                     | Web application scanner/proxy         | Free and open-source; active community; automated scanning features                    | User interface can be less polished than Burp; fewer advanced features           | Open source (Apache 2.0), free                                |
+| **Nessus**                        | Network vulnerability scanner         | Comprehensive CVE database; regular plugin updates; easy reporting                     | Commercial tool; high cost for professional edition; can produce false positives | Free (limited Home version), Professional license (paid)      |
+| **Wireshark**                     | Packet capture/analyzer               | Deep protocol inspection; graphical analysis; widely used for network troubleshooting  | Requires filtering to find attacks in noisy captures; not an attack tool per se  | Open source (GPL)                                             |
+| **Aircrack-ng**                   | Wi-Fi network testing                 | Robust for cracking WEP/WPA by capturing handshakes; suite of tools (airmon, aireplay) | Only works within radio range; illegal without permission; hardware needed       | Open source (GPL)                                             |
+| **SET (Social Engineer Toolkit)** | Phishing & social attacks             | Automates common social engineering tests (phishing pages, credential harvesting)      | Requires custom social context; purely tools—success depends on user gullibility | Open source (Python; license varies by component)             |
+| **SQLMap**                        | SQL injection exploitation            | Automates finding/exploiting SQLi vulnerabilities; supports many DBs                   | Only attacks SQLi; may miss blind or complex cases; some filtering needed        | Open source (GPL)                                             |
+| **Kali Linux**                    | Pen-testing OS distribution           | Bundles hundreds of security tools; actively maintained; widely used in training       | Full distro can be heavy; using many tools requires learning curve               | Open source (DEB; all tools have their own licenses)          |
+| **Docker Bench (CIS)**            | Container/CIS compliance checker      | Automated CIS benchmark checks for Docker hosts                                        | Only checks configuration, not runtime exploits                                  | Open source (Apache 2.0)                                      |
+| **Trivy**                         | Container image vulnerability scanner | Quick and simple; checks for CVEs in images; integrates with CI/CD                     | Limited to container images and some Terraform; misses complex configs           | Open source (Apache 2.0)                                      |
+| **Pacu**                          | AWS exploitation framework            | Modules for AWS misconfig exploitation; mimics attacker actions                        | Only for AWS (not Azure/GCP); requires valid credentials during tests            | Open source (MIT)                                             |
+| **Kali Proving Grounds**          | Online lab platform                   | Realistic lab environments for network/external pentests; beginner-friendly intro      | Limited free labs; full lab requires subscription                                | Free tier; paid plans for advanced labs                       |
   
 *Table: Comparison of popular penetration testing tools and platforms (purpose, strengths, limitations, and license or cost).*
 
 ## Engagement Timelines and Scopes  
 Penetration tests vary in duration depending on scope and depth.  A **quick assessment** (sometimes called “light pen test” or “vulnerability assessment”) might cover a small subset of targets or focus on one area (e.g. web app only) and last **1–3 days**.  It typically emphasizes scanning and a few exploitation attempts.  
 
-A **full external test** (Internet perimeter and public apps) often takes **2–3 weeks**【30†L221-L229】.  A **combined external/internal test** (including on-prem networks or internal web apps) can require **3–4 weeks** due to added complexity (network mapping, VPN access, etc.).  For example, StrikeGraph notes that “pen testing usually lasts two to three weeks, but the timeline and activities vary”【30†L221-L229】, and breaks down phases (e.g. 4–6 days reconnaissance, 2–3 days scanning, etc.).  A **full internal network test** (credentialed) may be similar in length, or longer if Active Directory attacks and lateral movement are involved.  
+A **full external test** (Internet perimeter and public apps) often takes **2–3 weeks**.  A **combined external/internal test** (including on-prem networks or internal web apps) can require **3–4 weeks** due to added complexity (network mapping, VPN access, etc.).  For example, StrikeGraph notes that “pen testing usually lasts two to three weeks, but the timeline and activities vary”, and breaks down phases (e.g. 4–6 days reconnaissance, 2–3 days scanning, etc.).  A **full internal network test** (credentialed) may be similar in length, or longer if Active Directory attacks and lateral movement are involved.  
 
 A comprehensive **red team** engagement (simulating a full sophisticated attack on all facets: physical, social, cyber) could span **6–8 weeks or more**. Red teaming often includes unannounced attack windows, phishing campaigns, and physical entry attempts, so planning and monitoring stages extend timeline.  Small teams sometimes compress a broader scope into multi-week campaigns.
 
@@ -148,7 +148,7 @@ A comprehensive **red team** engagement (simulating a full sophisticated attack 
 - **3–6 week comprehensive test**: full external+internal scope, custom applications, perhaps some social testing.  
 - **6–12 week red team**: multi-phase targeted attack including social engineering, physical, and advanced persistence scenarios.  
 
-Ultimately, timelines depend on asset count, authorization processes, and client needs. Status meetings are often weekly during longer engagements to review progress and critical findings【42†L2633-L2642】. (NIST notes for a 1-month test, “status meetings may be weekly with daily reports provided during active exploitation”【41†L158-L167】.) Planning must include reasonable buffers for mitigation verification or unexpected hurdles (e.g. network lockdowns).
+Ultimately, timelines depend on asset count, authorization processes, and client needs. Status meetings are often weekly during longer engagements to review progress and critical findings. (NIST notes for a 1-month test, “status meetings may be weekly with daily reports provided during active exploitation”). Planning must include reasonable buffers for mitigation verification or unexpected hurdles (e.g. network lockdowns).
 
 ## Metrics and KPIs for Testing  
 *(Included above in Metrics & KPIs section for brevity.)*
@@ -165,5 +165,5 @@ By progressively practicing attacks in labs and applying what you learn, you bui
 
 **Assumptions:** This overview assumes a technical audience with basic IT knowledge. It does not cover industry-specific regulations (e.g. HIPAA, ISO 27001 controls) which may impose additional compliance steps in testing. The guidance aligns with widely used standards (OWASP, NIST, MITRE CWE/ATT&CK) and general practices in the pen testing field.
 
-**Sources:** Authoritative frameworks and guides were used, including NIST SP 800-115【21†L2466-L2471】【42†L2639-L2642】, OWASP Top 10【32†L81-L90】, and MITRE CWE Top 25【35†L111-L120】. Industry experts and vendor resources supplemented methodology, timelines, and metrics【30†L221-L229】【49†L456-L464】. Tool specifics and licenses were drawn from official documentation【62†L2255-L2262】【87†L649-L653】. All information is up-to-date as of 2026.
+**Sources:** Authoritative frameworks and guides were used, including NIST SP 800-115, OWASP Top 10, and MITRE CWE Top 25. Industry experts and vendor resources supplemented methodology, timelines, and metrics. Tool specifics and licenses were drawn from official documentation. All information is up-to-date as of 2026.
 
