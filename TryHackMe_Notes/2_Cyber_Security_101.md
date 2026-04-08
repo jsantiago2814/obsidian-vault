@@ -33,8 +33,6 @@
 
 ### Linux Fundamentals
 - [[1_Pre_Security]] - for more detailed information #linux
-## Linux Fundamentals
-- [[1_Pre_Security]] - for more detailed information #linux
 ## Windows and AD Fundamentals
 - [[1_Pre_Security]]  - for Windows Fundamentals
 ### Active Directory Basics
@@ -50,7 +48,7 @@
 		1. **People**: users will generally represent persons in your organization that need to access the network, like employees.
 		2. **Services:** you can also define users to be used by services like IIS or MSSQL. Every single service requires a user to run, but service users are different from regular users as they will only have the privileges needed to run their specific service.
 - *Machines* are another type of object within Active Directory; for every computer that joins the Active Directory domain, a machine object will be created. Machines are also considered "security principals" and are assigned an account just as any regular user. The machine accounts themselves are local administrators on the assigned computer, they are generally not supposed to be accessed by anyone except the computer itself, but as with any other account, if you have the password, you can use it to log in.
-	- Identifying machine accounts is relatively easy. They follow a specific naming scheme. Teh machine account name is the computer's name followed by a dollar sign. For example, a machine named **DC01** will have a machine account called **DC01$**.
+	- Identifying machine accounts is relatively easy. They follow a specific naming scheme. The machine account name is the computer's name followed by a dollar sign. For example, a machine named **DC01** will have a machine account called **DC01$**.
 - *Security Groups* are also considered security principals and, therefore, can have privileges over resources on the network. Groups can have both users and machines as members. Several groups are created by default in a domain that can be used to grant specific privileges to users. Below are some of the most important groups in a domain:
 
 | Security Group     | Description                                                                                                                                               |
@@ -75,7 +73,7 @@
 		1. Servers are the second most common device within an AD domain. Servers are generally used to provide services to users or other servers.
 	3. Domain Controllers
 		1. Domain Controllers are the third most common device within an Active Directory domain. Domain Controllers allow you to manage the Active Directory Domain.
-- Group Policy Objects (GPOs) are simply a collection of setting that can be applied to OUs. GPOs can contain policies aimed at either users or computers, allowing you to set a baseline on specific machines and identities.
+- Group Policy Objects (GPOs) are simply a collection of settings that can be applied to OUs. GPOs can contain policies aimed at either users or computers, allowing you to set a baseline on specific machines and identities.
 - To configure GPOs, you can use the Group Policy Management tool, available from the start menu:
 ![[Pasted image 20260216083545.png]]
 - GPOs are distributed to the network via a network share called **SYSVOL**, which is stored in the DC. All users in a domain should typically have access to this share over the network to sync their GPOs periodically. The SYSVOL share points by default to the **C:\Windows\SYSVOL\sysvol\\** directory on each of the DCs in our network. 
@@ -99,13 +97,13 @@
 ![[Pasted image 20260216084649.png]]
 	1. The client sends an authentication request to the server they want to access.
 	2. The server generates a random number and sends it as a challenge to the client.
-	3. The client combines their NTLM password has with the challenge (and other known data) to generate a response to the challenge and sends it back to the server for verification.
+	3. The client combines their NTLM password hash with the challenge (and other known data) to generate a response to the challenge and sends it back to the server for verification.
 	4. The server forwards the challenge and the response to the Domain Controller for verification.
 	5. The Domain Controller uses the challenge to recalculate the response and compares it to the original response sent by the client. If they both match, the client is authenticated; otherwise, access is denied. The authentication result is sent back to the server.
 	6. The server forwards the authentication result to the client. 
 - AD supports integrating multiple domains so that you can partition your network into units that can be managed independently. If you have two domains that share the same namespace (thm.local in our example), those domains can be joined into a single **Tree**. 
 ![[Pasted image 20260216085344.png]]
-- The union of several trees with different namespace into the same network is known as a **forest**. 
+- The union of several trees with different namespace into the same network is known as a **forest**.
 ![[Pasted image 20260216085438.png]]
 - **Trust relationships** - In simple terms, having a trust relationship between domains allows you to authorize a user from domain **THM UK** to access resources from domain **MHT EU**. 
 - The simplest trust relationship that can be established is a **one-way trust relationship**. In a one-way trust, if **Domain AAA** trusts **Domain BBB**, this means that a user on BBB can be authorized to access resources on AAA:

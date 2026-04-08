@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux_Commands/ffuf.md",
-                "mode": "preview",
+                "file": "TryHackMe_Notes/2_Cyber_Security_101.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ffuf"
+              "title": "2_Cyber_Security_101"
             }
           }
         ]
@@ -186,10 +186,13 @@
   },
   "active": "2d2c499c9c2fae18",
   "lastOpenFiles": [
-    "PT1 Resources.md",
-    "Linux_Commands/ffuf.md",
-    "Linux_Commands/Linux_Commands.md",
+    "TryHackMe_Notes/1_Pre_Security.md",
+    "attachments/Pasted image 20260408091752.png",
     "Linux_Commands/nmap.md",
+    "THM_Rooms.md",
+    "Linux_Commands/ffuf.md",
+    "PT1 Resources.md",
+    "Linux_Commands/Linux_Commands.md",
     "PT1 Cert Study Guide.md",
     "TryHackMe_Notes/3_Jr_Penetration_Tester.md",
     "Pen testing Basics.md",
@@ -197,10 +200,8 @@
     "Ports.md",
     "PowerShell cmdlets/PowerShell cmdlets.md",
     "PowerShell cmdlets/AD PowerShell Scripts.md",
-    "TryHackMe_Notes/1_Pre_Security.md",
     "HTTP_Status_Codes.md",
     "Important_Info_for_Markdown.md",
-    "THM_Rooms.md",
     "VIM_Cheatsheet.md",
     "TryHackMe_Notes/2_Cyber_Security_101.md",
     "TryHackMe_Notes/5_Web_Application_Pentesting.md",
@@ -214,7 +215,6 @@
     "attachments/Pasted image 20260301130849.png",
     "attachments/Pasted image 20260301130734.png",
     "attachments/Pasted image 20260301112744.png",
-    "attachments/Pasted image 20260301112727.png",
     "Windows_Commands/Windows_Commands.md",
     "PowerShell cmdlets",
     "TryHackMe_Notes/6_Offensive_Pentesting.md",
@@ -229,7 +229,6 @@
     "Welcome.md",
     "Untitled.canvas",
     "TryHackMe Notes/Untitled.base",
-    "2026-02-10.md",
     "TryHackMe_Notes"
   ]
 }

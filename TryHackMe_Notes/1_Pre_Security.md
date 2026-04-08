@@ -19,7 +19,7 @@
 
 - Some tasks for blue team include cyber security awareness, documenting & managing assets, preventative security, logging & monitoring, and Frameworks, Policies, & Procedures.
 
-- SOC -> Security Operations Center: is a team of cyber security professionals that monitors the network and its systems to detect malicious cyber security events. Some main interests are: Trends & Vulnerability Awareness, Policy Violations, Unauthorized & Illegal Activity, and Intrusion & Breach Detection.
+- SOC -> Security Operations Center: is a team of cyber security professionals that monitor the network and its systems to detect malicious cyber security events. Some main interests are: Trends & Vulnerability Awareness, Policy Violations, Unauthorized & Illegal Activity, and Intrusion & Breach Detection.
 
 - Digital Forensics is the application of traditional forensic science processes to digital devices. Digital forensics is used to preserve and analyze digital evidence to aide in the investigation of incidents, such as a breach. This may involve looking at information from: File System, System Memory, System Logs, and Network Logs
 
@@ -53,17 +53,17 @@
     - Maintaining strong security best practices and supporting incident response measures.
     - Post-incident reporting and preparing for future attacks, considering learning and adaptations to take from incidents.
 
-- Digital Forensics Examiner - responsiblities:
+- Digital Forensics Examiner - responsibilities:
     - Collect digital evidence while observing legal procedures.
     - Analyze digital evidence to find answers related to the case.
     - Document your findings and report on the case.
 
  - Malware Analyst - responsibilities:
     - Carry out static analysis of malicious programs, which entails reverse-engineering.
-    - Conduct dynamic analysis of malware ssamples by observing their activities in a controlled evironment.
+    - Conduct dynamic analysis of malware samples by observing their activities in a controlled environment.
     - Document and report all findings.
 
-- Penetration Tester - responsibilites:
+- Penetration Tester - responsibilities:
     - Conduct tests on computer systems, networks, and web-based applications.
     - Perform security assessments, audits, and analyze policies.
     - Evaluate and report on insights, recommending actions for attack prevention.
@@ -91,19 +91,19 @@
 
 ![[Pasted image 20260215082113.png]]
 
-- An IP address is a set of numbers that are divided into four octets. The value of each octet will summarise to be the IP address of the device on the network. This number is calculated through a technique known as IP addressing & subnetting.
+- An IP address is a set of numbers that are divided into four octets. The value of each octet will summarize to be the IP address of the device on the network. This number is calculated through a technique known as IP addressing & subnetting.
 
-- An IP address can change from device to device but cannot be active simultaneously more than once wihtin the same network.
+- An IP address can change from device to device but cannot be active simultaneously more than once within the same network.
 
 - IP Addresses follow a set of standards known as protocols.
 
 - A public address is used to identify the device on the Internet, whereas a private address is used to identify a device amongst other devices.
 
-- Public IP addresses are given by your Internet Service Provider (ISP) at a montly fee (your bill!).
+- Public IP addresses are given by your Internet Service Provider (ISP) at a monthly fee (your bill!).
 
 - IPv4 uses a numbering system of 2^32 IP addresses (4.29 billion)
 
-- IPv6 is a new iteration of the Internet Protocol addressing scheme to help tackle the shortage of addresses for IPv5. IPv6 supports up to 2^128 of IP addresses (340 trillion-puls) and is more efficient due to new methodologies.
+- IPv6 is a new iteration of the Internet Protocol addressing scheme to help tackle the shortage of addresses for IPv4. IPv6 supports up to 2^128 of IP addresses (340 trillion-plus) and is more efficient due to new methodologies.
 
 ![[Pasted image 20260215082220.png]]
 
@@ -122,10 +122,9 @@
 - Topology - referring to the design or look of the network at hand.
 
 - Star Topology - Devices are individually connected via a central networking device such as a switch or hub. This topology is most commonly found today because of its reliability and scalability - despite the cost. Any information sent to a device in this topology is sent via the central device which it connects. Because more cabling and the purchase of dedicated networking equipment is required for this topology, it is more expensive than any other topologies. However, this topology is much more scalable in nature, which means that it is very easy to add more devices as the demand for the network increases. Unfortunately, the more the network scales, the more maintenance is required to keep the network functional.
+![[Pasted image 20260408091752.png]]
 
-![[Pasted image 20260215082254.png]]
-
-- Bus Topology - This type of connection relies upon a single connection which is known as a backbone cable. this type of topology is similar to the leaf off of a tree in the sense that devices (leaves) stem from where the branches are on this cable. Because all data is destined for each deivce travels along the same cable, it is very quickly prone to becoming slow and bottlenecked if devices within teh topology simultaneously requesting data. This bottleneck also results in very difficult troubleshooting because it quickly becomes difficult to identify which device is experiencing issues with data all travelling along the same route. Bus topologies are one of the easier and more cost-efficient topologies to set up because of their expenses, such as cabling or dedicated networking equipment used to connect these devices. Lastly, another disadvantage fo the bus topology is that there is little redundancy in place in case of failures.
+- Bus Topology - This type of connection relies upon a single connection which is known as a backbone cable. This type of topology is similar to the leaf off of a tree in the sense that devices (leaves) stem from where the branches are on this cable. Because all data is destined for each deivce travels along the same cable, it is very quickly prone to becoming slow and bottlenecked if devices within teh topology simultaneously requesting data. This bottleneck also results in very difficult troubleshooting because it quickly becomes difficult to identify which device is experiencing issues with data all travelling along the same route. Bus topologies are one of the easier and more cost-efficient topologies to set up because of their expenses, such as cabling or dedicated networking equipment used to connect these devices. Lastly, another disadvantage fo the bus topology is that there is little redundancy in place in case of failures.
 
 ![[Pasted image 20260215082302.png]]
 
@@ -133,7 +132,7 @@
 
 ![[Pasted image 20260215082309.png]]
 
-- What is a Switch? Switches are dedicated devices within a network that are designed to aggregate multiple other devices such as computers, printers, or any other networking-capable device suing ethernet. These various devices plug into a switch's port. Switches are usually found in larger networks such as businesses, schools, or similar-sized networks, where there are many devices to connect to the network. Switches can connect a large number of devices by having ports of 4, 8, 16, 24, 32, and 64 for devices to plug into. Switches are much more efficient than their lesser counterpart (hubs/repeaters). Switches keep track of what device is connected to which port. This way, when they receive a packet, instead of repeating that packet to every port like a hub would do, it just sends it to the intended target, thus reducing network traffic.
+- What is a Switch? Switches are dedicated devices within a network that are designed to aggregate multiple other devices such as computers, printers, or any other networking-capable device using ethernet. These various devices plug into a switch's port. Switches are usually found in larger networks such as businesses, schools, or similar-sized networks, where there are many devices to connect to the network. Switches can connect a large number of devices by having ports of 4, 8, 16, 24, 32, and 64 for devices to plug into. Switches are much more efficient than their lesser counterpart (hubs/repeaters). Switches keep track of what device is connected to which port. This way, when they receive a packet, instead of repeating that packet to every port like a hub would do, it just sends it to the intended target, thus reducing network traffic.
 
 ![[Pasted image 20260215082317.png]]
 
@@ -149,7 +148,7 @@
 
 - Network administrators use subnetting to categorize and assign specific parts of a network to reflect this. Subnetting is achieved by splitting up the number of hosts that can fit within the network, represented by a number called a subnet mask. As we can recall, an IP address is made up of four sections called octets. The same goes for a subnet mask, which is also represented as a number of four bytes (32 bits), ranging from 0 to 255 (0 - 255). Subnets use IP addresses in three different ways: 1) Identify the network address, 2) Identify the host address, 3) identify the default gateway. Default gateways usually use either the first or last host address in a network (.1 or .254).
 
-- Address Resolution Protocol (ARP), is the technology that is responsible for allowing devices to identify themselves on a network. Simply, ARP allows a device to associate its MAC address with an IP address on the network. Each device on a network will keep a log of the MAC address associated with other devices. When devices wish to communicate with another, they will send a broadcast to the entiere network searching for the specific device. Devices can use ARP to find the MAC address (and therefore the physical identifier) of a device for communication.
+- Address Resolution Protocol (ARP), is the technology that is responsible for allowing devices to identify themselves on a network. Simply, ARP allows a device to associate its MAC address with an IP address on the network. Each device on a network will keep a log of the MAC address associated with other devices. When devices wish to communicate with another, they will send a broadcast to the entire network searching for the specific device. Devices can use ARP to find the MAC address (and therefore the physical identifier) of a device for communication.
 
 - How does ARP work? Each device within a network has a ledger to store information on, which is called a cache. In the context of ARP, this cache stores the identifiers of other devices on the network. In order to map these two identifiers together (IP address and MAC address), ARP sends two type of messages: 1) ARP Request & 2) ARP Reply. When an ARP request is sent, a message is broadcasted on the network to other devices asking, "What is the mac address that owns this IP address?" When the other device receives that message, they will only respond if they own that IP address and will send an ARP reply with its MAC address. The requesting device can now remember this mapping and store it in its ARP cache for future use.
 
@@ -206,30 +205,30 @@
    - Source Address - The IP address of the device that the packet is being sent from so that data knows where to return to.
    - Destination Address - The device's IP address the packet is being sent to so that data knows where to travel next.
 
- - TCP/IP protocol conists of four layers and is arguably just a summarized version of the OSI model. These layers are: 1) Application, 2) Transport, 3) Internet, and 4) Network Interface.
+ - TCP/IP protocol consists of four layers and is arguably just a summarized version of the OSI model. These layers are: 1) Application, 2) Transport, 3) Internet, and 4) Network Interface.
 
- - Very similar to how the OSI model works, information is added ot each layer of the TCP model as the piece of data (or packet) traverses it.
+ - Very similar to how the OSI model works, information is added to each layer of the TCP model as the piece of data (or packet) traverses it.
 
  - TCP guarantees that any data sent will be received on the other end. This process is named the three-way handshake.
 
  - TCP packets contain various sections of information known as headers that are added from encapsulation.
      - Source Port - This value is the port opened by the sender to send the TCP packet from. This value is chosen randomly (out of the ports from 0 - 65535 that aren't already in use at that time).
-     - Destination Port - This value is the port nubmer that an application or service is running on the remote host (the one receiving data); for example a webserver running on port 80. Unlike the source port, this value is not chosen at random.
+     - Destination Port - This value is the port number that an application or service is running on the remote host (the one receiving data); for example a webserver running on port 80. Unlike the source port, this value is not chosen at random.
      - Source IP - This is the IP address of the device that is sending the packet.
      - Destination IP - This is the IP address of the device that the packet is destined for.
      - Sequence Number - When a connection occurs, the first piece of data transmitted is given a random number.
      - Acknowledgement Number - After a piece of data has been given a sequence number, the number for the next piece of data will have the sequence number +1.
      - Checksum - This value is what gives TCP integrity. A mathematical calculation is made where the output is remembered. When the receiving device performs the mathematical calculation, the data must be corrupt if the output is different from what was sent.
      - Data - This header is where the data, i.e. bytes of a file that is being transmitted is stored.
-     - Flag - This header determines how the packet should be handled by either device during the handshake process. Specific flags will determine specific behaviours.
+     - Flag - This header determines how the packet should be handled by either device during the handshake process. Specific flags will determine specific behaviors.
   
-- Thre-way handshake - the term given for the process used to establish a connection between two devices. The Three-way handshake communicates using a few special messages. Below are some of the main ones:
-   - 1 - SYN - A SYN message is the initial packet sent by a client during the handshake. This packet is used to initiate a conneciton and synchronize the two devices together.
+- Three-way handshake - the term given for the process used to establish a connection between two devices. The Three-way handshake communicates using a few special messages. Below are some of the main ones:
+   - 1 - SYN - A SYN message is the initial packet sent by a client during the handshake. This packet is used to initiate a connection and synchronize the two devices together.
    - 2 - SYN/ACK - This packet is sent by the receiving device (server) to acknowledge the synchronization attempt from the client.
-   - 3 - ACK - The acknowledgement packet can be used by either the client or server to acknowledge that a series of messages/packets have been successfully recieved.
+   - 3 - ACK - The acknowledgement packet can be used by either the client or server to acknowledge that a series of messages/packets have been successfully received.
    - 4 - DATA - Once a connection has been established, data (such as bytes of a file) is sent via the "DATA" message.
-   - 5 - FIN - This packet is used ot cleanly (properly) close the conneciton after it has been complete.
-   - \# - RST - This packet abruptly ends all communication. This is the last resport and indicates there was a problem during the process. For example, if the service or application is not working correctly, or the system has faults such as low resources.
+   - 5 - FIN - This packet is used to cleanly (properly) close the connection after it has been complete.
+   - \# - RST - This packet abruptly ends all communication. This is the last response and indicates there was a problem during the process. For example, if the service or application is not working correctly, or the system has faults such as low resources.
  
 ![[Pasted image 20260215082600.png]]
 
@@ -244,23 +243,23 @@
 
 ### Extending Your Network
 
-- Port forwarding is an essential component in connecting applications and services to the Inernet. Without port forwarding, applications and services such as web servers are only available to devices within the same direct network.
+- Port forwarding is an essential component in connecting applications and services to the Internet. Without port forwarding, applications and services such as web servers are only available to devices within the same direct network.
 
 - Port forwarding is configured at the router of the network.
 
 - A firewall is a device within a network responsible for determining what traffic is allowed to enter and exit. Think of a firewall as border security for a network.
 
-- Sateful Firewall: This type of firewall uses the entire information from a connection; rather than inspecting an individual packet, this firewall determines the behavior of a device based upon the entire connection. This firewall type consumes many resources in comparison to stateless firewalls as the decision making is dynamic. If a connection from a host is bad, ti will block the entire device.
+- Stateful Firewall: This type of firewall uses the entire information from a connection; rather than inspecting an individual packet, this firewall determines the behavior of a device based upon the entire connection. This firewall type consumes many resources in comparison to stateless firewalls as the decision making is dynamic. If a connection from a host is bad, it will block the entire device.
 
-- Stateless Firewall: This firewall type uses a static set of rules to determine whether or not individual packets are acceptable or not. For example a device sending a bad packet will not necessarily mean that the entire device is then blocked. Whilst these firewalls use much fewer resources than alternatives, they are much dumber. If a rule is not exactly matched, it is effectively useless. However, these firewalls are great when receiving large amounts of traffic froma  set of hosts (such as a DDoS attack).
+- Stateless Firewall: This firewall type uses a static set of rules to determine whether or not individual packets are acceptable or not. For example a device sending a bad packet will not necessarily mean that the entire device is then blocked. Whilst these firewalls use much fewer resources than alternatives, they are much dumber. If a rule is not exactly matched, it is effectively useless. However, these firewalls are great when receiving large amounts of traffic from a set of hosts (such as a DDoS attack).
 
 - Virtual Private Network (VPN): Is a technology that allows devices on separate networks to communicate securely by creating a dedicated path between each other over the Internet (known as a tunnel). Devices connected within this tunnel form their own private network.
 
-- VPN allows networks in different goegraphical locations to be connectted, offers privacy, and offers anonymity.
+- VPN allows networks in different geographical locations to be connected, offers privacy, and offers anonymity.
 
 - VPN technology has improved over the years. Existing VPN technologies are:
     - PPP - this technology is used by PPTP to allow for authentication and provide encryption of data. VPNs work by using a private and public certificate. A private key and certificate must match for you to connect. This technology is not capable of leaving a network by itself (non-routable).
-    - PPTP - The Point-to-Point Tunneling Protocol (PPTP) is a technology that allows th data from PPP to travel and leave a network. PPTP is very easy to set up and is supported by many devices. It is, however, weakly encrypted in comparison to alternatives.
+    - PPTP - The Point-to-Point Tunneling Protocol (PPTP) is a technology that allows the data from PPP to travel and leave a network. PPTP is very easy to set up and is supported by many devices. It is, however, weakly encrypted in comparison to alternatives.
     - IPSec - Internet Protocol Security (IPsec) encrypts data using the existing Internet Protocol (IP) framework. IPSec is difficult to set up in comparison to alternatives; however, if successful, it boasts strong encryption and is also supported on many devices.
  
 - Router - A router's job is to connect networks and pass data between them. It does this by using routing (hence the name router!).
@@ -291,7 +290,7 @@
     - A Record: These records resolve to IPv4 addresses, for example 104.26.10.229.
     - AAAA Record: These records resolve to IPv6 addresses, for example 2606:4700:20::681a:be5
     - CNAME Record: These records resolve to another domain name, for example, TryHackMe's online shop has the subdomain name store.tryhackme.com which returns a CNAME record shops.shopify.com. Another DNS request would then be made to shops.shopify.com to work out the IP address.
-    - MX Record: These records resolf to the address of the servers that handle the email for the domain you are querying, for example an MX record response for tryhackme.com would look something like alt1.aspmx.l.google.com. These records also come with a priority flag. This tells the cliend in which order to try the servers, this is perfort for if the main server goes down and emai lneeds to be sent to a backup server.
+    - MX Record: These records resolve to the address of the servers that handle the email for the domain you are querying, for example an MX record response for tryhackme.com would look something like alt1.aspmx.l.google.com. These records also come with a priority flag. This tells the client in which order to try the servers, this is for if the main server goes down and email needs to be sent to a backup server.
     - TXT Record: TXT records are free text fields where any text-based data can be stored. TXT records have multiple uses, but some common ones can be to list servers that have the authority to send an email on behalf of the domain (this can ehlp in the battle against spam and spoofed email. They can also be used to verify ownership of the domain name when signing up for third party services.
 
 - What happens when you make a DNS request?
@@ -315,7 +314,7 @@
 	- **Host:** The domain name or IP address of the server you with to access.
 	- **Port:** The Port that you are going to connect to, usually 80 for HTTP and 443 for HTTPS, but this can be hosted on any port between 1  65535.
 	- **Path:** The file name or location of the resource you are trying to access.
-	- **Query String:** Extra bits of information that can be sent to the requested path. For example, /blog?id=1 woudl tell the blog path that you wish to receive the blog article with the id of 1.
+	- **Query String:** Extra bits of information that can be sent to the requested path. For example, /blog?id=1 would tell the blog path that you wish to receive the blog article with the id of 1.
 	- **Fragment:** This is a reference to a location on the actual page requested. this is commonly used for pages with long content and can have a certain part of the page directly linked to it, so it is viewable to the user as they access the page. 
 - It's possible to make a request to a web server with just one line **GET /HTT/1.1**
 - HTTP methods are a way for the client to show their intended action when making an HTTP request.
@@ -365,7 +364,7 @@
 	- HTML, to build websites and define their structure
 	- CSS, to make websites look pretty by adding styling options
 	- JavaScript, implement complex features on pages using interactivity 
-- HyperText Markup Language (HTML) is the language websites are written in. elements (also known as tags) are the building blocks of HTML pages and tells the browser how to display content.
+- HyperText Markup Language (HTML) is the language websites are written in. Elements (also known as tags) are the building blocks of HTML pages and tells the browser how to display content.
 - You can view the HTML of any website by right-clicking and selecting "View Page Source"
 - JavaScript (JS) is one of the most popular coding languages in the work and allows pages to become interactive.
 - Sensitive information can be potentially leveraged to further an attacker's access within different parts of a web application by viewing the page source.
@@ -463,7 +462,7 @@
 | rwxr-xr-x | 755     | Owner can do everything, others can read and execute |
 | rw-r--r-- | 644     | Owner can read/write, others can only read           |
 | rwx------ | 700     | Only the owner has access                            |
-- Understanding numeric permissions is important because many Linux commands user numeric values (e.x. chmod 755 file)
+- Understanding numeric permissions is important because many Linux commands use numeric values (e.x. chmod 755 file)
 - Common Linux directories
 	- /etc
 		- This root directory is one of the most important root directories. The etc folder (short for etcetera) is a commonplace location to store system files that are used by your operating system. 
@@ -478,7 +477,7 @@
 		- Once we press enter to execute the command, nano will launch. Where we can just being to start entering or modifying our text. You can navigate each line using the "up" and "down" arrow keys or start a new line using the "Enter" key on your keyboard.
 		- VIM - Is a much more advanced text editor. Some of VIM's benefits include:
 			- Customizable - you can modify the keyboard shortcuts
-			- Syntax Highlighting - this is useful if you are writing or maintaining code, making it a popular choice for software develpers
+			- Syntax Highlighting - this is useful if you are writing or maintaining code, making it a popular choice for software developers
 			- VIM works on all terminals where nano may not be installed
 			- [[VIM_Cheatsheet]]
 - Downloading files (wget). **wget** command allows us to download files from the web via HTTP -- as if you were accessing the file in your browser. We simply need to provide the address of the resource that we with to download.
@@ -529,7 +528,7 @@
 - [Crontab Generator - Generate crontab syntax](https://crontab-generator.org/)
 - [Crontab.guru - The cron schedule expression generator](https://crontab.guru/)
 - Crontabs can be edited by using the **crontab - e**, where you can select an editor (such as Nano) to edit your crontab.
-- When developers with to submit software to the community, they will submit it to an "apt" repository. When using the **ls** command on a Ubuntu 20.04 Linux machine, these files serve as the gateway/registry.
+- When developers wish to submit software to the community, they will submit it to an "apt" repository. When using the **ls** command on a Ubuntu 20.04 Linux machine, these files serve as the gateway/registry.
  ![[Pasted image 20260215104624.png]]
  - Additional repositories can be added using the **add-apt-repository** command or by listing another provider!
  - Normally we use the **apt** command to install software onto our Ubuntu system. The **apt** command is part of the package management software also named **apt**. **Apt** contains a whole suite of tools that allows us to manage the packages and sources of our software, and to install or remove software at the same time. 
