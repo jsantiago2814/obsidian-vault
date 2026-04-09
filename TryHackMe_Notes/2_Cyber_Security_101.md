@@ -182,7 +182,7 @@
 - **Get-FileHash** is a useful cmdlet for generating file hashes. 
 - **Invoke-Command** is essential for executing commands on remote systems, making it fundamental for system administrators, security engineers, and penetration testers. 
 ### Linux Shells
-- When interacting with a shell, you must be in the directory where you want to perform operations. By default when you open a shell in most of the Linux distributions, you will be in your home directory. To see your current working directory, you can execute **pwd**, which stand for Print Working Directory.
+- When interacting with a shell, you must be in the directory where you want to perform operations. By default when you open a shell in most of the Linux distributions, you will be in your home directory. To see your current working directory, you can execute **pwd**, which stands for Print Working Directory.
 - The **grep** command is a very popular command among Linux users. This powerful command can search for any word or pattern inside a file. Suppose you want to search for a specific entries in a huge file. You can use the grep command along with the pattern of those entries, which will extract them for you. 
 ![[Pasted image 20260216113155.png]]
 - Multiple shells are installed in different Linux distributions. To see which shell you are using, type the following command: **echo $SHELL**
@@ -287,7 +287,7 @@
 - Default permanent coloring is shown below.
 ![[Pasted image 20260217143218.png]]
 - You can use the blue "shark button" to start network sniffing (capturing traffic), the red button will stop the sniffing, and the green button will restart the sniffing process.
-- Wireshark can combine two pcap files into one single file. YOu can use the "File --> Merge" menu path to merge a pcap with the processed one. 
+- Wireshark can combine two pcap files into one single file. You can use the "File --> Merge" menu path to merge a pcap with the processed one. 
 - Packets consist of 5 to 7 layers based on the OSI model.
 ![[Pasted image 20260217143444.png]]
 	- The Frame (Layer 1)
@@ -340,7 +340,7 @@
 	- In this context, "remote" means that at least one route separates our system from this network.
 	- Our system has the IP address **192.168.66.89** and belongs to the **192.168.66.0/24** network. In the terminal below we scan the target network **192.168.11.0/24** were there are two or more routers (hops) separate our local system from the targets.
 ![[Pasted image 20260218105301.png]]
-- Nmap offers a list scan with the option **-sL**.. This scan only lists the targets to scan without actually scanning them. For example, **nmap -sL 192.168.0.1/24** will list the 256 targets that will be scanned. This option helps confirm the targets before running the actual scan.
+- Nmap offers a list scan with the option **-sL**. This scan only lists the targets to scan without actually scanning them. For example, **nmap -sL 192.168.0.1/24** will list the 256 targets that will be scanned. This option helps confirm the targets before running the actual scan.
 - The **-sn** flag aims to discover live hosts without attempting to discover the services running on them. This might be helpful if you want to discover the devices on a network without causing much noise. 
 - By design, TCP has 65,535 ports, and the same applies to UDP.
 - The easiest and most basic way to know whether a TCP port is open would be to attempt to **telnet** to the port. 
@@ -387,7 +387,7 @@
 ![[Pasted image 20260219100816.png]]
 
 ![[Pasted image 20260219100831.png]]
-- **Symmetric encryption**, also known as **symmetric cryptography**, uses the same key to encrypt and decrypt the data. Keeping the kay secret is a must; it is also called **private key cryptography**. 
+- **Symmetric encryption**, also known as **symmetric cryptography**, uses the same key to encrypt and decrypt the data. Keeping the key secret is a must; it is also called **private key cryptography**. 
 ![[Pasted image 20260219101010.png]]
 - **Asymmetric Encryption** uses a pair of keys, one to encrypt and the other to decrypt. This is also called, **public key cryptography**. 
 ![[Pasted image 20260219101108.png]]
@@ -446,7 +446,7 @@
 - Hashing functions are designed as one-way functions. In other words, it is easy to calculate the hash value of a given input; however, it is a hard problem to find the original input given the hash value. In simple terms, a hard problem quickly becomes computationally infeasible in computer science.
 - This computational problem has its roots in mathematics as P vs NP.
 	- P (Polynomial Time): Class P covers the problems whose solution can be found in polynomial time.
-	- NO (Non-deterministic Polynomial Time): Problems in the class NP are those for which a given solution can be checked quickly, even though finding the solution itself might be hard.
+	- NP (Non-deterministic Polynomial Time): Problems in the class NP are those for which a given solution can be checked quickly, even though finding the solution itself might be hard.
 	- John the Ripper, or John as it's commonly shortened, is a tool for conducting fast brute force attacks on various hash types (dictionary attack). 
 - "Jumbo John" version of John the Ripper is the most popular extended version of John the Ripper.
 - To check if John the Ripper has been installed you can type **john** into the terminal. 
@@ -485,7 +485,7 @@
 		- Both are reverse Windows shells. The former is an inline (or single) payload, as indicated by the "_" between "shell" and "reverse." While the latter is a staged payload, as indicated by the "/" between "shell" and "reverse".
 - **Post** - Post modules will be useful on the final stage of the penetration testing process listed above, post-exploitation. 
 ![[Pasted image 20260221073246.png]]
-- The Metasploit Framework can be launched using **msfconsole**command on any system the Metasploit Framework is installed on.
+- The Metasploit Framework can be launched using **msfconsole** command on any system the Metasploit Framework is installed on.
 - The **msfconsole** can be used just like a regular command-line shell. 
 ![[Pasted image 20260221074437.png]]
 - It will support most Linux commands, including **clear** (to clear the terminal screen), but will not allow you to use some features of a regular command line.
@@ -578,7 +578,7 @@
 - When pen-testing a web application, it is important to check whether the website uses internal or external JS. This can be easily verified by viewing the page's source code.
 - Best practices - Avoid relying on Client-Side Validation Only, Refrain from Adding Untrusted Libraries, Avoid Hardcoded Secrets, Minify and Obfuscate You JavaScript Code.
 ### SQL Fundamentals
-- There are quite a few different types of databases that can be bult, but to primary types are: **relational databases** (aka SQL) & **non-relational databases** (aka NoSQL)
+- There are quite a few different types of databases that can be built, but two primary types are: **relational databases** (aka SQL) & **non-relational databases** (aka NoSQL)
 - ![[Pasted image 20260223153822.png]]
 - **Relational databases:** Store structured data, meaning the data inserted into this database follows a structure.
 - **Non-relational databases:** Instead of storing data the above way, store data in a non-tabular format. 
@@ -620,8 +620,8 @@
 	- **Access Other Systems on the Network**
 - **Reverse Shell** - A reverse shell, sometimes referred to as a "connect back shell," is one of the most popular techniques for gaining access to a system in cyberattacks. The connections initiate form the target system to the attacker's machine, which can help avoid detection from network firewalls and other security appliances.
 - **How Reverse Shells Work**
-	- **Set up a Netcat (nc) Listener** - A reverse shell will connect back to the attacker's machine. This machine will be waiting for a connection, so Netcat can be used ot listen to a connection using the following command **nc -lvnp 443**. 
-	- The **-l** option indicates to Netcat to listen or wait for a conneciton.
+	- **Set up a Netcat (nc) Listener** - A reverse shell will connect back to the attacker's machine. This machine will be waiting for a connection, so Netcat can be used to listen to a connection using the following command **nc -lvnp 443**. 
+	- The **-l** option indicates to Netcat to listen or wait for a connection.
 	- **-v** option enables verbose mode. 
 	- **-n** option prevents the connections from using DNS for lookup.
 	- **-p** flag indicates the port that will be used to wait for the connection.
