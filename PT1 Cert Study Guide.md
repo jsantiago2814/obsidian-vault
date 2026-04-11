@@ -4,12 +4,12 @@ Your notes are comprehensive and well-organized. Below is a structured study gui
 
 ## Exam Structure Overview
 
-|Section|Weight|Focus Areas|
-|---|---|---|
-|**Web Application**|~33%|OWASP Top 10, Burp Suite, authentication flaws, file inclusion, injection|
-|**Network**|~33%|Service enumeration, protocol exploitation, pivoting, password attacks|
-|**Active Directory**|~33%|Kerberos attacks, LDAP enumeration, lateral movement, privilege escalation|
-|**Reporting**|Graded|Professional documentation, CVSS scoring, remediation recommendations|
+| Section              | Weight | Focus Areas                                                                |
+| -------------------- | ------ | -------------------------------------------------------------------------- |
+| **Web Application**  | ~40%   | OWASP Top 10, Burp Suite, authentication flaws, file inclusion, injection  |
+| **Network**          | ~36%   | Service enumeration, protocol exploitation, pivoting, password attacks     |
+| **Active Directory** | ~24%   | Kerberos attacks, LDAP enumeration, lateral movement, privilege escalation |
+| **Reporting**        | Graded | Professional documentation, CVSS scoring, remediation recommendations      |
 
 ## Phase 1: Reconnaissance
 

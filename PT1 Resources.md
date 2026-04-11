@@ -6,11 +6,11 @@ Based on the exam structure and reviews from recent test-takers, here's a compre
 
 The PT1 is a 48-hour practical exam covering three domains:
 
-|Domain|Weight|Focus|
-|---|---|---|
-|Web Application Security|~40-60%|OWASP Top 10, manual testing|
-|Network Security|~36%|Linux/Windows enumeration and privilege escalation|
-|Active Directory|~24%|Domain enumeration, Kerberos attacks, lateral movement|
+| Domain                   | Weight | Focus                                                  |
+| ------------------------ | ------ | ------------------------------------------------------ |
+| Web Application Security | ~40%   | OWASP Top 10, manual testing                           |
+| Network Security         | ~36%   | Linux/Windows enumeration and privilege escalation     |
+| Active Directory         | ~24%   | Domain enumeration, Kerberos attacks, lateral movement |
 
 **Key insight from reviews:** The web application section is reportedly the most challenging and heavily weighted—allocate significant time there. [systemweakness.com](https://systemweakness.com/full-guide-to-help-you-pass-your-tryhackme-pt1-exam-3cf1f1fcb30b) [mresecurity.com](https://mresecurity.com/blog/try-hack-me-pt-1-certification-review-entry-level-penetration-testing-exam)
 

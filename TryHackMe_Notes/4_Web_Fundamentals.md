@@ -56,7 +56,7 @@
 - JavaScript (JS) is one of the most popular coding languages in the world and allows pages to become interactive. HTML is used to create the website structure and content, while JavaScript is used to control the functionality of web pages - without JavaScript, a page would not have interactive elements and would always be static.
 - Sensitive Data Exposure occurs when a website doesn't properly protect (or remove) sensitive clear-text information to the end-user; usually found in a site's frontend source code.
 - We now know that websites are built using many HTML elements (tags), all of which we can see simply by "viewing the page source". A website developer may have forgotten to remove login credentials, hidden links to private parts of the website or other sensitive data shown in HTML or JavaScript.
-- **HTML Injection** - HTML Injection is a vulnerability that occurs when unfiltered user input is displayed on the page. If a website fails to sanitize user input (filer any "malicious" text that a user inputs into a website), and that input is used on the page, an attacker can inject HTML code into a vulnerable website.
+- **HTML Injection** - HTML Injection is a vulnerability that occurs when unfiltered user input is displayed on the page. If a website fails to sanitize user input (filter any "malicious" text that a user inputs into a website), and that input is used on the page, an attacker can inject HTML code into a vulnerable website.
 ![[Pasted image 20260304135505.png]]
 ### HTTP in Detail
 - HyperText Transfer Protocol (HTTP) is what's used whenever you view a website, developed by Tim Berners-Lee and his team between 1989 - 1991.
@@ -110,13 +110,13 @@
 	- **Cache-Control**: How long to store the content of the response in the browser's cache before it requests it again.
 	- **Content-Type**: This tells the client what type of data is being returned, i.e., HTML, CSS, JavaScript, Images, PDF, Video, etc. Using the content-type header the browser then knows how to process the data.
 	- **Content-Encoding**: What method has been used to compress the data to make it smaller when sending it over the internet.
-- **Cookies** - Cookies are just a small piece of data that is stored on your computer. Cookies are save when you receive a "Set-Cookie" header from a web server. Then every further request you make, you'll send the cookie data back to the web server. 
+- **Cookies** - Cookies are just a small piece of data that is stored on your computer. Cookies are saved when you receive a "Set-Cookie" header from a web server. Then every further request you make, you'll send the cookie data back to the web server. 
 ![[Pasted image 20260304143203.png]]
 ### Burp Suite: The Basics
 - Refer to [[3_Jr_Penetration_Tester]]
 ### OWASP API Security Top 10-1
 - Open Worldwide Application Security Project (OWASP) is an non-profit and collaborative online community that aims to improve application security via a set of security principles, articles, documentation etc.
-- API stands for Application Programming Interface. It is a middleware that facilitates the communication of two software components utilizing a set of protocols and definitions. In the API  context, the term 'application' refers to any software having specific functionality, and 'interface' refers to the service contract between the two apps that make communication possible via requests and responses. 
+- API stands for Application Programming Interface. It is a middleware that facilitates the communication of two software components utilizing a set of protocols and definitions. In the API context, the term 'application' refers to any software having specific functionality, and 'interface' refers to the service contract between the two apps that make communication possible via requests and responses. 
 - **Vulnerability I - Broken Object Level Authorization (BOLA)** - Generally, API endpoints are utilized for a common practice of retrieving and manipulating data through object identifiers. BOLA refers to Insecure Direct Object Reference (IDOR) - which creates a scenario where the user uses the **input functionality and gets access to the resources they are not authorized to access.** 
 - **Likely Impact** - The absence of controls to prevent **unauthorized object access can lead to data leakage** and, in some cases, complete account takeover.
 - **Vulnerability II - Broken User Authentication (BUA)** - User authentication is the core aspect of developing any application containing sensitive data. Broken User Authentication (BUA) reflects a scenario where an API endpoint allows an attacker to access a database or acquire a higher privilege than the existing one. The primary reason behind BUA is either **invalid implementation of authentication** like using incorrect email/password queries etc., or the absence of security mechanisms like authorization headers, tokens etc.
@@ -129,7 +129,7 @@
 - With unrestricted upload access to a server (and the ability to retrieve data at will), an attacker could deface or otherwise alter existing content -- up to and including injecting malicious webpages, which lead to further vulnerabilities such as XSS or CSRF.
 - By uploading arbitrary files, an attacker could potentially also use the server to host and/or serve illegal content, or to leak sensistive information.
 - As with any kind of hacking, enumeration is key. The more we understand about our environment, the more we're able to do with it. Looking at the source code for the page is good to see if any kind of client-side filtering is being applied.
-- Scanning with a directory bruteforcer such as Gobuster is usually helpful in web attacks, and may reveal where files are being uploaded to; Gobuster is not longer installed by default on Kali, but can be installed with **sudo apt install gobuster**. 
+- Scanning with a directory bruteforcer such as Gobuster is usually helpful in web attacks, and may reveal where files are being uploaded to; Gobuster is no longer installed by default on Kali, but can be installed with **sudo apt install gobuster**. 
 ### Pickle Rick
 - 
 ## OWASP Top 10 (2025)
@@ -149,7 +149,7 @@
 ### OWASP Top 10 2025: Application Design Flaws
 - **AS02: Security Misconfigurations** - Security misconfigurations happen when systems, servers, or applications are deployed with unsafe defaults, incomplete settings, or exposed services. These are not code bugs but mistakes in how the environment, software, or network is set up. They create easy entry points for attackers.
 - Even small misconfigurations can expose sensitive data, enable privilege escalation, or give attackers a foothold into the system. 
-- **AS03: Software Supply Chain Failures** - Software supply chain failures happen when applications rely on components, libraries, services, or models that are compromised, outdated, or improperly verified. These weaknesses are not inherent in  your code, but rather in the software and tools you depend on. Attackers exploit these weak links to inject malicious code, bypass security, or steal sensitive data.
+- **AS03: Software Supply Chain Failures** - Software supply chain failures happen when applications rely on components, libraries, services, or models that are compromised, outdated, or improperly verified. These weaknesses are not inherent in your code, but rather in the software and tools you depend on. Attackers exploit these weak links to inject malicious code, bypass security, or steal sensitive data.
 - **AS04: Cryptographic Failures** - Cryptographic failures happen when encryption is used incorrectly or not at all. This includes weak algorithms, hard-coded keys, poor key handling, or unencrypted sensitive data. These flaws let attackers access information that should be private.
 - **AS06: Insecure Design** - Insecure design happens when flawed logic or architecture is built into a system from the start. These flaws stem from skipped threat modelling, no design requirements or reviews, or accidental errors. 
 ### OWASP Top 10 2025: Insecure Data Handling
@@ -159,7 +159,7 @@
 	- SQL Injection
 	- Command Injection
 	- API Prompts
-	- Server Side Template Inejection (SSTI)
+	- Server Side Template Injection (SSTI)
 - **A08: Software or Data Integrity Failures** - Software or Data Integrity Failures occur when an application relies on code, updates, or data it assumes are safe, without verifying their authenticity, integrity, or origin. This includes trusting software updates without verification, loading scripts or configuration files from untrusted sources, failing to validate data that impacts application logic, or accepting data such as binaries, templates, or JSON files without confirming whether it has been altered.
 
 

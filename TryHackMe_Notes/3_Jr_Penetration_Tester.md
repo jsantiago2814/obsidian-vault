@@ -15,36 +15,36 @@
     - Grey hat - These people use their skills to benefit others often; however, they do not respect/follow the law or ethical standards at all times.
     - Black hat - These people are criminals and often seek to damage organizations or gain some form of financial benefit at the cost of others.
  - Rules of Engagement (ROE) - The ROE is a document that is created at the initial stages of a penetration testing engagement. This document consists of three main sections, which are ultimately responsible for deciding how the engagement is carried out.
-     - Permission - This section of the document gives explicit permission for the engagement to be carried out. This permission is essential to legally protect individuals and organizations for the activities they carr out.
-     - Test Scope - This section of the document will annotate specific targets to which the engagemetn should apply. For example, the penetration test may only apply to certain servers or applications but not the entire network.
+     - Permission - This section of the document gives explicit permission for the engagement to be carried out. This permission is essential to legally protect individuals and organizations for the activities they carry out.
+     - Test Scope - This section of the document will annotate specific targets to which the engagement should apply. For example, the penetration test may only apply to certain servers or applications but not the entire network.
      - Rules - The rules section will define exactly the techniques that are permitted during the engagement. For example, the rules may specifically state that techniques such as phishing attacks are prohibited, but MITM (Man-in-the-Middle) attacks are okay.
 - The steps a penetration tester takes during an engagement is known as the methodology. A general theme seen in industry-standard methodologies are:
-    - Information Gathering - This stage involves collecting as much publically accessible information about a target/organization as possible, for example, OSINT (Open Source Intelligence) and research. NOTE: This does not involve scanning any systems.
+    - Information Gathering - This stage involves collecting as much publicly accessible information about a target/organization as possible, for example, OSINT (Open Source Intelligence) and research. NOTE: This does not involve scanning any systems.
     - Enumeration/Scanning - This stage involves discovering applications and services running on the systems. For example, finding a web server that may be potentially vulnerable.
     - Exploitation - This stage involves leveraging vulnerabilities discovered on a system or application. This stage can involve the use of public exploits or exploiting application logic.
-    - Privilege Escalation - Once you have successfully exploited a system or application (known as a foothold), this stage is the attempt to expand your access to a system. You can escalate horizontally and vertically, where horizontaly is accessing another account of the same permission group (i.e. another user), whereas vertically is that of another permission group (i.e. an administrator).
+    - Privilege Escalation - Once you have successfully exploited a system or application (known as a foothold), this stage is the attempt to expand your access to a system. You can escalate horizontally and vertically, where horizontally is accessing another account of the same permission group (i.e. another user), whereas vertically is that of another permission group (i.e. an administrator).
     - Post-exploitation - This stage involves a few sub-stages: 1) What other hosts can be targeted (pivoting). 2) What additional information can we gather from the host now that we are a privileged user. 3) Cover your tracks. 4) Reporting.
-- The Open Source Security Testing Methodology Manual (OSSTMM) provides a detailed framework of testing strategires for systems, software, applictions, communications, and the human aspect of cybersecurity. The methodology focuses on how these systems, applications communicate, so it includes a methodology for: 1) Telecommunications (phones, VoIP, etc.), 2) Wired Networks, 3) Wireless communications
-- Open Web Application Security Project (OWASP) framework is a community-driven and frequently updated framework used solely to test the securiyt of web applications and services. The foundation regularly writes reports stating the top ten security vulnerabilities a web application may have, the testing approach, and remediation.
-- NIST Cybersecurity Framework is a popular framework used to improve an organizations cybersecruity standards and manage the risk of cyber threats. The framework provides guidelines on security controls & benchmarks for success for organizations from critical infrastructure (power plants, etc.) all through to commercial. There is a limited section on a standard guideline for the methodology a penetration tester shoul take.
-- National Cyber Security Centre Cyber Assessment Framework (NCSC CAF) is an extensive framework of fourteen principles used to assess the risk of various cyber threats and an organization's defenses against these. The framework applies to organizations considered to perform "vitally important services and activies" such as critical infrastructure, banking, and the likes. The framework mainly focuses on and assess the following topics: 1) Data Security, 2) System security, 3) Identity and access control, 4) Resiliency, 5) Monitoring, 6) Response and recovery planning.
+- The Open Source Security Testing Methodology Manual (OSSTMM) provides a detailed framework of testing strategies for systems, software, applications, communications, and the human aspect of cybersecurity. The methodology focuses on how these systems, applications communicate, so it includes a methodology for: 1) Telecommunications (phones, VoIP, etc.), 2) Wired Networks, 3) Wireless communications
+- Open Web Application Security Project (OWASP) framework is a community-driven and frequently updated framework used solely to test the security of web applications and services. The foundation regularly writes reports stating the top ten security vulnerabilities a web application may have, the testing approach, and remediation.
+- NIST Cybersecurity Framework is a popular framework used to improve an organizations cybersecurity standards and manage the risk of cyber threats. The framework provides guidelines on security controls & benchmarks for success for organizations from critical infrastructure (power plants, etc.) all through to commercial. There is a limited section on a standard guideline for the methodology a penetration tester should take.
+- National Cyber Security Centre Cyber Assessment Framework (NCSC CAF) is an extensive framework of fourteen principles used to assess the risk of various cyber threats and an organization's defenses against these. The framework applies to organizations considered to perform "vitally important services and activities" such as critical infrastructure, banking, and the likes. The framework mainly focuses on and assess the following topics: 1) Data Security, 2) System security, 3) Identity and access control, 4) Resiliency, 5) Monitoring, 6) Response and recovery planning.
 
 ![[Pasted image 20260224131140.png]]
 
 - Black-Box Testing: This testing process is a high-level process where the tester is not given any information about the inner workings of the application or service.
 - Grey-Box Testing: This testing process is the most popular for things such as penetration testing. It is a combination of both black-box and white-box testing processes. The tester will have some limited knowledge of the internal components of the application or piece of software.
-- White-Box Testing: This tesing process is a low-level process usually done by a software developer who knows programming and application logic. The tester will have full knowledge of the application and its expected behaviour and is much more time consuming thna black-box testing.
+- White-Box Testing: This testing process is a low-level process usually done by a software developer who knows programming and application logic. The tester will have full knowledge of the application and its expected behavior and is much more time consuming than black-box testing.
 ### Principles of Security
 - Defense in Depth is the use of multiple varied layers of security to an organization's systems and data in the hopes that multiple layers will provide redundancy in an organization's security perimeter.
 - The CIA triad is an information security model that is used in consideration throughout creating a security policy. This model has an extensive background, ranging from being used in 1998.
 - Consisting of three sections: Confidentiality, Integrity, and Availability (CIA), this model has quickly become an industry standard today. 
 ![[Pasted image 20260224131219.png]]
 - The CIA triad is unlike a traditional model where you have individual sections; instead, it is a continuous cycle.
-- **Confidentiality** - This element is the protection of data from unauthorized access and misuse. To provide confidentiality is to protect this dat from parties that it is not intended for.
+- **Confidentiality** - This element is the protection of data from unauthorized access and misuse. To provide confidentiality is to protect this data from parties that it is not intended for.
 - **Integrity** - The CIA triad element of integrity is the condition where information is kept accurate and consistent unless authorized changes are made. Hash verifications and digital signatures can help to ensure that transactions are authentic and that flat files have not been modified or corrupted.
 - **Availability** - In order for data to be useful, it must be available and accessible by the user. The main concern in the CIA triad is that the information should be available when authorized users need access to it. 
 - The levels of access given to individuals are determined by two primary factors: 1) The individual's role/function within the organization. 2) The sensitivity of the information being stored on the system.
-- Two key concepts are used to assign and manage the access rights of individuals: Privileged Indentity Management (PIM) and Privileged Access Management (PAM).
+- Two key concepts are used to assign and manage the access rights of individuals: Privileged Identity Management (PIM) and Privileged Access Management (PAM).
 - PIM is used to translate a user's role within an organization into an access role on a system.
 - PAM is the management of the privileges a system's access role has, amongst other things.
 - Some popular and effective security models are used to achieve the three elements of the CIA triad.
@@ -87,7 +87,7 @@
 	- **Network** - See all the network requests a page makes.
 - As a penetration tester, your role when reviewing a website or web application is to discover features that could potentially be vulnerable and attempt to exploit them to assess whether or not they are.
 - Finding interactive portions of the website can be as easy as spotting a login form to manually review the website's JavaScript. 
-- An excellent pace to start is just with your browser exploring the website and noting down the individual pages/areas/features with a summary for each one.
+- An excellent place to start is just with your browser exploring the website and noting down the individual pages/areas/features with a summary for each one.
 - **Viewing Page Source** - The page source is the human-readable code returned to our browser/client from the web server each time we make a request.
 - While viewing a website, you can right-click on the page, and you'll see an option menu that says View Page Source. 
 - Most browsers support putting view-source: in front of the URL for example, view-source:https://google.com
@@ -165,10 +165,10 @@
 - Cross-site Scripting, better known as XSS in the cybersecurity community, is classified as an injection attack were malicious JavaScript gets injected into a web application with the intention of being executed by other users.
 - In XSS, the payload is the JavaScript code we wish to be executed on the targets computer. There are two parts to the payload, the intention and the modification. 
 - Reflected XSS happens when user-supplied data in an HTTP request is included in the webpage source without any validation. 
-- Stored XSS, as the name infers, the XSS payload is stored on the web application (in a database, for example) and then gets run when other users visit the sit or web page. 
+- Stored XSS, as the name infers, the XSS payload is stored on the web application (in a database, for example) and then gets run when other users visit the site or web page. 
 - **DOM Based XSS** - DOM stands for Document Object Model and is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. 
 	- DOM based XSS is where the JavaScript execution happens directly in the browser without any new pages being loaded or data submitted to backend code. Execution occurs when the website JavaScript code acts on input or user interaction. 
-- Blind XSS is similar to a stored XSS in that your payload gets stored on the webite for another user to view, but in this instance, you can't see the payload working or be able to test it against yourself first. 
+- Blind XSS is similar to a stored XSS in that your payload gets stored on the website for another user to view, but in this instance, you can't see the payload working or be able to test it against yourself first. 
 ### Race Conditions
 - A race condition is a situation in a computer programs where the timing of events influences the behavior and outcome of the program. It typically happens when a variable gets accessed and modified by multiple threads. Due to a lack of proper lock mechanisms and synchronization between the different threads, an attacker might abuse the system and apply a discount multiple times or make money transactions beyond their balance. 
 - A thread is a lightweight unit of execution. It shares various memory parts and instructions with the process. 
@@ -209,7 +209,7 @@
 - When using Burp Suite Intruder to perform an attack, the first step is to examine the positions within the request where we want to insert our payloads.
 - The **Positions** tab of Burp Suite Intruder has a dropdown menu for selecting the attack type. Intruder offers four attack types, each serving a specific purpose.
 	- **Sniper**: The Sniper attack is the default and most commonly used option. It cycles through the payloads, inserting one payload at a time into each position defined in the request. Sniper attacks iterate through all the payloads in a linear fashion, allowing for precise and focused testing.
-	- **Battering ram**: The Battering ram attack type differs from Sniper in that it sends all payloads simultaneously , each payload inserted into its respective position. This attack type is useful when testing for race conditions or when payloads need to be sent concurrently.
+	- **Battering ram**: The Battering ram attack type differs from Sniper in that it sends all payloads simultaneously, each payload inserted into its respective position. This attack type is useful when testing for race conditions or when payloads need to be sent concurrently.
 	- **Pitchfork**: The Pitchfork attack type enables simultaneous testing of multiple positions with different payloads. It allows the tester to define multiple payload sets, each associated with a specific position in the request. Pitchfork attacks are effective when there are distinct parameters that need separate testing.
 	- **Cluster bomb**: The Cluster bomb attack type combines the Sniper and Pitchfork approaches. It performs a Sniper-like attack on each position but simultaneously tests all payloads from each set. This attack type is useful when multiple positions have different payloads and we want to test them all together. 
 ### Burp Suite: Other Modules
@@ -328,7 +328,7 @@ macOS - Option + Command + I
 
 - **TCP Flags** 
 	- **URG** - Urgent flag indicates that the urgent pointer field is significant.
-	- **ACK** - Acknowledgement flag indicates that the acknowledgement number is significant. I tis used to acknowledge the receipt of a TCP segment.
+	- **ACK** - Acknowledgement flag indicates that the acknowledgement number is significant. It is used to acknowledge the receipt of a TCP segment.
 	- **PSH** - Push flag asking TCP to pass the data to the application promptly.
 	- **RST** - Reset flag is used to reset the connection. Another device, such as a firewall, might send it to tear a TCP connection.
 	- **SYN** - Synchronize flag is used to initiate a TCP 3-way handshake and synchronize sequence number with the other host.
@@ -459,7 +459,7 @@ macOS - Option + Command + I
 - Hydra remains a very efficient tool that you can launch from the terminal to try different passwords - [[Tools]].
 ## Vulnerability Research
 ### Vulnerabilities 101
-- A vulnerability in cybersecurity is defined as a weakness or flaw in design, implementation or behaviors of a system or appliction. 
+- A vulnerability in cybersecurity is defined as a weakness or flaw in design, implementation or behaviors of a system or application. 
 - NIST defines vulnerability as "weakness in an information system, system security procedures, internal controls, or implementation that could be exploited or triggered by a threat source."
 - There are five (5) main categories of vulnerabilities:
 
@@ -483,7 +483,7 @@ macOS - Option + Command + I
 | CVSS is popular in organizations.                                                | CVSS heavily assesses vulnerabilities on an exploit being available. However, only 20% of all vulnerabilities have an exploit available. |
 | CVSS is a free framework to adopt and recommended by organizations such as NIST. | Vulnerabilities rarely change scoring after assessment despite the fact that new developments such as exploits may be found.             |
 - The Vulnerability Priority Rating (VPR) framework is a much more modern framework in vulnerability management - developed by Tenable, an industry solutions provider for vulnerability management. This framework is considered to be risk-driven; meaning that vulnerabilities are given a score with a heavy focus on the risk a vulnerability poses to the organization itself, rather than factors such as impact (like with CVSS).
-- VPR is considerably dynamic in its scoring, where the risk that a vulnerability may post can change almost daily as it ages.
+- VPR is considerably dynamic in its scoring, where the risk that a vulnerability may pose can change almost daily as it ages.
 
 | Advantages of VPR                                                                                                                       | Disadvantages of VPR                                                                                                                                                                                                    |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -491,7 +491,7 @@ macOS - Option + Command + I
 | VPR considers over 150 factors when calculating risk.                                                                                   | VPR can only be adopted apart of a commercial platform.                                                                                                                                                                 |
 | VPR is risk-driven and used by organizations to help prioritize patching vulnerabilities.                                               | VPR does not consider the CIA triad to the extent that CVSS does; meaning that risk to the confidentiality, integrity, and availability of data does not play a large factor in scoring vulnerabilities when using VPR. |
 | Scorings are not final and are very dynamic, meaning the priority a vulnerability should be given can change as the vulnerability ages. | *Intentionally left blank.*                                                                                                                                                                                             |
-|                                                                                                                                         |                                                                                                                                                                                                                         |
+
 - **Vulnerability Databases** - Thankfully for us, there are resources on the internet that keep track of vulnerabilities for all sorts of software, operating systems, and more! A couple of these resources are:
 	- NVD (National Vulnerability Database) - https://nvd.nist.gov/vuln
 	- Exploit-DB - http://exploit-db.com/
@@ -557,7 +557,7 @@ macOS - Option + Command + I
 - Both are reverse Windows shells. The former is an inline (or single) payload, as indicated by the "_" between "shell" and "reverse". While the latter is a staged payload, as indicated by the "/" between "shell" and "reverse". 
 - **Post** - Post modules will be useful on the final stage of the penetration testing process listed above, post-exploitation. 
 ![[Pasted image 20260301112257.png]]
-- The **ls** command lists the contents of the folder from which Metasploit was launched using the **msfconsole** command. Metaploit will support most Linux commands.
+- The **ls** command lists the contents of the folder from which Metasploit was launched using the **msfconsole** command. Metasploit will support most Linux commands.
 - You can use the **history** command to see commands you have typed earlier.
 - The module to be used can be selected with the **use** command followed by the number at the beginning of the search result line or by listing the module.
 - **show options** - prompt that tells us what can and needs to be set.
@@ -587,7 +587,7 @@ macOS - Option + Command + I
 ### What the Shell?
 - In the simplest terms, shells are what we use when interfacing with a Command Line environment (CLI). In other words, the common bash or sh programs in Linux are examples of shells, as are cmd.exe and PowerShell on Windows.
 - **Netcat** - Netcat is the traditional "Swiss Army Knife" of networking. It is used to manually perform all kinds of network interactions.
-- **Socat** - Socat is like netcat on steroids. It can do all of the same things, and man more. Socat shells are usually more stable than netcat shells out of the box. In this sense it is vastly superior to netcat; however, there are to big catches:
+- **Socat** - Socat is like netcat on steroids. It can do all of the same things, and many more. Socat shells are usually more stable than netcat shells out of the box. In this sense it is vastly superior to netcat; however, there are two big catches:
 	- The syntax is more difficult.
 	- Netcat is installed on virtually every Linux distribution. Socat is very rarely installed by default.
 	- **Metasploit --multi/handler** - The **exploit/multi/handler** module of the Metasploit framework is, like socat and netcat, used to receive reverse shells.
@@ -626,9 +626,9 @@ macOS - Option + Command + I
 	- On a Windows target we would use this command for our listener: **socat TCP-L:\<PORT> EXEC:powershell.exe,pipes
 	- We use the "pipes" argument to interface between the Unix and Windows ways of handling input and output in a CLI environment.
 	- Regardless of the target, we use this command on our attacking machine to connect to the waiting listener: **socat TCP:\<TARGET-IP>:\<TARGET-PORT> -
-- **Socat Encrypted Shells** - One of the many great things about socat is that it's capable of creating encrypted shells -- both bind and reverse. Why would we want to do this? Encrypted shells cannot be spied on unless you have the decryption key, and are often able to bypass an IDS as a refult.
+- **Socat Encrypted Shells** - One of the many great things about socat is that it's capable of creating encrypted shells -- both bind and reverse. Why would we want to do this? Encrypted shells cannot be spied on unless you have the decryption key, and are often able to bypass an IDS as a result.
 - **Common Shell Payloads** - For some common reverse shell payloads, PayloadsAllTheThings (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md) is a repository containing a wide range of shell codes (usually in one-liner format for copying and pasting), in may different languages.
-- **msvenmon** - Part of the Metasploit framework, msfvenom is used to generate code for primarily reverse and bind shells. It is used extensively in lower-level exploit development to generate hexadecimal shellcode when developing something like a Buffer Overflow exploit.
+- **msfvenmon** - Part of the Metasploit framework, msfvenom is used to generate code for primarily reverse and bind shells. It is used extensively in lower-level exploit development to generate hexadecimal shellcode when developing something like a Buffer Overflow exploit.
 - The standard syntax for msfvenom is as follows: **msfvenom -p \<PAYLOAD> \<OPTIONS>
 - **Staged vs Stageless shell payloads**
 	- **Staged** payloads are sent in two parts. The first part is called the stager. This is a piece of code which is executed directly on the server itself. It connects back to a waiting listener, but doesn't actually contain any reverse shell code by itself. Instead it connects to the listener and uses the connection to load the real payload, executing it directly and preventing it from touching the disk where it could be caught by traditional anti-virus solutions. Thus the payload is split into two parts -- a small initial stager, then the bulkier reverse shell code which is downloaded when the stager is activated. Staged payloads require a special listener -- usually the Metasploit multi/handler.
@@ -639,8 +639,8 @@ macOS - Option + Command + I
 		- Open Metasploit with **msfconsole**
 		- Type **use multi/handler**, and press enter.
 - **WebShells** - There are times when we encounter websites that allow us an opportunity to upload, in some way or another, an executable file. Ideally we would use this opportunity to upload code that would activate a reverse or bind shell, but sometimes this is not possible. In these cases we would instead upload a *webshell*. 
-- "Webshell" is a colloquial term for a script that runs inside a webserver (usually in a language such as PHP or ASP) which executes code on the server. Essentially, commands are entered into a webpage -- either through a HTML form, or directly as arguments in the URL -- which are then executed by the script, withe the results returned and written to the page. 
-- **Next Steps** - The one thing about shells is that they tend to be unstable and non-interactive. On Linux ideally we would be looking for opportunities to gain access to a user account. SSH keys are stored at **/home/\<user>/.ssh** areoften ideal way to do this. 
+- "Webshell" is a colloquial term for a script that runs inside a webserver (usually in a language such as PHP or ASP) which executes code on the server. Essentially, commands are entered into a webpage -- either through a HTML form, or directly as arguments in the URL -- which are then executed by the script, with the results returned and written to the page. 
+- **Next Steps** - The one thing about shells is that they tend to be unstable and non-interactive. On Linux ideally we would be looking for opportunities to gain access to a user account. SSH keys are stored at **/home/\<user>/.ssh** are often ideal way to do this. 
 - Reverse and Bind shells are an essential technique for gaining remote code execution on a machine, however, they will never be as fully featured as a native shell. Ideally we always want to escalate into using a "normal" method for accessing the machine, as this will invariably be easier to use for further exploitation of the target.
 ### Linux Privilege Escalation
 - At it's core, Privilege Escalation usually involves going from a lower permission account to a higher permission one. More technically, it's the exploitation of a vulnerability, design flaw, or configuration oversight in an operating system or application to gain unauthorized access to resources that are usually restricted from the users.
@@ -664,7 +664,7 @@ macOS - Option + Command + I
 		- **netstat -s**: list network usage by protocol.
 		- **netstat - tp**: list connections with the service name and PID information.
 		- **netstat - i**: Shows interface statistics. 
-	- **find** command - Searing the target system for important information and potential privilege escalation vectors can be fruitful. The built-in "find" command is useful and work keeping in your arsenal.
+	- **find** command - Searing the target system for important information and potential privilege escalation vectors can be fruitful. The built-in "find" command is useful and worth keeping in your arsenal.
 		- **find . -name flag1.txt**: find the file name "flag1.txt" in the current directory.
 		- **find /home -name flag1.txt**: find the file names "flag1.txt" in the /home directory.
 		- **find / -type d -name config**: find the directory named config under "/'"
@@ -694,14 +694,14 @@ macOS - Option + Command + I
 - **Privilege Escalation: Sudo**
 	- The sudo command, by default, allows you to run a program with root privileges. Any user can check its current situation related to root privileges using the **sudo -l** command.
 - **Privilege Escalation: SUID**
-	- Many of Linux privilege controls rely on controlling the user and files interactions. This id done with permissions. This is done with permissions. By now, you know that files can have read, write, and execute permissions. These are given to users within their privilege levels. This changes with SUID (Set-user Identification) and SGID (Set-group Identification). 
+	- Many of Linux privilege controls rely on controlling the user and files interactions. This is done with permissions. By now, you know that files can have read, write, and execute permissions. These are given to users within their privilege levels. This changes with SUID (Set-user Identification) and SGID (Set-group Identification). 
 ### Windows Privilege Escalation
-- **Windows Privilege Escalation** - Simply put, privilege escalation consists of using given access to a host with "user A" and leveraging it to gain access to "user B" by abusing a wekness in teh target system. 
+- **Windows Privilege Escalation** - Simply put, privilege escalation consists of using given access to a host with "user A" and leveraging it to gain access to "user B" by abusing a weakness in the target system. 
 - Windows systems mainly have two kinds of users. Depending on their access levels, we can categorize a user in one of the following groups:
 	- Administrators - These users have the most privileges. They can change any system configuration parameter and access any file in the system.
 	- Standard Users - These users can access the computer but only perform limited tasks. Typically these users can not make permanent or essential changes to the system and are limited to their files.
 - Built-in accounts used by the operating system
-	- System / LocalSystem - An account used by the operating system to perform internal tasks. It has full access to all files and resources available on the hose with even higher privileges than adminstrators.
+	- System / LocalSystem - An account used by the operating system to perform internal tasks. It has full access to all files and resources available on those with even higher privileges than administrators.
 	- Local Service - Default account used to run Windows services with "minimum" privileges. It will use anonymous connections over the network.
 	- Network Service - Default account used to run Windows services with "minimum" privileges. It will use the computer credentials to authenticate through the network.
 - **Harvesting Passwords from Usual Spots**
@@ -724,7 +724,7 @@ macOS - Option + Command + I
 - **Other Quick Wins**
 	- Looking into scheduled tasks on the target system, you may see a scheduled task that either lost its binary or it's using a binary you can modify.
 	- **AlwaysInstallElevated** - Windows installer files (also known as .msi files) are used to install applications on the system. They usually run with the privilege level of the user that starts it. However, these can be configured to run with higher privileges from any user account (even unprivileged ones). This could potentially allows us to generate a malicious MSI file that would run with admin privileges. 
-- **Tools of the Trade** - Several These tools can shorted the enumeration process time and uncover different potential privilege escalation vectors. However, please remember that automated tools can sometimes miss privilege escalation.
+- **Tools of the Trade** - Several These tools can shorten the enumeration process time and uncover different potential privilege escalation vectors. However, please remember that automated tools can sometimes miss privilege escalation.
 - Below are a few tools commonly used to identify privilege escalation vectors.
 	- **WinPEAS** - WinPEAS is a script developed to enumerate the target system to uncover privilege escalation paths. WinPEAS can be downloaded here: https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
 	- **PrivescCheck** - PrivescCheck is a PowerShell script that searches common privilege escalation on the target system. It provides an alternative to WinPEAS without requiring the execution of a binary file. PrivescCehck can be downloaded here: https://github.com/itm4n/PrivescCheck
