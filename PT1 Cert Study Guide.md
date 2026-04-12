@@ -241,14 +241,14 @@ hydra -l admin -P passwords.txt rdp://10.10.10.10
 
 ### Attack Techniques
 
-|Attack|Requirement|Tool|
-|---|---|---|
-|**Kerberoasting**|Valid domain creds|Impacket `GetUserSPNs.py`, Rubeus|
-|**AS-REP Roasting**|No pre-auth accounts|Impacket `GetNPUsers.py`, Rubeus|
-|**Pass-the-Hash**|NTLM hash|Impacket, CrackMapExec, Mimikatz|
-|**Pass-the-Ticket**|Kerberos ticket|Mimikatz, Rubeus|
-|**DCSync**|Replication rights|Mimikatz, Impacket `secretsdump.py`|
-|**Golden Ticket**|KRBTGT hash|Mimikatz|
+| Attack              | Requirement          | Tool                                |
+| ------------------- | -------------------- | ----------------------------------- |
+| **Kerberoasting**   | Valid domain creds   | Impacket `GetUserSPNs.py`, Rubeus   |
+| **AS-REP Roasting** | No pre-auth accounts | Impacket `GetNPUsers.py`, Rubeus    |
+| **Pass-the-Hash**   | NTLM hash            | Impacket, CrackMapExec, Mimikatz    |
+| **Pass-the-Ticket** | Kerberos ticket      | Mimikatz, Rubeus                    |
+| **DCSync**          | Replication rights   | Mimikatz, Impacket `secretsdump.py` |
+| **Golden Ticket**   | KRBTGT hash          | Mimikatz                            |
 
 ### Impacket Commands
 
