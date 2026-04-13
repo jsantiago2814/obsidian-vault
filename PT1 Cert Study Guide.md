@@ -230,14 +230,14 @@ hydra -l admin -P passwords.txt rdp://10.10.10.10
 
 ### Key AD Ports
 
-|Port|Service|Attack Relevance|
-|---|---|---|
-|88|Kerberos|Kerberoasting, AS-REP roasting|
-|389|LDAP|User/group enumeration|
-|636|LDAPS|Encrypted LDAP|
-|445|SMB|Pass-the-Hash, relay attacks|
-|135|RPC|User enumeration|
-|5985|WinRM|Remote command execution|
+| Port | Service  | Attack Relevance               |
+| ---- | -------- | ------------------------------ |
+| 88   | Kerberos | Kerberoasting, AS-REP roasting |
+| 389  | LDAP     | User/group enumeration         |
+| 636  | LDAPS    | Encrypted LDAP                 |
+| 445  | SMB      | Pass-the-Hash, relay attacks   |
+| 135  | RPC      | User enumeration               |
+| 5985 | WinRM    | Remote command execution       |
 
 ### Attack Techniques
 
@@ -296,18 +296,18 @@ secretsdump.py domain/user:password@10.10.10.10
 
 ### Windows Privilege Escalation Checklist
 
-|Check|Command|
-|---|---|
-|Current user|`whoami /all`|
-|System info|`systeminfo`|
-|Running processes|`tasklist /v`|
-|Services|`wmic service list brief`|
-|Scheduled tasks|`schtasks /query /fo LIST /v`|
-|Network info|`ipconfig /all && netstat -ano`|
-|Unquoted service paths|`wmic service get name,pathname`|
-|AlwaysInstallElevated|Check registry keys|
-|Stored credentials|`cmdkey /list`|
-|PowerShell history|Check `ConsoleHost_history.txt`|
+| Check                  | Command                          |
+| ---------------------- | -------------------------------- |
+| Current user           | `whoami /all`                    |
+| System info            | `systeminfo`                     |
+| Running processes      | `tasklist /v`                    |
+| Services               | `wmic service list brief`        |
+| Scheduled tasks        | `schtasks /query /fo LIST /v`    |
+| Network info           | `ipconfig /all && netstat -ano`  |
+| Unquoted service paths | `wmic service get name,pathname` |
+| AlwaysInstallElevated  | Check registry keys              |
+| Stored credentials     | `cmdkey /list`                   |
+| PowerShell history     | Check `ConsoleHost_history.txt`  |
 
 **Automation:** WinPEAS, PowerUp, PrivescCheck
 
@@ -338,13 +338,14 @@ secretsdump.py domain/user:password@10.10.10.10
 
 ## Recommended Wordlists (SecLists)
 
-|Purpose|Path|
-|---|---|
-|Directory brute-forcing|`Discovery/Web-Content/directory-list-2.3-medium.txt`|
-|Common files|`Discovery/Web-Content/common.txt`|
-|Subdomains|`Discovery/DNS/subdomains-top1million-5000.txt`|
-|Usernames|`Usernames/Names/names.txt`|
-|Passwords|`Passwords/Leaked-Databases/rockyou.txt`|
+| Purpose                 | Path                                                  |
+| ----------------------- | ----------------------------------------------------- |
+| Directory brute-forcing | `Discovery/Web-Content/directory-list-2.3-medium.txt` |
+| Common files            | `Discovery/Web-Content/common.txt`                    |
+| Subdomains              | `Discovery/DNS/subdomains-top1million-5000.txt`       |
+| Usernames               | `Usernames/Names/names.txt`                           |
+| Passwords               | `Passwords/Leaked-Databases/rockyou.txt`              |
+|                         |                                                       |
 
 ## Quick Reference: Tools by Phase
 
